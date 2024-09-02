@@ -1,0 +1,33 @@
+# TidBit 19, created from weekly writing 19
+
+Completing the Yara and Sigma room in HTB. Almost full module walkthrough...
+
+Notes:
+to RDP from Powershell inside Parrot OS - examples
+xfreerdp /v:10.129.228.137:3389 /u:htb-student
+Using xfreerdp as the program
+/v:<server>:<port>
+/u:<username>
+submit password when asked to verify certificate. 
+
+ 
+We used [Threat Report: Illuminating Volume Shadow Deletion - VMware Security Blog - VMware](https://blogs.vmware.com/security/2022/09/threat-report-illuminating-volume-shadow-deletion.html) to better understand VSD.
+ 
+This was my sigma>powershell command/script for identifying the malicious driver within the lab_events_4.evtx file. 
+Get-WinEvent -Path C:\Events\YARASigma\lab_events_4.evtx | where {($_.ID -eq "1006" -or $_.ID -eq "1116" -or $_.ID -eq "1015" -or $_.ID -eq "1117") } | select TimeCreated,Id,RecordId,ProcessId,MachineName,Message
+ 
+Then we used Chainsaw and sigma rules to hunt for a suspicious Defender exclusion inside a file.
+Our command was: .\chainsaw_x86_64-pc-windows-msvc.exe hunt C:\Events\YARASigma\lab_events_5.evtx -s C:\Tools\chainsaw\sigma\rules\windows\powershell\powershell_script\posh_ps_win_defender_exclusions_added.yml --mapping .\mappings\sigma-event-logs-all.yml
+We had to name the directory. In this case - document\virus
+ 
+For the sigma/splunk conversion, the command was: python sigmac -t splunk C:\Rules\sigma\file_event_win_app_dropping_archive.yml -c .\config\splunk-windows.yml
+
+and the output for splunk rule was: ((Image="\winword.exe" OR Image="\excel.exe" OR Image="\powerpnt.exe" OR Image="\msaccess.exe" OR Image="\mspub.exe" OR Image="\eqnedt32.exe" OR Image="\visio.exe" OR Image="\wordpad.exe" OR Image="\wordview.exe" OR Image="\certutil.exe" OR Image="\certoc.exe" OR Image="\CertReq.exe" OR Image="\Desktopimgdownldr.exe" OR Image="\esentutl.exe" OR Image="\finger.exe" OR Image="\notepad.exe" OR Image="\AcroRd32.exe" OR Image="\RdrCEF.exe" OR Image="\mshta.exe" OR Image="\hh.exe" OR Image="\sharphound.exe") (TargetFilename=".zip" OR TargetFilename=".rar" OR TargetFilename=".7z" OR TargetFilename=".diagcab" OR TargetFilename=".appx"))
+ 
+The one I struggled with was the .NET assembly question in the skills assessment because I didn't remember that there was a section on .exe files with .NET assemblies. It's called 'Developing Yara Rules', and illustrates how we can answer this question. 
+Essentially, you load the document from monodis (use command line) or into dnSpy and follow along with the screenshot that is provided within the explanation of .NET assemblies. 
+ 
+This is a screenshot of the dnSpy utility within a windows environment. Monodis is used within Linux distributions...I think, as I got errors trying to use it in Powershell. 
+
+dnSpy [GitHub - dnSpy/dnSpy: .NET debugger and assembly editor](https://github.com/dnSpy/dnSpy)
+monodis [Dis/Assembling CIL Code | Mono (mono-project.com)](https://www.mono-project.com/docs/tools+libraries/tools/monodis/) Command monodis --output+code <filename.exe>
