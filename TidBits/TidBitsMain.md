@@ -1,16 +1,16 @@
 # Tid-Bits
 ## Small writings; either for future-reference or updates
-### The first 6 TidBit writings are from a wordpress blog that I had started to be similar to this one. 
+### The first 7 TidBit writings are from a wordpress blog that I had started to be similar to this one. 
 
 [Home](./)
 
-* [TidBit 9](./TidBits/TidBit 9.html)
-* [TidBit 10](./TidBits/TidBit 10.html)
-* [TidBit 11](./TidBits/TidBit 11.html)
-* [TidBit 12](./TidBits/TidBit 12.html)
-* [TidBit 19](./TidBits/TidBit 19.html)
-* [TidBit 20](./TidBits/TidBit 20.html)
-
+* [TidBit 9](./TidBits/TidBit_9.html)
+* [TidBit 10](./TidBits/TidBit_10.html)
+* [TidBit 11](./TidBits/TidBit_11.html)
+* [TidBit 12](./TidBits/TidBit_12.html)
+* [TidBit 19](./TidBits/TidBit_19.html)
+* [TidBit 20](./TidBits/TidBit_20.html)
+* [TidBit XSS](./TidBits/TidBit_XSS.html)
 Text can be **bold**, _italic_, ~~strikethrough~~ or `keyword`.
 > This is a blockquote following a header.
 >
