@@ -1,7 +1,7 @@
 # Tid-Bits
 ## Small writings; either for future-reference or updates
 
-[back](./)
+[Home](./)
 
 [Title of TidBit 1](./TidBits/TidBitsMain.html)
 
