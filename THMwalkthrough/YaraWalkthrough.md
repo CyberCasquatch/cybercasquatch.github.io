@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # THM - Yara Room Walkthrough 
 
 ### Task 1: Introduction
