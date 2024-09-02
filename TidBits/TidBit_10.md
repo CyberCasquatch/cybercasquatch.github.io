@@ -18,3 +18,4 @@ I chose 160 because of the SALT. From example_hashes [hashcat wiki](https://hash
 (Note: I kept my file name the same because I was lazy and did not want to create another file or change the name) -- my syntax was: hashcat -m 160 -a 0 lvl1.txt /FILE_PATH_TO_ROCKYOU.TXT/rockyou.txt
 Then I got it with the output. Ye. 
  
+[back](./TidBitMain.html)
