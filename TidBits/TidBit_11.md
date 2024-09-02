@@ -9,3 +9,6 @@ I found this video -
 And found the syntax I was after, which was: gpg --import _insertfilenamehere_.pgp
 after I followed this, I was able to complete the room. I enjoyed this one. I got to use John and GPG. 
 I enjoy working in the terminals. 
+
+
+[back](./TidBitMain.html)
