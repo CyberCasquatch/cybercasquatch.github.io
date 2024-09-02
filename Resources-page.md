@@ -37,3 +37,5 @@ _This page is used to store resources for various types of use cases and gathere
 * [JavaScript Tutorial (w3schools.com)](https://www.w3schools.com/js/default.asp)
 * [Cross Site Scripting (XSS) | OWASP Foundation](https://owasp.org/www-community/attacks/xss/)
 * [Running containers | Docker Docs](https://docs.pwntools.com/en/stable/)
+
+[back](./)
