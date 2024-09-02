@@ -1,6 +1,7 @@
 ---
 layout: default
 ---
+This is the main page. 
 <!--
 Text can be **bold**, _italic_, ~~strikethrough~~ or `keyword`.
 
