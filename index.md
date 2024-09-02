@@ -3,4 +3,6 @@ layout: default
 --->
 This is the main page. 
 
-[Link to another page](./TidBits/TidBitsMain.html).
+[TidBits (small writings)](./TidBits/TidBitsMain.html).
+[Resources](./Resources-page.html).
+
