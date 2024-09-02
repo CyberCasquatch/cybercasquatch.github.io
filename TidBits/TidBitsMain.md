@@ -4,13 +4,13 @@
 
 [Home](./)
 
-* [TidBit 9](/TidBit_9.html)
-* [TidBit 10](/TidBit_10.html)
-* [TidBit 11](/TidBit_11.html)
-* [TidBit 12](/TidBit_12.html)
-* [TidBit 19](/TidBit_19.html)
-* [TidBit 20](/TidBit_20.html)
-* [TidBit XSS](/TidBit_XSS.html)
+* [TidBit 9](TidBit_9.html)
+* [TidBit 10](TidBit_10.html)
+* [TidBit 11](TidBit_11.html)
+* [TidBit 12](TidBit_12.html)
+* [TidBit 19](TidBit_19.html)
+* [TidBit 20](TidBit_20.html)
+* [TidBit XSS](TidBit_XSS.html)
 
 Text can be **bold**, _italic_, ~~strikethrough~~ or `keyword`.
 > This is a blockquote following a header.
