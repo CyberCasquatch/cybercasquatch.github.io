@@ -1,8 +1,8 @@
 # Resources
 
-Welcome to the resources page
+### Welcome to the resources page
 
-This page is used to store resources for various types of use cases and gathered from many different types of projects that I have completed. I have found these resources useful and so have tried to list & group them appropriately. 
+_This page is used to store resources for various types of use cases and gathered from many different types of projects that I have completed. I have found these resources useful and so have tried to list & group them appropriately._
 
 ### GENERAL
 * [Security Certification Roadmap - Paul Jerimy Media](https://pauljerimy.com/security-certification-roadmap/)
