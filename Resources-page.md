@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Resources
 
 ### Welcome to the resources page
