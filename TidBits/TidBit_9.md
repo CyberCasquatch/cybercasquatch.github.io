@@ -13,4 +13,4 @@ I was able to find the answer pretty quickly with regedit.
 I want to try other websites such as HackTheBox and PwnedLabs. 
 I made a lot of python projects yesterday but many of them have bugs that I am still trying to fix.
 
-[back](./TidBitMain.html)
+[back](./)
