@@ -48,11 +48,11 @@ This room introduces a few tools that we will be using in further tasks of this 
 The main one being LOKI by Florian Roth.
 
 I encourage you to save any links here for future use.
-[Loki/README.md at master · Neo23x0/Loki (github.com)](https://github.com/Neo23x0/Loki/blob/master/README.md)
-[Releases · Neo23x0/Loki (github.com)](https://github.com/Neo23x0/Loki/releases)
-[THOR Lite - Nextron Systems (nextron-systems.com)](https://www.nextron-systems.com/thor-lite/)
-[Neo23x0/Fenrir: Simple Bash IOC Scanner (github.com)](https://github.com/Neo23x0/Fenrir)
-[Introducing “YAYA”, a New Threat Hunting Tool From EFF Threat Lab | Electronic Frontier Foundation](https://www.eff.org/deeplinks/2020/09/introducing-yaya-new-threat-hunting-tool-eff-threat-lab)
+* [Loki/README.md at master · Neo23x0/Loki (github.com)](https://github.com/Neo23x0/Loki/blob/master/README.md)
+* [Releases · Neo23x0/Loki (github.com)](https://github.com/Neo23x0/Loki/releases)
+* [THOR Lite - Nextron Systems (nextron-systems.com)](https://www.nextron-systems.com/thor-lite/)
+* [Neo23x0/Fenrir: Simple Bash IOC Scanner (github.com)](https://github.com/Neo23x0/Fenrir)
+* [Introducing “YAYA”, a New Threat Hunting Tool From EFF Threat Lab | Electronic Frontier Foundation](https://www.eff.org/deeplinks/2020/09/introducing-yaya-new-threat-hunting-tool-eff-threat-lab)
 
 ### Task 8: Using LOKI and its Yara rule set
 Read through the section and get familiar with where Loki can be found on the system along with the ‘suspicious-files’ location.
