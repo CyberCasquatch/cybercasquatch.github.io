@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 ---
 
 # THM - Yara Room Walkthrough 
