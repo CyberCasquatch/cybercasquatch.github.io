@@ -31,3 +31,5 @@ This is a screenshot of the dnSpy utility within a windows environment. Monodis 
 
 dnSpy [GitHub - dnSpy/dnSpy: .NET debugger and assembly editor](https://github.com/dnSpy/dnSpy)
 monodis [Dis/Assembling CIL Code | Mono (mono-project.com)](https://www.mono-project.com/docs/tools+libraries/tools/monodis/) Command monodis --output+code <filename.exe>
+
+[back](./TidBitMain.html)
