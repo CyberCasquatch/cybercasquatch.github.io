@@ -11,6 +11,7 @@
 * [TidBit 19](./TidBits/TidBit_19.html)
 * [TidBit 20](./TidBits/TidBit_20.html)
 * [TidBit XSS](./TidBits/TidBit_XSS.html)
+
 Text can be **bold**, _italic_, ~~strikethrough~~ or `keyword`.
 > This is a blockquote following a header.
 >
