@@ -16,9 +16,9 @@ _This page is used to store resources for various types of use cases and gathere
 ### BLOGS
 
 ### OSINT
-*	[https://github.com/laramies/theHarvester]
-*	[https://osintframework.com/]
-*	[https://www.varonis.com/blog/what-is-osint]
+*	[https://github.com/laramies/theHarvester](https://github.com/laramies/theHarvester)
+*	[https://osintframework.com/](https://github.com/lockfale/osint-framework)
+*	[https://www.varonis.com/blog/what-is-osint](https://www.varonis.com/blog/what-is-osint)
 
 ### CASE STUDIES
 *	[Target](https://corporate.target.com/news-features/article/2013/12/important-notice-unauthorized-access-to-payment-ca)
@@ -30,6 +30,7 @@ _This page is used to store resources for various types of use cases and gathere
 *	[Sysmon Configuration (Github)](https://github.com/olafhartong/sysmon-modular/blob/master/sysmonconfig.xml)
 *	[Sysmon Download](https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon)
 
+***
 
 * [Introduction — Scapy 2.5.0 documentation](https://scapy.readthedocs.io/en/latest/introduction.html)
 * [pwntools — pwntools 4.12.0 documentation](https://docs.pwntools.com/en/stable/)
