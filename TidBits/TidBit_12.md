@@ -1,3 +1,12 @@
+---
+layout: default
+title:  "TidBit 12"
+date:   2024-09-03
+author: C. Casquatch
+comments: false
+categories: cyber security
+---
+
 # TidBit 12, created from weekly writing 12
 
 I have suspended my subscription to TryHackMe for a little while so I can experience other platforms. 
