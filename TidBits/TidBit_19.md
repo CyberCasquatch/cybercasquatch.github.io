@@ -1,3 +1,12 @@
+---
+layout: default
+title:  "TidBit 19"
+date:   2024-09-03
+author: C. Casquatch
+comments: false
+categories: cyber security
+---
+
 # TidBit 19, created from weekly writing 19
 
 Completing the Yara and Sigma room in HTB. Almost full module walkthrough...
