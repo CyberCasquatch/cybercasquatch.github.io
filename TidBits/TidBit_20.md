@@ -1,3 +1,12 @@
+---
+layout: default
+title:  "TidBit 20"
+date:   2024-09-03
+author: C. Casquatch
+comments: false
+categories: cyber security
+---
+
 # TidBit 20, created from weekly writing 20
 
 Going through a digital forensics module in HTB.
