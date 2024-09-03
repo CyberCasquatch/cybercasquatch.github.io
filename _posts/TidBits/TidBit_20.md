@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title:  "TidBit 20"
 date:   2024-09-03
 author: C. Casquatch
