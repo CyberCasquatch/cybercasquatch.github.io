@@ -4,5 +4,5 @@ show_pages: true
 google_analytics:
 theme: jekyll-theme-hacker
 website: https://cybercasquatch.github.io
-basewebsite: /blog
+basewebsite: /_posts
 permalink: /:categories/:year/:month/:day/:title:output_ext
