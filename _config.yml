@@ -3,4 +3,6 @@ description: A place to show my mad skills.
 show_pages: true
 google_analytics:
 theme: jekyll-theme-hacker
-permalink: /:title/
+website: https://cybercasquatch.github.io
+basewebsite: /blog
+permalink: /:categories/:year/:month/:day/:title:output_ext
