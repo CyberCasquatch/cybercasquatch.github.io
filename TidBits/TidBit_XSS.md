@@ -1,3 +1,12 @@
+---
+layout: default
+title:  "TidBit XSS"
+date:   2024-09-03
+author: C. Casquatch
+comments: false
+categories: cyber security
+---
+
 # TidBit XSS
 
 ### I am wanting to complete the XSS room on THM but I am having to do about 5 pre-requisite rooms to complete it. 
