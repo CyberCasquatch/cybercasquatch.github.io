@@ -1,6 +1,6 @@
 ---
 layout: default
-title:  "Resources"
+title:  "Walkthroughs"
 date:   2024-09-03
 author: C. Casquatch
 comments: false
