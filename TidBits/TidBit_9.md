@@ -1,3 +1,12 @@
+---
+layout: default
+title:  "TidBit 9"
+date:   2024-09-03
+author: C. Casquatch
+comments: false
+categories: cyber security
+---
+
 # From weekly writing #9, this is TidBit 9
 
 I have been trying the Hacker101.io website. It lets me know that I have no idea what I'm doing and I need to learn more about Burpsuite. 
