@@ -1,3 +1,12 @@
+---
+layout: default
+title:  "TidBit 11"
+date:   2024-09-03
+author: C. Casquatch
+comments: false
+categories: cyber security
+---
+
 # TidBit 11, created from weekly writing 11
 
 I am trying out the Anonforce room on TryHackMe.
