@@ -1,3 +1,12 @@
+---
+layout: default
+title:  "TidBit 10"
+date:   2024-09-03
+author: C. Casquatch
+comments: false
+categories: cyber security
+---
+
 # TidBit 10, taken from weekly writing 10
 
 I'm doing another TryHackMe room for practice. 
