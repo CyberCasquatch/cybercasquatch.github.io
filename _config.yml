@@ -3,3 +3,4 @@ description: A place to show my mad skills.
 show_pages: true
 google_analytics:
 theme: jekyll-theme-hacker
+permalink: /:title/
