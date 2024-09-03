@@ -1,3 +1,12 @@
+---
+layout: default
+title:  "TidBits"
+date:   2024-09-03
+author: C. Casquatch
+comments: false
+categories: cyber security
+---
+
 # Tid-Bits
 ## Small writings; either for future-reference or updates
 ### The first 7 TidBit writings are from a wordpress blog that I had started to be similar to this one. 
