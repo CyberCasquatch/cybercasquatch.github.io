@@ -11,7 +11,8 @@ categories: cyber security
 
 ## TryHackMe Walkthroughs
 * [Yara Room Walkthrough](./THMWalkthroughs/YaraWalkthrough.html)
-
+* [Snort Room Walkthrough](./THMWalkthroughs/SnortWalkthrough.html)
+* 
 ## HackTheBox Walkthroughs
 
 [back](./)
