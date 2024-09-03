@@ -10,7 +10,7 @@ categories: cyber security
 # This is the page to list the different types of walkthroughs (THM, HTB, CD, PwndLabs, Hacker1, etc.)
 
 ## TryHackMe Walkthroughs
-* [Yara Room Walkthrough]({% post_url 2024-09-03-Walkthrough-Main %})
+* [Yara Room Walkthrough](_posts/Walkthroughs/THMwalkthroughs/2024/09/03/Yara-Walkthrough.html)
 * [Snort Room Walkthrough](./THMWalkthroughs/SnortWalkthrough.html)
 * 
 ## HackTheBox Walkthroughs
