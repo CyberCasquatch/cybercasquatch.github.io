@@ -19,7 +19,7 @@ categories: cyber security
 * [TidBit 12](TidBit_12.html)
 * [TidBit 19](TidBit_19.html)
 * [TidBit 20](2024-09-03-TidBit-20.html)
-* [TidBit XSS](_posts/TidBits/2024-09-03-TidBit-XSS.html)
+* [TidBit XSS](/_posts/TidBits/2024-09-03-TidBit-XSS.html)
 
 Text can be **bold**, _italic_, ~~strikethrough~~ or `keyword`.
 > This is a blockquote following a header.
