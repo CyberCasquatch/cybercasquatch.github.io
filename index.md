@@ -9,7 +9,7 @@ categories: cyber security
 
 # This is the main page. 
 
-* [TidBits](./TidBits/TidBitsMain.html)
-* [Walkthroughs](./Walkthroughs/Walkthrough_Main.html)
+* [TidBits](./_posts/TidBits/TidBitsMain.html)
+* [Walkthroughs](./_posts/Walkthroughs/Walkthrough_Main.html)
 * [Resources](./Resources-page.html)
 
