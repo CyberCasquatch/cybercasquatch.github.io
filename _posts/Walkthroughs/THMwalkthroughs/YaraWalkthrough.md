@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title:  "Yara Romm Walkthrough (THM)"
 date:   2024-09-03
 author: C. Casquatch
