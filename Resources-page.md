@@ -44,7 +44,9 @@ _This page is used to store resources for various types of use cases and gathere
 * [Introduction — Scapy 2.5.0 documentation](https://scapy.readthedocs.io/en/latest/introduction.html)
 * [pwntools — pwntools 4.12.0 documentation](https://docs.pwntools.com/en/stable/)
 * [JavaScript Tutorial (w3schools.com)](https://www.w3schools.com/js/default.asp)
+
 * [Cross Site Scripting | OWASP Foundation](https://owasp.org/www-community/attacks/xss/)
+
 * [Running containers | Docker Docs](https://docs.pwntools.com/en/stable/)
 
 [back](./)
