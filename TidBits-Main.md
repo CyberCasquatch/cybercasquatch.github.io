@@ -13,7 +13,7 @@ categories: cyber security
 
 [Home](./)
 
-* [TidBit 9](2024-09-03-TidBit-9.markdown)
+* [TidBit 9](_post/TidBits/2024-09-03-TidBit-9.markdown)
 * [TidBit 10](2024-09-03-TidBit-10.markdown)
 * [TidBit 11](2024-09-03-TidBit-11.markdown)
 * [TidBit 12](2024-09-03-TidBit-12.markdown)
