@@ -4,7 +4,7 @@ title:  "TidBit XSS"
 date:   2024-09-03
 author: C. Casquatch
 comments: false
-categories: cyber security
+tags: ['XSS', 'JavaScript']
 ---
 
 # TidBit XSS
