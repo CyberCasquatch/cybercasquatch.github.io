@@ -15,4 +15,4 @@ categories: cyber security
 * 
 ## HackTheBox Walkthroughs
 
-[back](./)
+[back](./index.md)
