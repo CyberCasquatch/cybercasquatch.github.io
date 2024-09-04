@@ -13,13 +13,13 @@ categories: cyber security
 
 [Home](./)
 
-* [TidBit 9](TidBit_9.html)
-* [TidBit 10](TidBit_10.html)
-* [TidBit 11](TidBit_11.html)
-* [TidBit 12](TidBit_12.html)
-* [TidBit 19](TidBit_19.html)
-* [TidBit 20](2024-09-03-TidBit-20.html)
-* [TidBit XSS](/_posts/TidBits/2024-09-03-TidBit-XSS.html)
+* [TidBit 9](_posts/TidBits/2024-09-03-TidBit-9.markdown)
+* [TidBit 10](_posts/TidBits/2024-09-03-TidBit-10.markdown)
+* [TidBit 11](_posts/TidBits/2024-09-03-TidBit-11.markdown)
+* [TidBit 12](_posts/TidBits/2024-09-03-TidBit-12.markdown)
+* [TidBit 19](_posts/TidBits/2024-09-03-TidBit-19.markdown)
+* [TidBit 20](_posts/2024-09-03-TidBit-20.html)
+* [TidBit XSS](_posts/TidBits/2024-09-03-TidBit-XSS.html)
 
 Text can be **bold**, _italic_, ~~strikethrough~~ or `keyword`.
 > This is a blockquote following a header.
