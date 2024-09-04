@@ -11,7 +11,7 @@ categories: cyber security
 ## Small writings; either for future-reference or updates
 ### The first 7 TidBit writings are from a wordpress blog that I had started to be similar to this one. 
 
-[Home](./)
+[Home](./index.md)
 
 * [TidBit 9](_post/TidBits/2024-09-03-TidBit-9.markdown)
 * [TidBit 10](2024-09-03-TidBit-10.markdown)
