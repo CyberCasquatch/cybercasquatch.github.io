@@ -3,6 +3,7 @@ layout: post
 title:  "Yara Romm Walkthrough (THM)"
 author: C. Casquatch
 comments: false
+categories: [Walkthroughs]
 ---
 
 # THM - Yara Room Walkthrough 
