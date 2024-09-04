@@ -31,7 +31,10 @@ We had to name the directory. In this case - document\virus
  
 For the sigma/splunk conversion, the command was: python sigmac -t splunk C:\Rules\sigma\file_event_win_app_dropping_archive.yml -c .\config\splunk-windows.yml
 
-and the output for splunk rule was: ((Image="\winword.exe" OR Image="\excel.exe" OR Image="\powerpnt.exe" OR Image="\msaccess.exe" OR Image="\mspub.exe" OR Image="\eqnedt32.exe" OR Image="\visio.exe" OR Image="\wordpad.exe" OR Image="\wordview.exe" OR Image="\certutil.exe" OR Image="\certoc.exe" OR Image="\CertReq.exe" OR Image="\Desktopimgdownldr.exe" OR Image="\esentutl.exe" OR Image="\finger.exe" OR Image="\notepad.exe" OR Image="\AcroRd32.exe" OR Image="\RdrCEF.exe" OR Image="\mshta.exe" OR Image="\hh.exe" OR Image="\sharphound.exe") (TargetFilename=".zip" OR TargetFilename=".rar" OR TargetFilename=".7z" OR TargetFilename=".diagcab" OR TargetFilename=".appx"))
+and the output for splunk rule was: 
+```
+((Image="\winword.exe" OR Image="\excel.exe" OR Image="\powerpnt.exe" OR Image="\msaccess.exe" OR Image="\mspub.exe" OR Image="\eqnedt32.exe" OR Image="\visio.exe" OR Image="\wordpad.exe" OR Image="\wordview.exe" OR Image="\certutil.exe" OR Image="\certoc.exe" OR Image="\CertReq.exe" OR Image="\Desktopimgdownldr.exe" OR Image="\esentutl.exe" OR Image="\finger.exe" OR Image="\notepad.exe" OR Image="\AcroRd32.exe" OR Image="\RdrCEF.exe" OR Image="\mshta.exe" OR Image="\hh.exe" OR Image="\sharphound.exe") (TargetFilename=".zip" OR TargetFilename=".rar" OR TargetFilename=".7z" OR TargetFilename=".diagcab" OR TargetFilename=".appx"))
+```
  
 The one I struggled with was the .NET assembly question in the skills assessment because I didn't remember that there was a section on .exe files with .NET assemblies. It's called 'Developing Yara Rules', and illustrates how we can answer this question. 
 Essentially, you load the document from monodis (use command line) or into dnSpy and follow along with the screenshot that is provided within the explanation of .NET assemblies. 
