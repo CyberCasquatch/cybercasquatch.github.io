@@ -4,7 +4,6 @@ title:  "Resources"
 date:   2024-09-03
 author: C. Casquatch
 comments: false
-categories: cyber security
 ---
 
 # Resources
