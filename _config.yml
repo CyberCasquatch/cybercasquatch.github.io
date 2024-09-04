@@ -4,4 +4,5 @@ show_pages: true
 google_analytics:
 theme: jekyll-theme-hacker
 website: https://cybercasquatch.github.io
+baseurl: "" #leave blank if your site is at the root of the domain
 permalink: /:title/
