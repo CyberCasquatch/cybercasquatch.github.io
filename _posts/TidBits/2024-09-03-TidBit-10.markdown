@@ -4,6 +4,7 @@ title:  "TidBit 10"
 date:   2024-09-03
 author: C. Casquatch
 comments: false
+tag: ['Crack That Hash', 'THM']
 ---
 
 # TidBit 10, taken from weekly writing 10
