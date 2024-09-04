@@ -4,7 +4,7 @@ title:  "TidBit 19"
 date:   2024-09-03
 author: C. Casquatch
 comments: false
-categories: cyber security
+tag: ['Yara', 'Sigma', 'Chainsaw']
 ---
 
 # TidBit 19, created from weekly writing 19
