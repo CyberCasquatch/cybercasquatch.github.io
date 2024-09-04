@@ -4,7 +4,6 @@ title:  "TidBits"
 date:   2024-09-03
 author: C. Casquatch
 comments: false
-categories: cyber security
 ---
 
 # Tid-Bits
@@ -14,12 +13,12 @@ categories: cyber security
 [Home](./index.md)
 
 * [TidBit 9](_posts/TidBits/2024-09-03-TidBit-9.markdown)
-* [TidBit 10](2024-09-03-TidBit-10.markdown)
-* [TidBit 11](2024-09-03-TidBit-11.markdown)
-* [TidBit 12](2024-09-03-TidBit-12.markdown)
-* [TidBit 19](2024-09-03-TidBit-19.markdown)
-* [TidBit 20](2024-09-03-TidBit-20.html)
-* [TidBit XSS](2024-09-03-TidBit-XSS.html)
+* [TidBit 10](_posts/TidBits/2024-09-03-TidBit-10.markdown)
+* [TidBit 11](_posts/TidBits/2024-09-03-TidBit-11.markdown)
+* [TidBit 12](_posts/TidBits/2024-09-03-TidBit-12.markdown)
+* [TidBit 19](_posts/TidBits/2024-09-03-TidBit-19.markdown)
+* [TidBit 20](_posts/TidBits/2024-09-03-TidBit-20.markdown)
+* [TidBit XSS](_posts/TidBits/2024-09-03-TidBit-XSS.markdown)
 
 Text can be **bold**, _italic_, ~~strikethrough~~ or `keyword`.
 > This is a blockquote following a header.
