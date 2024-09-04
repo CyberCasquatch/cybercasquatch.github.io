@@ -3,7 +3,7 @@ layout: post
 title:  "TidBit 12"
 date:   2024-09-03
 author: C. Casquatch
-comments: false
+tag: ['User Agents', 'Wireshark']
 ---
 
 # TidBit 12, created from weekly writing 12
