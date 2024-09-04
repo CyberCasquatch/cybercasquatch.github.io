@@ -10,5 +10,5 @@ comments: false
 
 * [TidBits](./TidBits-Main.md)
 * [Walkthroughs](./Walkthrough-Main.md)
-* [Resources](./Resources-page.html)
+* [Resources](./Resources-page.md)
 
