@@ -4,7 +4,7 @@ title:  "Snort Room Walkthrough"
 date:   2024-09-03
 author: C. Casquatch
 comments: false
-categories: cyber security
+categories: Walkthroughs
 ---
 
 ### Task1
