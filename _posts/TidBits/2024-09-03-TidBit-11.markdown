@@ -4,6 +4,7 @@ title:  "TidBit 11"
 date:   2024-09-03
 author: C. Casquatch
 comments: false
+tag: ['Anonforce', 'THM']
 ---
 
 # TidBit 11, created from weekly writing 11
