@@ -4,7 +4,7 @@ title:  "TidBit 20"
 date:   2024-09-03
 author: C. Casquatch
 comments: false
-categories: cyber security
+tag: ['Volatility', 'DigitalForensics']
 ---
 
 # TidBit 20, created from weekly writing 20
