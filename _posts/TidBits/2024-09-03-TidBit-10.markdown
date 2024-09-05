@@ -7,8 +7,6 @@ comments: false
 tag: ['Crack That Hash', 'THM']
 ---
 
-# TidBit 10, taken from weekly writing 10
-
 I'm doing another TryHackMe room for practice. 
 The room I'm completing is Crack That Hash. Which is just a hands-on-learning room to crack hashes as practice. 
  
