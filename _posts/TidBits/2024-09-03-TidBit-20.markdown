@@ -64,4 +64,4 @@ I searched for the file in the training screenshot first, using the # column to 
 # photo6 
 Success. This room is completed.
 
-[back](./TidBits-Main.html)
+[back](../)
