@@ -20,10 +20,10 @@
         <h2>{{ site.description | default: site.github.project_tagline }}</h2>
 
         <section id="pages">
-<!--          {% if site.show_pages %}
-            <a href="{{ site.github.io/TidBits/TidBitsMain.html }}" class="btn">TidBits</a>
-            <a href="{{ site.github.io/Resources-page.html }}" class="btn">Resources</a>
-          {% endif %}-->
+         {% if site.show_pages %}
+            <a href="{{ site.baseurl }}/TidBits/TidBitsMain" class="btn">TidBits</a>
+            <a href="{{ site.baseurl }}/Resources-page" class="btn">Resources</a>
+          {% endif %}
           <a href="{{ site.github.repository_url }}" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
         </section>
       </div>
