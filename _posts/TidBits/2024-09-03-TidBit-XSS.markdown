@@ -13,11 +13,13 @@ I've been meaning to complete some coding projects for cyber security purposes b
 
 and I completed the array sorting challenge from that room:
 never mind the code at the bottom.
- 
+# photo1
+
 The next language room I completed for the XSS room was python. 
 One project calculating shipping costs for packages and another project calculating bitcoin $$ in USD to create an alert. 
- 
-I think this was my favourite bit:
+# photo2
 
+I think this was my favourite bit:
+# photo3
 
 [back](./)
