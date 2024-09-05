@@ -226,4 +226,4 @@ _Answer: Nay_
 #### Task 11: Conclusion
 This one is self-explanatory – read through the exit and click the Question Done button. From here we can move onto the next room.
 
-[back](./Walkthrough-Main.md)
+<button onclick="history.back()">Go Back</button>
