@@ -11,5 +11,8 @@ Today I tried out CyberDefenders. the Webstrike lab which is currently (at the t
 This room was fun. I enjoy the investigative aspects of this work, though I need more practice with wireshark. 
 (don't forget you can use http.user_agent) To find.....user agents.....
 
+# photo1
+
+# photo2
 
 [back](./TidBits-Main.html)
