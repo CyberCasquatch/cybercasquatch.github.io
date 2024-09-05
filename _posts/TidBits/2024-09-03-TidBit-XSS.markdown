@@ -23,3 +23,4 @@ I think this was my favourite bit:
 # photo3
 
 [back](./)
+<button onclick="history.back()">Go Back</button>
