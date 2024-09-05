@@ -6,8 +6,7 @@ author: C. Casquatch
 comments: false
 ---
 
-# Tid-Bits
-## Small writings; either for future-reference or updates
+## Short and sweet insights
 ### The first 7 TidBit writings are from a wordpress blog that I had started to be similar to this one. 
 
 [Home](./index.md)
