@@ -1,12 +1,10 @@
 ---
 layout: post
-title:  "Yara Romm Walkthrough (THM)"
+title:  "Yara Room Walkthrough (THM)"
 author: C. Casquatch
 comments: false
 tag: ['Yara', 'Digital Forensics', 'Threat Hunting']
 ---
-
-# THM - Yara Room Walkthrough 
 
 ### Task 1: Introduction
 After reading the intro we can hit the Question Done button.
