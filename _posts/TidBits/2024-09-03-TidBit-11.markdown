@@ -22,4 +22,4 @@ I enjoy working in the terminals.
 
 YES.
 
-[back](./TidBits-Main.html)
+<button onclick="history.back()">Go Back</button>
