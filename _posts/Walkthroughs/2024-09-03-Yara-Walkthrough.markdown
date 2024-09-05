@@ -3,6 +3,7 @@ layout: post
 title:  "Yara Romm Walkthrough (THM)"
 author: C. Casquatch
 comments: false
+tag: ['Yara', 'Digital Forensics', 'Threat Hunting']
 ---
 
 # THM - Yara Room Walkthrough 
