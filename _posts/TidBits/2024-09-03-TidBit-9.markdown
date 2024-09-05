@@ -7,8 +7,6 @@ comments: false
 tag: ['Hacker101', 'Burpsuite', 'Windows']
 ---
 
-# From weekly writing #9, this is TidBit 9
-
 I have been trying the Hacker101.io website. It lets me know that I have no idea what I'm doing and I need to learn more about Burpsuite. 
 
 Today I am completing the Investigating Windows Room on THM. 
