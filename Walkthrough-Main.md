@@ -6,7 +6,7 @@ author: C. Casquatch
 comments: false
 ---
 
-# This is the page to list the different types of walkthroughs (THM, HTB, CD, PwndLabs, Hacker1, etc.)
+# Welcome to the ultimate hub for all kinds of walkthroughs.
 
 ## TryHackMe Walkthroughs
 * [Yara Room Walkthrough](_posts/Walkthroughs/2024-09-03-Yara-Walkthrough.markdown)
