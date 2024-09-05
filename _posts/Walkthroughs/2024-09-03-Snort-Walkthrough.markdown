@@ -222,4 +222,4 @@ I counted 7.
 
 Revs must change.
 
-[back](./Walkthrough-Main.md)
+<button onclick="history.back()">Go Back</button>
