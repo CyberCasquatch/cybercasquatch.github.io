@@ -15,4 +15,4 @@ This room was fun. I enjoy the investigative aspects of this work, though I need
 
 # photo2
 
-[back](./TidBits-Main.html)
+<button onclick="history.back()">Go Back</button>
