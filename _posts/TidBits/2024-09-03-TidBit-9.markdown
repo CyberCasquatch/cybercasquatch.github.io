@@ -10,11 +10,13 @@ tag: ['Hacker101', 'Burpsuite', 'Windows']
 I have been trying the Hacker101.io website. It lets me know that I have no idea what I'm doing and I need to learn more about Burpsuite. 
 
 Today I am completing the Investigating Windows Room on THM. 
- 
+
+ # photo1
 
 I am following along with [Investigating Windows Walkthrough](https://www.youtube.com/watch?v=s6bt835oZrA) this guy. 
+
 Shoutout to this comment.
- 
+# photo2
 I was able to find the answer pretty quickly with regedit. 
 
 I want to try other websites such as HackTheBox and PwnedLabs. 
