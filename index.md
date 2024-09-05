@@ -6,9 +6,7 @@ author: C. Casquatch
 comments: false
 ---
 
-# This is the main page. 
+# Cyber News
 
-* [TidBits](./TidBits-Main.md)
-* [Walkthroughs](./Walkthrough-Main.md)
-* [Resources](./Resources-page.md)
+
 
