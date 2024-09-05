@@ -7,8 +7,6 @@ comments: false
 tag: ['Yara', 'Sigma', 'Chainsaw']
 ---
 
-# TidBit 19, created from weekly writing 19
-
 Completing the Yara and Sigma room in HTB. Almost full module walkthrough...
 
 Notes:
