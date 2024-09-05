@@ -7,8 +7,6 @@ comments: false
 tag: ['Volatility', 'DigitalForensics']
 ---
 
-# TidBit 20, created from weekly writing 20
-
 Going through a digital forensics module in HTB.
 First set of tasks was to RDP into a windows machine and access their Velociraptor portal with admin/password. 
 I then created a new collection to gather artifacts labeled as "Windows.KapeFiles.Targets" using the _SANS_Triage configuration. 
