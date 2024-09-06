@@ -11,7 +11,7 @@ tag: ['snort', 'THM', 'soc']
 > suspicious network activity.
 
 
-### Task1
+### Task 1
 Read through task and complete the question.
 
 ### Task 2
@@ -24,7 +24,7 @@ While the VM is loading – read through Task 3 and complete the questions. All 
 Read through Task 4 and start exploring snort.
 Use the hints with the questions when needed.
 
-**Question1:
+**Question 1:
 Run the Snort instance and check the build number.**
  
 ![photo1](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/snort/snortPicture1.png)
@@ -67,13 +67,14 @@ sudo ./traffic-generator.sh
 Now, you should have the logs in the current directory. Navigate to folder "145.254.160.237". What is the source port used to connect port 53?**
  
 ![photo4](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/snort/snortPicture4.png)
+
 Here we can see the source port is 3009.
 
 **Question 2:
 Use snort.log.1640048004 
 Read the snort.log file with Snort; what is the IP ID of the 10th packet?**
 
-Command:
+Command to use for this question:
 ```
 Snort -r snort.log.1640048004 -n 10
 ```
