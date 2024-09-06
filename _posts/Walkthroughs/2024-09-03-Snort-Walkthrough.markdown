@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Snort Room Walkthrough"
-date:   2024-09-03
+date:   2024-03-01
 author: C. Casquatch
 comments: false
 tag: ['snort', 'THM', 'soc']
