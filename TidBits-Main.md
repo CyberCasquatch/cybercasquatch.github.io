@@ -7,7 +7,7 @@ comments: false
 ---
 
 ## Short and sweet insights
-### The first 7 TidBit writings are from a wordpress blog that I had started to be similar to this one. 
+### The first 7 TidBit writings are from a wordpress blog that I had.
 
 [Home](./index.md)
 
@@ -18,6 +18,13 @@ comments: false
 * [TidBit 19](_posts/TidBits/2024-09-03-TidBit-19.markdown)
 * [TidBit 20](_posts/TidBits/2024-09-03-TidBit-20.markdown)
 * [TidBit XSS](_posts/TidBits/2024-09-03-TidBit-XSS.markdown)
+
+| 2023         | 2024              |
+|:-------------|:------------------|
+| [TidBit XSS](_posts/TidBits/2024-09-03-TidBit-XSS.markdown) | good swedish fish |
+| | good and plenty   |
+|            | good `oreos`      |
+|            | good `zoute` drop |
 
 Text can be **bold**, _italic_, ~~strikethrough~~ or `keyword`.
 > This is a blockquote following a header.
