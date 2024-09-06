@@ -22,12 +22,14 @@ _Answer: Yay_
 ### Task 3: Deploy
 In this task we will deploy the machine and start our attack box.
 To do this:
- # _photo_1
+
+![photo1](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/yara/yaraPicture1.png)
 
 Start your attack box – whether you connect to a VPN or use split view.
 I usually use split view – so that is what I will be using for this walkthrough.
 Also make note of the credentials given to us in this task.
-# _photo_2
+
+![photo2](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/yara/yaraPicture2.png)
 
 These will assist us in further tasks.
 Click the Question Done button and let’s move onto task 4.
@@ -68,16 +70,20 @@ We are the security analyst for a mid-size law firm. A co-worker discovered susp
 #### Questions:
 **Scan file 1. Does Loki detect this file as suspicious/malicious or benign?**
 Let’s instruct Loki to scan the suspicious file1. Cd into the directory and scan the file:
-# _photo3_
+
+![photo3](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/yara/yaraPicture3.png)
+
 If we scroll down the scan, we can see our answer to this question.
- # _photo4_
+
+![photo4](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/yara/yaraPicture4.png)
 
 _Answer: Suspicious_
 
 **What Yara rule did it match on?**
 
 For this question, we’ll focus on the word ‘match’ and have a look in the scan.
-# _photos5_
+
+![photos5](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/yara/yaraPicture5.png)
  
 _Answer: webshell_metaslsoft_
 
@@ -89,7 +95,8 @@ _Answer: Web Shell_
 **Based on the output, what string within the Yara rule did it match on?**
 If we look below the description we can see the MATCHES:
 This indicates the string we are looking for –
-# _photo6_
+
+![photo6](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/yara/yaraPicture6.png)
 
 _Answer: Str1_
 
@@ -107,7 +114,8 @@ We can do this by going into the signature-base directory of the Loki file on ou
 nano thor-webshells.yar
 you can use Haircutfish’s shortcut “nano /home/cmnatic/tools/Loki/signature-base/yara/thor-webshells.yar” to get the same results.
 Following nano rules – we hit F6 to enable search and input the Yara rule it matched on, which is webshell_metaslsoft
- # _photo7_
+
+![photo7](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/yara/yaraPicture7.png)
 
 Here we can see there is only one string.
 _Answer: 1_
@@ -122,7 +130,8 @@ _Answer: Benign_
 We can use nano here again while in the file2 directory.
 If we ls in this directory we can see the file 1ndex.php
 We can use the command nano 1ndex.php and look at the file.
-# _photo8_
+
+![photo8](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/yara/yaraPicture8.png)
 
 Our answer is at the top of the file.
 _Answer: b374k 3.2.3_
@@ -137,7 +146,9 @@ _Answer: yara file2.yar file2/1ndex.php_
 
 **Did Yara rule flag file 2? (Yay/Nay)**
 First we have to cd back into the correct directory (file2) to launch the rule.
- # _photo9_
+
+![photo9](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/yara/yaraPicture9.png)
+
 If we think back to task 4 – this means that the Yara rule flagged file 2.
 _Answer: Yay_
 
@@ -150,20 +161,23 @@ Syntax - python ../../tools/Loki/loki.py -p .
 
 **Test the Yara rule with Loki, does it flag file 2?**
  Loki has brought the goods this time.
- # _photo10_
+
+![photo10](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/yara/yaraPicture10.png)
 
 _Answer: Yay._
 
 **What is the name of the variable for the string that it matched on?**
 Our hint from THM says look at $x1…
- # _photo11_
+
+![photo11](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/yara/yaraPicture11.png)
 
 Loki has a string match here with a variable of Zepto
 _Answer: Zepto_
 
 **Inspect the Yara rule, how many strings were generated?**
 If we go to the loki folder and cat the file –
-# _photo12_
+
+![photo12](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/yara/yaraPicture12.png)
 
 There are 20 strings here.
 _Answer: 20_
@@ -174,32 +188,41 @@ _Answer: 700KB_
 
 ### Task 10: Valhalla
 **Enter the SHA256 hash file into Valhalla. Is this file attributed to an APT group?**
- # _photo13_
+
+![photo13](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/yara/yaraPicture13.png)
+
 _Answer: Yay._
 
 **Do the same for file 2. What is the name of the first Yara rule to detect file 2?**
- # _photo14_
+ 
+![photo14](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/yara/yaraPicture14.png)
+
 _Answer: Webshell_b374_rule1_
 
 **Examine the information for file 2 from Virus Total (VT). The Yara Signature Match is from what scanner?**
 We’re given the first hint which is VT – so we click that on the Valhalla website.
- # _photos15_
+
+![photos15](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/yara/yaraPicture15.png)
+
 The second hint tells us that it’s on the community tab.
 When the VT page loads – I am given the match and the type of scanner.
- # _photo16_
+
+![photo16](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/yara/yaraPicture16.png)
 
 _Answer: THOR APT Scanner_
 
 **Enter the SHA 256 hash of file 2 into VT. Did every AV detect this as malicious? (Yay/Nay)**
 Once searched, we can see that not every AV did.
-# _photo17_ 
+
+![photo17](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/yara/yaraPicture17.png) 
 
 _Answer: Nay_
 
 **Besides .PHP, what other extension is recorded for this file?**
 
 Our hint is to look under the details tab in VT to find out the extensions.
- # _photo18_
+
+![photo18](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/yara/yaraPicture18.png)
 
 After clicking the down arrow at the bottom of the names we have all the types of file extensions that it could use. .txt, .php, .html, .exe, .sys, .php5
 THM says it’s only 3 characters, so try each three letter extension to see which one works out for us.
@@ -210,7 +233,8 @@ _Answer: EXE_
 Since we are done with VT – we will head back to the Valhalla page and click on the link icon which will take us to where our hint is telling us (Github)
 
 From here we will navigate to the index.php file and search within it. To do this we will CTRL F and search for Javascript or .js
- # _photo19_
+
+![photo19](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/yara/yaraPicture19.png)
 
 
 One word here looks awfully familiar – so I will start with that.
@@ -219,7 +243,9 @@ _Answer: Zepto_
 
 **Is this Yara rule in the default Yara file Loki uses to detect these types of hack tools? (Yay/Nay)**
 In the yara terminal we can grep the rule we want with the following command:
- # _photo20_
+
+![photo20](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/yara/yaraPicture20.png)
+
 Nothing shows up here.
 _Answer: Nay_
 
