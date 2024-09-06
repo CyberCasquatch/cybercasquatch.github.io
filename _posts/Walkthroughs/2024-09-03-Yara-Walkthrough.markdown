@@ -22,7 +22,7 @@ To answer the questions in this task, everything we need will be in the written 
 
 _Answer: Hexadecimal_
 
-Would the test “Enter your Name” be a string in an application? (Yay/Nay)
+**Would the test “Enter your Name” be a string in an application? (Yay/Nay)**
 
 _Answer: Yay_
 
@@ -113,7 +113,7 @@ _Answer: Str1_
 
 **What is the name and version of this hack tool?**
 
-Take the `hint` advice and look under the FIRST_BYTES line in our output. We will need the information after the * symbol.
+Take the hint advice and look under the FIRST_BYTES line in our output. We will need the information after the * symbol.
 
 _Answer: b374k 2.2_
 
