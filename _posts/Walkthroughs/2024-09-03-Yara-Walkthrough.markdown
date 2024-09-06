@@ -136,8 +136,10 @@ _Answer: 1_
 
 If we run through the loki scanner again and use file2 as our directory. To do this we can use the command we used for the first question - 
 
-```python ../../tools/Loki/loki.py -p .
 ```
+python ../../tools/Loki/loki.py -p .
+```
+
 Once scanned we can see our answer.
 _Answer: Benign_
 
