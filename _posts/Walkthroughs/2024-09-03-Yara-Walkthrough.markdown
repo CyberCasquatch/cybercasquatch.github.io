@@ -134,7 +134,10 @@ _Answer: 1_
 
 **Scan file 2. Does Loki detect this file as suspicious/malicious or benign?**
 
-If we run through the loki scanner again and use file2 as our directory. To do this we can use the command we used for the first question - python ../../tools/Loki/loki.py -p .
+If we run through the loki scanner again and use file2 as our directory. To do this we can use the command we used for the first question - 
+
+```python ../../tools/Loki/loki.py -p .
+```
 Once scanned we can see our answer.
 _Answer: Benign_
 
@@ -169,6 +172,7 @@ First we have to cd back into the correct directory (file2) to launch the rule.
 ![photo9](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/yara/yaraPicture9.png)
 
 If we think back to task 4 – this means that the Yara rule flagged file 2.
+
 _Answer: Yay_
 
 Now copy the Yara rule you created into the loki signatures directory.
