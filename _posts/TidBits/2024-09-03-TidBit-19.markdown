@@ -7,7 +7,8 @@ comments: false
 tag: ['Yara', 'Sigma', 'Chainsaw']
 ---
 
-Completing the Yara and Sigma room in HTB. Almost full module walkthrough...
+> Completing the Yara and Sigma room in HTB. Almost full module walkthrough...
+
 
 Notes:
 to RDP from Powershell inside Parrot OS - examples
