@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Yara Room Walkthrough (THM)"
+date: 2024-04-21
 author: C. Casquatch
 comments: false
 tag: ['Yara', 'Digital Forensics', 'Threat Hunting']
