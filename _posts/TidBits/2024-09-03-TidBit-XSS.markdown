@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "TidBit XSS"
-date:   2024-09-03
+date:   2024-03-03
 author: C. Casquatch
 comments: false
 tags: ['XSS', 'JavaScript']
