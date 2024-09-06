@@ -14,4 +14,4 @@ comments: false
 * [Snort Room Walkthrough](_posts/Walkthroughs/2024-09-03-Snort-Walkthrough.markdown)
   
 * * *
-[back](./index.md)
+[Home](./index.md)
