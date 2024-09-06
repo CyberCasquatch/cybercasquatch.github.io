@@ -120,7 +120,8 @@ _Answer: b374k 2.2_
 
 **Inspect the actual Yara file that flagged file 1. Within this rule, how many strings are there to flag this file?**
 
-As per Haircutfish on Medium [TryHackMe Yara Room.| by Haircutfish | Medium](https://medium.com/@haircutfish/tryhackme-yara-room-d279ccb5cbb3) – we will use nano to look into this file and search for the Yara rule that it matched on within the file.
+As per Haircutfish on Medium [TryHackMe Yara Room.| by Haircutfish | Medium](https://medium.com/@haircutfish/tryhackme-yara-room-d279ccb5cbb3)
+we will use nano to look into this file and search for the Yara rule that it matched on within the file.
 
 We can do this by going into the signature-base directory of the Loki file on our Yara system and using the command:
 nano thor-webshells.yar
