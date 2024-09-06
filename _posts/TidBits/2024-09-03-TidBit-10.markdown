@@ -7,8 +7,9 @@ comments: false
 tag: ['Crack That Hash', 'THM']
 ---
 
-I'm doing another TryHackMe room for practice. 
-The room I'm completing is Crack That Hash. Which is just a hands-on-learning room to crack hashes as practice. 
+> I'm doing another TryHackMe room for practice. 
+> The room I'm completing is Crack That Hash, which is just a hands-on-learning room to crack hashes as practice. 
+
 
 ![Photo1](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/10/Picture1.png)
  
