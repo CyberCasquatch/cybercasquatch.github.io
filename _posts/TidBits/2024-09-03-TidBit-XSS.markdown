@@ -24,6 +24,6 @@ One project calculating shipping costs for packages and another project calculat
 I think this was my favourite bit:
 
 ![Photo3](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/xss/Picture3.png)
-<img src="./assets/images/xss/Picture1.png" alt="photo3">
+<img src="assets/images/xss/Picture1.png" alt="photo3">
 
 <button onclick="history.back()">Go Back</button>
