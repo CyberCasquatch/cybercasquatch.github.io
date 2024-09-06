@@ -123,8 +123,14 @@ As per Haircutfish on Medium [TryHackMe Yara Room.| by Haircutfish | Medium](htt
 we will use nano to look into this file and search for the Yara rule that it matched on within the file.
 
 We can do this by going into the signature-base directory of the Loki file on our Yara system and using the command:
+```
 nano thor-webshells.yar
-you can use Haircutfish’s shortcut “nano /home/cmnatic/tools/Loki/signature-base/yara/thor-webshells.yar” to get the same results.
+```
+you can use Haircutfish’s shortcut 
+```
+nano /home/cmnatic/tools/Loki/signature-base/yara/thor-webshells.yar
+```
+to get the same results.
 Following nano rules – we hit F6 to enable search and input the Yara rule it matched on, which is webshell_metaslsoft
 
 ![photo7](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/yara/yaraPicture7.png)
