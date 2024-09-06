@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "TidBit 9"
-date:   2024-09-03
+date:   2024-04-15
 author: C. Casquatch
 comments: false
 tag: ['Hacker101', 'Burpsuite', 'Windows']
