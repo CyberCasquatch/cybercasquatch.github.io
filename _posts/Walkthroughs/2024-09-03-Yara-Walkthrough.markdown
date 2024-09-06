@@ -15,7 +15,6 @@ tag: ['Yara', 'Digital Forensics', 'Threat Hunting']
 After reading the intro we can hit the Question Done button.
 
 ### Task 2: What is Yara?
-Yara is a language and application used for threat intelligence, forensics, and threat hunting. It can identify information based on binary and textual patterns, such as hexadecimal and strings contained in a file.
 To answer the questions in this task, everything we need will be in the written section of the task.
 
 #### Questions:
