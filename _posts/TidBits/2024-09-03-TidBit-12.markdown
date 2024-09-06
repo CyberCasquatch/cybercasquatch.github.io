@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "TidBit 12"
-date:   2024-09-03
+date:   2024-05-12
 author: C. Casquatch
 tag: ['User Agents', 'Wireshark']
 ---
