@@ -20,8 +20,11 @@ To answer the questions in this task, everything we need will be in the written 
 
 #### Questions:
 **What is the name of the base-16 numbering system that Yara can detect?**
+
 _Answer: Hexadecimal_
+
 Would the test “Enter your Name” be a string in an application? (Yay/Nay)
+
 _Answer: Yay_
 
 ### Task 3: Deploy
@@ -75,6 +78,7 @@ We are the security analyst for a mid-size law firm. A co-worker discovered susp
 
 #### Questions:
 **Scan file 1. Does Loki detect this file as suspicious/malicious or benign?**
+
 Let’s instruct Loki to scan the suspicious file1. Cd into the directory and scan the file:
 
 ![photo3](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/yara/yaraPicture3.png)
@@ -94,11 +98,13 @@ For this question, we’ll focus on the word ‘match’ and have a look in the 
 _Answer: webshell_metaslsoft_
 
 **What does Loki classify this file as?**
-If we use THM’s Hint button we can see they are asking us to look at the description which lives under the MATCH: we just discovered.
+
+If we use THM’s `hint` button we can see they are asking us to look at the description which lives under the MATCH: we just discovered.
 
 _Answer: Web Shell_
 
 **Based on the output, what string within the Yara rule did it match on?**
+
 If we look below the description we can see the MATCHES:
 This indicates the string we are looking for –
 
@@ -108,13 +114,13 @@ _Answer: Str1_
 
 **What is the name and version of this hack tool?**
 
-Take the ‘hint’ advice and look under the FIRST_BYTES line in our output. We will need the information after the * symbol.
+Take the `hint` advice and look under the FIRST_BYTES line in our output. We will need the information after the * symbol.
 
 _Answer: b374k 2.2_
 
 **Inspect the actual Yara file that flagged file 1. Within this rule, how many strings are there to flag this file?**
 
-As per Haircutfish on Medium [TryHackMe Yara Room. Learn the applications and language… | by Haircutfish | Medium](https://medium.com/@haircutfish/tryhackme-yara-room-d279ccb5cbb3) – we will use nano to look into this file and search for the Yara rule that it matched on within the file.
+As per Haircutfish on Medium [TryHackMe Yara Room.| by Haircutfish | Medium](https://medium.com/@haircutfish/tryhackme-yara-room-d279ccb5cbb3) – we will use nano to look into this file and search for the Yara rule that it matched on within the file.
 
 We can do this by going into the signature-base directory of the Loki file on our Yara system and using the command:
 nano thor-webshells.yar
@@ -144,13 +150,20 @@ _Answer: b374k 3.2.3_
 
 ### Task 9: Creating Yara rules with yarGen
 Use the command in the teachings to generate the yar file (be sure to be in the yarGen directory by going through the tools folder (cd ~/tools/yarGen))
+
 The command we’ll use to generate the file is:
+
+```
 python3 yarGen.py -m /home/cmnatic/suspicious-files/file2 --excludegood -o /home/cmnatic/suspicious-files/file2.yar
+```
 **From within the root of the suspicious files directory, what command would you run to test the Yara and you Yara rule against file2?**
+
 Looking back through task 4, the rule file we just created, and the hint we are given:
+
 _Answer: yara file2.yar file2/1ndex.php_
 
 **Did Yara rule flag file 2? (Yay/Nay)**
+
 First we have to cd back into the correct directory (file2) to launch the rule.
 
 ![photo9](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/yara/yaraPicture9.png)
@@ -160,13 +173,22 @@ _Answer: Yay_
 
 Now copy the Yara rule you created into the loki signatures directory.
 Within the file2 directory use the command:
+
+```
 mv /home/cmnatic/suspicious-files/file2.yar /home/cmnatic/tools/Loki/signature-base/yara/
+```
+
 This was given to us when we first scanned the file in loki – we use the mv command and the file we want to move into the file location we want to move it to.
 Now we can activate loki and scan the file with python like we did before.
-Syntax - python ../../tools/Loki/loki.py -p .
+Syntax:
+
+```
+python ../../tools/Loki/loki.py -p .
+```
 
 **Test the Yara rule with Loki, does it flag file 2?**
- Loki has brought the goods this time.
+
+Loki has brought the goods this time.
 
 ![photo10](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/yara/yaraPicture10.png)
 
@@ -190,6 +212,7 @@ _Answer: 20_
 
 **One of the conditions to match on the Yara rule specifies file size. The file has to be less than what amount?**
 At the top of the screen shot above is our answer.
+
 _Answer: 700KB_
 
 ### Task 10: Valhalla
@@ -218,6 +241,7 @@ When the VT page loads – I am given the match and the type of scanner.
 _Answer: THOR APT Scanner_
 
 **Enter the SHA 256 hash of file 2 into VT. Did every AV detect this as malicious? (Yay/Nay)**
+
 Once searched, we can see that not every AV did.
 
 ![photo17](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/yara/yaraPicture17.png) 
@@ -231,11 +255,14 @@ Our hint is to look under the details tab in VT to find out the extensions.
 ![photo18](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/yara/yaraPicture18.png)
 
 After clicking the down arrow at the bottom of the names we have all the types of file extensions that it could use. .txt, .php, .html, .exe, .sys, .php5
+
 THM says it’s only 3 characters, so try each three letter extension to see which one works out for us.
 In this case – it’s .exe
+
 _Answer: EXE_
 
 **What Javascript library is used by file 2?**
+
 Since we are done with VT – we will head back to the Valhalla page and click on the link icon which will take us to where our hint is telling us (Github)
 
 From here we will navigate to the index.php file and search within it. To do this we will CTRL F and search for Javascript or .js
@@ -245,17 +272,20 @@ From here we will navigate to the index.php file and search within it. To do thi
 
 One word here looks awfully familiar – so I will start with that.
 And lo and behold, that is our answer here.
+
 _Answer: Zepto_
 
 **Is this Yara rule in the default Yara file Loki uses to detect these types of hack tools? (Yay/Nay)**
+
 In the yara terminal we can grep the rule we want with the following command:
 
 ![photo20](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/yara/yaraPicture20.png)
 
 Nothing shows up here.
+
 _Answer: Nay_
 
-#### Task 11: Conclusion
+### Task 11: Conclusion
 This one is self-explanatory – read through the exit and click the Question Done button. From here we can move onto the next room.
 
 <button onclick="history.back()">Go Back</button>
