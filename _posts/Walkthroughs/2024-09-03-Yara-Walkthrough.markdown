@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Yara Room Walkthrough (THM)"
+title:  "Yara Room Walkthrough"
 date: 2024-04-21
 author: C. Casquatch
 comments: false
