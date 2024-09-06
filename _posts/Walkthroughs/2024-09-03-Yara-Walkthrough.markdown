@@ -6,6 +6,8 @@ author: C. Casquatch
 comments: false
 tag: ['Yara', 'Digital Forensics', 'Threat Hunting']
 ---
+YARA is a tool used to identify and classify malware by creating rules that describe patterns found in malicious files. It helps cybersecurity professionals detect and analyze malware by matching these patterns against a set of predefined rules.
+
 
 ### Task 1: Introduction
 After reading the intro we can hit the Question Done button.
