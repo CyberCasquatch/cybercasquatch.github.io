@@ -65,10 +65,11 @@ I encourage you to save any links here for future use.
 * [Releases · Neo23x0/Loki (github.com)](https://github.com/Neo23x0/Loki/releases)
 * [THOR Lite - Nextron Systems (nextron-systems.com)](https://www.nextron-systems.com/thor-lite/)
 * [Neo23x0/Fenrir: Simple Bash IOC Scanner (github.com)](https://github.com/Neo23x0/Fenrir)
-* [Introducing “YAYA”, a New Threat Hunting Tool From EFF Threat Lab | Electronic Frontier Foundation](https://www.eff.org/deeplinks/2020/09/introducing-yaya-new-threat-hunting-tool-eff-threat-lab)
+* [Introducing “YAYA”](https://www.eff.org/deeplinks/2020/09/introducing-yaya-new-threat-hunting-tool-eff-threat-lab)
 
 ### Task 8: Using LOKI and its Yara rule set
 Read through the section and get familiar with where Loki can be found on the system along with the ‘suspicious-files’ location.
+
 The scenario we have been given:
 We are the security analyst for a mid-size law firm. A co-worker discovered suspicious files on a web server within our organisation. These files were discovered while performing updates to the corporate website. The files have been copied to your machine for analysis. The files are located in the ‘suspicious-files’ directory. Use Loki to answer the questions.
 
