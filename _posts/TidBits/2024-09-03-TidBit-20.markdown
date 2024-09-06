@@ -11,11 +11,11 @@ Going through a digital forensics module in HTB.
 First set of tasks was to RDP into a windows machine and access their Velociraptor portal with admin/password. 
 I then created a new collection to gather artifacts labeled as "Windows.KapeFiles.Targets" using the _SANS_Triage configuration. 
 
-# photo1
+![photo1](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/20/Picture1.png)
 
 Lastly, I examined the collected artifacts and found the scheduled task that was wanted by the question. Going back to read through where I could find scheduled tasks in a windows machine, helped. 
 
-# photo2
+![photo2](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/20/Picture2.png)
 
 The second set of questions focuses on utilising Volatility for analysis. 
 First used:
@@ -36,7 +36,7 @@ vol.py -f /home/htb-student/MemoryDumps/Win7-2515534d.vmem --profile=Win7SP1x64 
 ```
 Instead of specifying -p <PID> | I wanted to list all of the processes and their dll files, because I did not know the ID of the parent process I was asked to look for. 
 
-# photo3
+![photo3](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/20/Picture3.png)
 
 There would be a better way to do the last one, but I got lucky - the answer wasn't a long scroll up. 
 The second room within the module focuses on some of Eric Zimmerman's tools. Mainly Timeline Explorer.
@@ -50,13 +50,13 @@ the above is an example - below is the empty command to fill with your own file 
 ```
 Then we upload the csv into Timeline Explorer and filter on the Zone.Identifiers - from here we explore what is left and find the changed name of the file. 
 
-# photo4
+![photo4](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/20/Picture4.png)
 
 This one tool me a little while to get - but it's actually really easy. I went to the HTB discord and searched for other people who might have had the same issue I was having. There were several people there that gave hints as to what you should be looking for. I am finding that this discord is really great for pushing your way through difficult questions. There's bound to be someone who has asked before you, so make sure you search through the backlog of chats to try and find some hints. 
 I found the second a little easier to find - I think by exploring more of the software, it gets easier to filter different columns you know to have the answer. 
 We transfer a file to a csv file and drop it into Timeline Explorer. Here, they want us to find a scheduled task with certain parameters. For this one, I just filtered on 'm' in the Executable Info column (this column suggested in the training section of the room)
 
-# photo5
+![photo5](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/20/Picture5.png)
 
 For the last question we are using API monitor with an .apmx64 file. 
 Tasked to find a specific process that 'discord.exe' had injected. 
