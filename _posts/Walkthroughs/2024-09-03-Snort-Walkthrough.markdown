@@ -7,6 +7,10 @@ comments: false
 tag: ['snort', 'THM', 'soc']
 ---
 
+> Snort is an open-source intrusion detection and prevention system (IDS/IPS) that monitors network traffic in real-time, > analyzing packets for signs of malicious activity. It uses predefined rules to detect threats and can alert or block 
+> suspicious network activity.
+
+
 ### Task1
 Read through task and complete the question.
 
