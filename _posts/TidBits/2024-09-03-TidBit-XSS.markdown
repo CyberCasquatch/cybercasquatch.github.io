@@ -22,7 +22,6 @@ One project calculating shipping costs for packages and another project calculat
 ![Photo2](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/xss/Picture2.png)
 
 I think this was my favourite bit:
-![Photo3](assets/images/xss/Picture3.png)
 ![Photo3](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/xss/Picture3.png)
 
 
