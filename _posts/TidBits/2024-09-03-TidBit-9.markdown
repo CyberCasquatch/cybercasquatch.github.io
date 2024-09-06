@@ -11,12 +11,14 @@ I have been trying the Hacker101.io website. It lets me know that I have no idea
 
 Today I am completing the Investigating Windows Room on THM. 
 
- # photo1
+![Photo1](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/9/Picture1.png)
 
 I am following along with [Investigating Windows Walkthrough](https://www.youtube.com/watch?v=s6bt835oZrA) this guy. 
 
 Shoutout to this comment.
-# photo2
+
+![Photo2](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/9/Picture2.png)
+
 I was able to find the answer pretty quickly with regedit. 
 
 I want to try other websites such as HackTheBox and PwnedLabs. 
