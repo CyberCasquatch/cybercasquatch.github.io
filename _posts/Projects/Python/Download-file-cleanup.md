@@ -10,7 +10,9 @@ tag: ['python', 'files', 'sort']
 > How many times can you say the word download in one post.
 
 #### This code sorts the download folder into several directories with all downloaded files currently within the downloads folder.
-# photo1
+
+![photo1](https://github.com/CyberCasquatch/Download-File-Cleanup/blob/main/PythonScriptPhoto.jpg)
+
 ##### Make sure to replace "path_to_your_downloads_folder" with the actual path to your Downloads folder before running the script. Also, feel free to modify the folder_mapping dictionary to include additional file extensions and corresponding folder names as needed.
 
 ```python
