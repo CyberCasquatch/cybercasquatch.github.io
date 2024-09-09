@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Nessus Vulnerability Management Lab"
-date:   2024-09-10
+date:   2024-03-21
 author: C. Casquatch
 comments: false
 tag: ['nessus', 'SIEM', 'lab', 'SOC']
