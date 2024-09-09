@@ -92,7 +92,7 @@ if __name__ == '__main__':
 ## The rest of the code from here will be the checks that I did to troubleshoot my own issues. 
 
 
-#### This code is to check the destination source. 
+#### This code is to check the destination and source IPs. 
 
 ```python
 def retKML(dstip, srcip):
