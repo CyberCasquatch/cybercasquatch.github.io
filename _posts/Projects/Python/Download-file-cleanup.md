@@ -60,6 +60,6 @@ def sort_downloads_folder(downloads_folder_path):
 
 if __name__ == "__main__":
     downloads_folder_path = "path_to_your_downloads_folder"  # Replace with your Downloads folder path
-    sort_downloads_folder(downloads_folder_path)
+    sort_downloads_folder(downloads_folder_path) # Replace with your Downloads folder path
     print("Files sorted successfully!")
 ```
