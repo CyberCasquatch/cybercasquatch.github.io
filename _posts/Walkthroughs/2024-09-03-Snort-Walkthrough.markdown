@@ -27,21 +27,21 @@ Use the hints with the questions when needed.
 ##### Question 1:
 **Run the Snort instance and check the build number.**
  
-![photo1](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/snort/snortPicture1.png)
+![photo1](/assets/images/snort/snortPicture1.png)
 
 The build number is 149. 
 
 ##### Question 2:
 **Test the current instance with "/etc/snort/snort.conf" file and check how many rules are loaded with the current build.**
  
-![photo2](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/snort/snortPicture2.png)
+![photo2](/assets/images/snort/snortPicture2.png)
 
 If we scroll up through the file we can see that there are 4151 rules loaded.
 
 ##### Question 3:
 **Test the current instance with "/etc/snort/snortv2.conf" file and check how many rules are loaded with the current build.**
 
-![#photo3](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/snort/snortPicture3.png)
+![#photo3](/assets/images/snort/snortPicture3.png)
 
 If we run with the snortv2 file we can see that 1 rule has loaded.
 
@@ -66,7 +66,7 @@ sudo ./traffic-generator.sh
 ##### Question 1: 
 **Now, you should have the logs in the current directory. Navigate to folder "145.254.160.237". What is the source port used to connect port 53?**
  
-![photo4](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/snort/snortPicture4.png)
+![photo4](/assets/images/snort/snortPicture4.png)
 
 Here we can see the source port is 3009.
 
@@ -80,21 +80,21 @@ Snort -r snort.log.1640048004 -n 10
 ```
 Also make sure you are in the correct directory.
 
-![photo5](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/snort/snortPicture5.png)
+![photo5](/assets/images/snort/snortPicture5.png)
 
 The answer would be 49313.
 
 ##### Question 3:
 **Read the "snort.log.1640048004" file with Snort; what is the referer of the 4th packet?**
  
-![photo6](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/snort/snortPicture6.png)
+![photo6](/assets/images/snort/snortPicture6.png)
 
 Look for the word ‘referer’ and we have our answer.
 
 ##### Question 4:
 **Read the "snort.log.1640048004" file with Snort; what is the Ack number of the 8th packet?**
  
-![photo7](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/snort/snortPicture7.png)
+![photo7](/assets/images/snort/snortPicture7.png)
 
 TCP port 80 number is 41.
 
@@ -118,7 +118,7 @@ sudo ./traffic-generator.sh
 
 Use the hints when needed.
  
-![photo8](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/snort/snortPicture8.png)
+![photo8](/assets/images/snort/snortPicture8.png)
 
 The question specifies ‘GET’ methods and here under HTTP we can see there are 2.
 Here we are encouraged to practice more parameters by using the traffic=generator script.
@@ -135,21 +135,21 @@ sudo snort -c /etc/snort/snort.conf -A full -l . -r mx-1.pcap
 ##### Question 1:
 **What is the number of the generated alerts?**
 
-![photo9](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/snort/snortPicture9.png)
+![photo9](/assets/images/snort/snortPicture9.png)
 
 Next to ‘alerts’ is says 170.
 
 ##### Question 2:
 **Keep reading the output. How many TCP Segments are Queued?**
 
-![photo10](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/snort/snortPicture10.png)
+![photo10](/assets/images/snort/snortPicture10.png)
 
 As we scroll through we can see that there are 18 TCP segments that are queued.
 
 ##### Question 3:
 **Keep reading the output. How many "HTTP response headers" were extracted?**
 
-![photo11](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/snort/snortPicture11.png)
+![photo11](/assets/images/snort/snortPicture11.png)
 
 We scroll a little more and find that there were 3 HTTP response headers extracted.
 For the next question
@@ -162,7 +162,7 @@ sudo snort -c /etc/snort/snort.conf -A full -l . -r mx-2.pcap
 ##### Question 4: 
 **what is the number of the generated alerts?**
  
-![photo12](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/snort/snortPicture12.png)
+![photo12](/assets/images/snort/snortPicture12.png)
 
 68.
 
@@ -176,7 +176,7 @@ sudo snort -c /etc/snort/snort.conf -A full -l . -r mx-2.pcap
 ##### Question 5:
 **What is the number of the generated alerts?**
 
-![photo13](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/snort/snortPicture13.png)
+![photo13](/assets/images/snort/snortPicture13.png)
 
 Alerts for this one are at 340.
 
@@ -184,7 +184,7 @@ Alerts for this one are at 340.
 **Keep reading the output. What is the number of the detected TCP packets?
 Use the hint for question 5: Check for the TCP Port Filter.**
 
-![photo14](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/snort/snortPicture14.png)
+![photo14](/assets/images/snort/snortPicture14.png)
 
 82.
 
@@ -198,7 +198,7 @@ sudo snort -c /etc/snort/snort.conf -A full -l . --pcap-list="mx-2.pcap mx-3.pca
 ##### Question 7:
 **What is the number of the generated alerts?**
 
-![photo15](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/snort/snortPicture15.png)
+![photo15](/assets/images/snort/snortPicture15.png)
 
 1020.
 
@@ -216,14 +216,14 @@ snort -c local.rules -A full -l . -r task9.pcap
 
 I suggest using the hint: Try to filter different protocols like TCP/UDP/ICMP. id:35369;
 
-![photo16](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/snort/snortPicture16.png)
+![photo16](/assets/images/snort/snortPicture16.png)
 
 TIMESTAMP REQUEST
 
 ##### Question 2:
 **Create a rule to filter packets with Syn flag and run it against the given pcap file. What is the number of detected packets?**
 
-![photo17](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/snort/snortPicture17.png)
+![photo17](/assets/images/snort/snortPicture17.png)
 
 Detected packets are 1
 
@@ -231,7 +231,7 @@ Detected packets are 1
 **Clear the previous log and alarm files and deactivate/comment out the old rule.
 Write a rule to filter packets with Push-Ack flags and run it against the given pcap file. What is the number of detected packets?**
 
-![photo18](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/snort/snortPicture18.png)
+![photo18](/assets/images/snort/snortPicture18.png)
 
 216.
 
@@ -239,11 +239,11 @@ Write a rule to filter packets with Push-Ack flags and run it against the given 
 **Clear the previous log and alarm files and deactivate/comment out the old rule.
 Create a rule to filter packets with the same source and destination IP and run it against the given pcap file. What is the number of packets that show the same source and destination address?**
 
-![photo19](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/snort/snortPicture19.png)
+![photo19](/assets/images/snort/snortPicture19.png)
 
 I initially got 10 – but if you cat on the alerts. You can see which ones have our rule.
 
-![photo20](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/snort/snortPicture20.png)
+![photo20](/assets/images/snort/snortPicture20.png)
 
 I counted 7.
 
