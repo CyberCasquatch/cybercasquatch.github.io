@@ -180,3 +180,6 @@ for ip in ip_addresses:
         print(f"No information available for IP address {ip}")
 ```
 
+* * *
+
+<button onclick="history.back()">Go Back</button>
