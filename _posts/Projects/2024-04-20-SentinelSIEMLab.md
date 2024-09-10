@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "Azure Sentinal Lab"
+title:  "Azure Sentinel Lab"
 date:   2024-04-20
 author: C. Casquatch
 comments: false
-tag: ['azure', 'SIEM', 'sentinal', 'SOC']
+tag: ['azure', 'SIEM', 'sentinel', 'SOC']
 ---
 
 ## Description
