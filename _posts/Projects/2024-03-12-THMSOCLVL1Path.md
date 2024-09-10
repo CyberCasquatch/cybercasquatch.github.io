@@ -10,7 +10,8 @@ tag: ['SOC', 'tryhackme']
 > This project consists of practicing the following: Monitoring and investigating alerts,configuring and managing security tools, developing and implementing IDS signatures.
 > This learning path is created by the team at TryHackMe - at the end of the journey, the reward is satisfaction and a cert to show your friends.
 
-# photo1
+![CERT](/assets/images/SOCLVL1THM/THM_SOC1CERT.png)
+
 ~ I have edited out the certificate number that should be present in the top right corner.
 
 ### Languages and Utilities Used
@@ -31,34 +32,34 @@ This is a broad overview of this learning path:
 6. Digital Forensics and Incident Response, basic DFIR concepts and the tools available for use in the incident response process.
 7. Phishing, looking at the components involved with sending emails across the internet and how to analyse email headers.
 
-# photo2
+![2](/assets/images/SOCLVL1THM/2.PNG)
 
 #### Each of the seven sections has a series of rooms to complete, these rooms allowed for theoretical and practical examinations of the topic
-# photo3
+![3](/assets/images/SOCLVL1THM/3.PNG)
 
 #### Each room has a series of 'Tasks' that are required to be completed. Some only require to be read, while others are more in depth and require practice to obtain the answers and move on to the next question
-# photo4
+![4](/assets/images/SOCLVL1THM/4.PNG)
 
 #### Here is an example of a practical task
-# photo5
+![5](/assets/images/SOCLVL1THM/5.PNG)
 
 #### Cyber Threat Intelligence Rooms
-# photo6
+![6](/assets/images/SOCLVL1THM/6.PNG)
 
 #### Network Security and Traffic Analysis Rooms
-# photo7
+![7](/assets/images/SOCLVL1THM/7.PNG)
 
 #### Endpoint Security Monitoring Rooms
-# photo8
+![8](/assets/images/SOCLVL1THM/8.PNG)
 
 #### SIEM (Security Information and Event Management) Rooms
-# photo9
+![9](/assets/images/SOCLVL1THM/9.PNG)
 
 #### Digital Forensic and Response Rooms
-# photo10
+![10](/assets/images/SOCLVL1THM/10.PNG)
 
 #### Phishing Rooms
-# photo11
+![phishing](/assets/images/SOCLVL1THM/phishing.PNG)
 
 * * *
 
