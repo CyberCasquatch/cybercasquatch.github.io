@@ -6,9 +6,6 @@ author: C. Casquatch
 comments: false
 ---
 
-# Resources
-
-### Welcome to the resources page
 
 _This page is used to store resources for various types of use cases and gathered from many different types of projects that I have completed. I have found these resources useful and so have tried to list & group them appropriately._
 
