@@ -10,8 +10,8 @@ comments: false
 
 | 2024              |
 |:------------------|
-| [Downloads Folder Cleanup](_posts/Python/Download-file-cleanup.md) |
-| [Visual Packet Tracer](_posts/Python/Visual-Packet-Tracer.md) |
+| [Downloads Folder Cleanup](/Download-file-cleanup.md) |
+| [Visual Packet Tracer](/Visual-Packet-Tracer.md) |
 | [Active Directory Lab](Projects/ActiveDirectoryLab.md) |
 | [Nessus Lab](Projects/NessusLab.md) |
 | [Sentinel Lab](Projects/SentinelSIEMLab.md) |
