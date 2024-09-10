@@ -20,37 +20,37 @@ tag: ['nessus', 'SIEM', 'lab', 'SOC']
 ### Program walk-through:
 
 #### Turning off the firewall and creating a scan for the host
-# photo1
+![1](/assets/images/NessusLab/1.PNG)
 
 #### Enabling Remote Registry
-# photo2
+![2](/assets/images/NessusLab/2.PNG)
 
 #### Turning on printer and Netdiscovery
-# photo3
+![3](/assets/images/NessusLab/3.PNG)
 
 #### Screenshot of before VM configuration
-# photo4 
+![4](/assets/images/NessusLab/beforeconfiguringvm.PNG)
 
 #### Screenshot of after VM configuration
-# photo5
+![5](/assets/images/NessusLab/afterconfiguringvm.PNG)
 
 #### Scan after installing older version of firefox onto VM
-# photo6
+![6](/assets/images/NessusLab/installedoldfirefoxscan.PNG)
 
 #### Firefox Vulnerabilities
-# photo7
+![7](/assets/images/NessusLab/firefoxvulns.PNG)
 
 #### Firefox Remediation recommendations from Nessus
-# photo8
+![8](/assets/images/NessusLab/firefoxremediation.PNG)
 
 #### Firefox remediation in action: Updating Windows and deleting firefox
-# photo9
+![9](/assets/images/NessusLab/updatingwindows.PNG)
 
 #### Nessus scan after Windows updates and Firefox deletion
-# photo10
+![10](/assets/images/NessusLab/scanafterupdates.PNG)
 
 #### Nessus remediation suggestions for last scan, if needed
-# photo11
+![11](/assets/images/NessusLab/remediationsforlastscan.PNG)
 
 * * *
 
