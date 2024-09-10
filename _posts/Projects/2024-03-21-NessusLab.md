@@ -51,3 +51,7 @@ tag: ['nessus', 'SIEM', 'lab', 'SOC']
 
 #### Nessus remediation suggestions for last scan, if needed
 # photo11
+
+* * *
+
+<button onclick="history.back()">Go Back</button>
