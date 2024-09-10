@@ -67,3 +67,7 @@ if __name__ == "__main__":
     sort_downloads_folder(downloads_folder_path) # Replace with your Downloads folder path
     print("Files sorted successfully!")
 ```
+
+* * *
+
+<button onclick="history.back()">Go Back</button>
