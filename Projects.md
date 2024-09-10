@@ -12,6 +12,9 @@ comments: false
 |:------------------|
 | [Downloads Folder Cleanup](_posts/Projects/Python/Download-file-cleanup.md) |
 | [Visual Packet Tracer](_posts/Projects/Python/Visual-Packet-Tracer.md) |
+| [Active Directory Lab](_posts/Projects/ActiveDirectoryLab.md) |
+| [Nessus Lab](_posts/Projects/Python/NessusLab.md) |
+| [Sentinel Lab](_posts/Projects/Python/SentinelSIEMLab.md) |
 
 * * *
 [Home](./index.md)
