@@ -1,7 +1,7 @@
 ---
 layout: default
 title:  "Projects"
-date:   2024-09-010
+date:   2024-09-10
 author: C. Casquatch
 comments: false
 ---
