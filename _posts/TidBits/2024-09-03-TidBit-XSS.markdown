@@ -15,18 +15,18 @@ I've been meaning to complete some coding projects for cyber security purposes b
 and I completed the array sorting challenge from that room:
 never mind the code at the bottom.
 
-![Photo1](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/xss/Picture1.png)
+![Photo1](/assets/images/xss/Picture1.png)
 
-![Photo1](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/a877c559e57ef00eebd04eae0d7972a65fdb5c38/assets/images/xss/Picture1.png)
+![Photo1](/assets/images/xss/Picture1.png)
 
 The next language room I completed for the XSS room was python. 
 One project calculating shipping costs for packages and another project calculating bitcoin $$ in USD to create an alert. 
 
-![Photo2](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/xss/Picture2.png)
+![Photo2](/assets/images/xss/Picture2.png)
 
 I think this was my favourite bit:
 
-![Photo3](https://github.com/CyberCasquatch/cybercasquatch.github.io/blob/main/assets/images/xss/Picture3.png)
+![Photo3](/assets/images/xss/Picture3.png)
 
 
 <button onclick="history.back()">Go Back</button>
