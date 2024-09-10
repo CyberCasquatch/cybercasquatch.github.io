@@ -163,7 +163,7 @@ while ($true)
 ```
 
 ## THIS QUERY IS BY  Nirakar Sapkota, you can find them here: [Nirakar-Sapkota](https://github.com/Nirakar-Sapkota)
-## They provide a good video for walkting through the last half of the Josh Madakor video, which is a little outdated because of the updates to Azure by Microsoft.
+## They provide a good video for walking through the last half of the Josh Madakor video, which is a little outdated because of the updates to Azure by Microsoft.
 ### This is the extraction query we use:
 ```
 FAILED_RDP_WITH_GEO_CL
