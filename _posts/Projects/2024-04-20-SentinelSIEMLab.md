@@ -7,7 +7,6 @@ comments: false
 tag: ['azure', 'SIEM', 'sentinel', 'SOC']
 ---
 
-## Description
 > Project includes the setup Azure Sentinel (SIEM) and its' connection to a live virtual machine, acting as a honey pot.
 > I observed live attacks (RDP Brute Force) from all around the world. I used a custom PowerShell script (provided by Josh Madakor) to look up the attackers Geolocation information and plot it on the Azure Sentinel Map.
 > Also thanks to Nirakar Sapkota for the query script.
