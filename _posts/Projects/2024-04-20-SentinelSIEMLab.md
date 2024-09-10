@@ -210,3 +210,6 @@ FAILED_RDP_WITH_GEO_CL
 ##### In Sentinel; Map of attacks on our honeypot VM
 # photo9
 
+* * *
+
+<button onclick="history.back()">Go Back</button>
