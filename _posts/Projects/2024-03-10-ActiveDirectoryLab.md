@@ -32,3 +32,7 @@ tag: ['active directory', 'homelab', 'windows server']
 
 ##### Checking Users are Shown in DC
 # photo5
+
+* * *
+
+<button onclick="history.back()">Go Back</button>
