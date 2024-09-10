@@ -183,31 +183,31 @@ FAILED_RDP_WITH_GEO_CL
 # Program walk-through:
 * * *
 ##### In Sentinel; creating our honeypot VM. Below are the configuration settings we will be using
-# photo1
+![1](/assets/images/SentinelLab/1.PNG)
 
 ##### In Sentinel; Creating our Log Analytics work space
-# photo2
+![2](/assets/images/SentinelLab/2.PNG)
 
 ##### In Sentinel; Connecting the VM to the Log Analytics work space
-# photo3
+![3](/assets/images/SentinelLab/3.PNG)
 
 ##### Remoting from our desktop into our VM and providing confiurations
-# photo4
+![4](/assets/images/SentinelLab/4.PNG)
 
 ##### In Sentinel; Creating custom logs for our analytics work space
-# photo5
+![5](/assets/images/SentinelLab/5.PNG)
 
 ##### In Sentinel; Generating a query to extract custom fields from the existing raw data field
-# photo6
+![6](/assets/images/SentinelLab/6.PNG)
 
 ##### In Sentinel; Running the query from the last screenshot
-# photo7
+![7](/assets/images/SentinelLab/7.PNG)
 
 ##### In Sentinel; Creating a workbook to provide a visualisation of the honeypot attacks
-# photo8
+![8](/assets/images/SentinelLab/8.PNG)
 
 ##### In Sentinel; Map of attacks on our honeypot VM
-# photo9
+![9](/assets/images/SentinelLab/9.PNG)
 
 * * *
 
