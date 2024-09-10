@@ -12,7 +12,7 @@ comments: false
 * * *
 ### [Yara Room Walkthrough](_posts/Walkthroughs/2024-09-03-Yara-Walkthrough.markdown)
 ### [Snort Room Walkthrough](_posts/Walkthroughs/2024-09-03-Snort-Walkthrough.markdown)
-### [CI/CD Pipeline Room Walkthrough](_posts/Walkthroughs/2024-04-06-CI-CD-Pipeline.md) 
+### [CI/CD Pipeline Room Walkthrough](./_posts/Walkthroughs/2024-04-06-CI-CD-Pipeline.md) 
 
 * * *
 [Home](./index.md)
