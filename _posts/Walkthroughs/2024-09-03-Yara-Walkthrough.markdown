@@ -30,7 +30,7 @@ _Answer: Yay_
 In this task we will deploy the machine and start our attack box.
 To do this:
 
-![photo1]("assets/images/yara/yaraPicture1.png" | absolute_url)
+![photo1](/assets/images/yara/yaraPicture1.png | absolute_url)
 
 Start your attack box – whether you connect to a VPN or use split view.
 I usually use split view – so that is what I will be using for this walkthrough.
