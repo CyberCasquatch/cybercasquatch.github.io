@@ -22,6 +22,7 @@ tag: ['active directory', 'homelab', 'windows server']
 
 ##### Oracle Box: Creating Domain Controller and Client
 ![1](assets/images/ActiveDirectoryLab/1.png)
+
 ![2](assets/images/ActiveDirectoryLab/2.PNG)
 
 ##### Adding Client to Server:
