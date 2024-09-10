@@ -21,17 +21,17 @@ tag: ['active directory', 'homelab', 'windows server']
 # Program walk-through:
 
 ##### Oracle Box: Creating Domain Controller and Client
-# photo1
-# photo2
+![1](assets/images/ActiveDirectoryLab/1.png)
+![2](assets/images/ActiveDirectoryLab/2.PNG)
 
 ##### Adding Client to Server:
-# photo3
+![3](assets/images/ActiveDirectoryLab/3.PNG)
 
 ##### Creating Users with Powershell:
-# photo4
+![4](assets/images/ActiveDirectoryLab/4.PNG)
 
 ##### Checking Users are Shown in DC
-# photo5
+![5](assets/images/ActiveDirectoryLab/5.PNG)
 
 * * *
 
