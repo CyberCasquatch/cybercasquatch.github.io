@@ -1,6 +1,6 @@
 ---
 layout: default
-title:  "Another Secuirty Blog"
+title:  "Another Security Blog"
 date:   2024-09-03
 author: C. Casquatch
 comments: false
