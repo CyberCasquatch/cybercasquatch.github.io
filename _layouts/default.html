@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     {% include head-custom.html %}
-
+    {% include _THMbadge.html %}
 {% seo %}
   </head>
 
@@ -28,7 +28,6 @@
           {% endif %}
           <a href="{{ site.github.repository_url }}" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
           <img src="https://tryhackme-badges.s3.amazonaws.com/CyberCasquatch.png" alt="Your Image Badge" />
-          {% include _THMbadge.html %}
         </section>
       </div>
     </header>
