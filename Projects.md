@@ -17,7 +17,7 @@ comments: false
 | [Sentinel Lab](_posts/Projects/2024-04-20-SentinelSIEMLab.md) |
 | [SOC Analyst Path Level 1 (THM)](_posts/Projects/2024-03-12-THMSOCLVL1Path.md) |
 
-| [_posts/Projects/CCNA_part1
+| [CCNA Part1 200-301(_posts/Projects/2024-12-14-CCNA_part1.md) |
 
 * * *
 [Home](./index.md)
