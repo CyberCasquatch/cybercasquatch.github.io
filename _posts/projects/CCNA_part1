@@ -1,0 +1,129 @@
+---
+layout: post
+title:  "CCNA Super Study Guide"
+date:   2024-10-14
+author: C. Casquatch
+comments: false
+tag: ['ccna', 'study', 'cisco']
+---
+
+> Space to dump notes for CCNA
+> End goal is to obtain a CCNA certificate from Cisco.
+
+#### Utilities Used
+* Neil Anderson (Gold CCNA Bootcamp)
+* Jeremy's IT Lab 200-301 Video Series on Youtube
+* Packet Tracer
+
+#### Environments Used
+* Packet Tracer
+* GitHub
+
+# Section 1.0 Network Fundamentals
+
+1.1 Explain the role and function of network components
+
+OSI Layer and Network Services
+application layer	network services to applications
+network services to applications (presentation layer)	data formatting, translation, encryption, encode
+session layer	logical communication between host processes
+transport layer	windowing, error recovery, segments, reliability
+network layer	logical addressing, routing and path selection
+data link layer	framing, media access control, MAC address
+physical layer	putting binary bits on physical media
+
+Protocol Date Unit (PDU) is based on the headers added as data is encapsulated from the application layer data to the physical layer. OSI model data encapsulation – each lower layer adds a header to the PDU from the next upper layer. 
+Layer 1 = bits, Layer 2 = frames, Layer 3 = packets, Layer 4 = segments
+- Segment encapsulates data from all upper layers (5-7)
+- Packet encapsulates transport layer segment
+- Frame encapsulates network layer packets
+- Physical layer converts all to binary bits for transmission across the wire
+
+The data link layer creates a frame with source and destination MAC address along with control information. The network layer creates a packet with IP addressing and control information. The transport layer divides a data stream into segments. Reliability and flow control information is added when the transport protocol is TCP. 
+
+TCP/IP Reference model
+The newer TCP/IP model is based on the popularity of TCP with internet connectivity and network applications. TCP/IP model is the industry standard for network connectability. The TCP/IP model integrates the OSI model session layer, presentation layer and application layer into a single application layer. 
+
+TCP/IP Model	OSI Model
+Application Layer	Session, presentation, application layer
+Transport Layer	Transport Layer
+Internet Layer	Network Layer
+Network Layer	Physical Layer, Data Link Layer
+
+Network Devices and OSI Layer 
+firewall	layer 7
+wireless access point	layer 2
+wireless LAN controller	layer 2
+switch	layer 2
+router	layer 3
+bridge	layer 2
+
+
+1.1 a What is a router
+
+The function of a router is to route packets between different subnets. They do not automatically forward traffic. 
+The firewall can inspect packets up to the application (layer 7). The only layer 3 device is the router however firewalls can provide routing services as well. The switch, wireless access point, wireless LAN controller and bridge are all layer 2 devices.
+
+1.1.b Layer 2 and Layer 3 switches
+
+Layer 2 switches move packets between different interfaces in the same LAN/VLAN
+Layer 3 switches act like a router but has fewer routing features. 
+
+
+1.1.c Next-generation firewalls and IPS
+
+A Firewalls purpose is to protect the network against network attacks. Firewalls are becoming more and more capable and are even able to protect the network against viruses, ransomware, and phishing. 
+
+Next Generation Firewalls move beyond port/protocol inspection and blocking to add application-level inspection, intrusion prevention, and user based security. 
+Deep packet inspection analyses packets up to layer 7 of the OSI stack. Different permissions can be applied to different users. The Cisco ASA with FirePower is a Next Generation Firewall. 
+
+How packet filters work – An access control list security policy is a packet filter. Packet filters do not maintain a connection table. They affect traffic in one direction only and do not track the state of two-way connections going through the router. 
+
+Packet filters do not keep a connection table. 
+Established keyword – only checks for ‘ack’ flag in return traffic. Does not make the router a stateful firewall. It does not keep a connection table. 
+
+IOS Firewall – You can configure a router as a stateful firewall with the IOS Firewall feature set, this uses different commands than ACLs. 
+IDS – intrusion detection system; IPS – Intrusion inspection system
+
+IDS and IPS use signatures to inspect packets up to layer 7 of the OSI stack, looking for traffic patterns which match known attacks. They can also use anomaly-based inspection to look for unusual behaviour, such as a host sending more traffic than usual. They require skilled staff to tune the IPS to their own environment and minimise false positives and negatives. 
+
+1.1.d Access points
+
+An access point converts electrical signals to electromagnetic waves and the other way around. They facilitate the connection of a wireless device to the network. 
+
+1.1.e Controllers (Cisco DNA Center and WLC)
+
+Part of IBN (intent-based networking) and Cisco Software Defined Architecture. It is one of three: Catalyst Centre, SD-Access, SD-WAN.
+DNA Centre (Catalyst Center) is a Cisco SDN controller which is designed to manage enterprise environments – campus branch and WAN (as opposed to APIC which manages data center environments with Nexus switches.) Catalyst Centre runs as a virtual appliance in the cloud or on-premises, or as a physical appliance on Cisco UCS server hardware. The underlying operating system is linux and it can be clustered for redundancy.
+WLC = Wireless LAN Controllers. A WLC can be used as a central point of managements, to configure a large amount of access points. Virtual wireless controllers are also available. 
+Standalone access points are known as autonomous access points. Access points with a WLC are known as Lightweight Access points. The installed software image determines whether an access point is autonomous or lightweight. 
+Lightweight Access points support Zero Touch provisioning: they discover their wireless lan controller via these options – DHCP, option 43 gives the IP address of the WLC. DNS, ‘cisco-capwap-controller’ resolves the IP address of the WLC. And local subnet broadcast. 
+The Lightweight access point downloads its configuration from the wireless LAN controller. This includes what WLANs it should support and their settings. The WLC also monitors the wireless quality and controls the channels and power of the access points. It can also detect rogue APs.
+Wireless stations can roam across wireless APs supporting the same WLANs. The infrastructure can be configured to make roaming seamless. 
+CAPWAP – Control and Provisioning of wireless access points protocol is a standardised protocol that enables a wireless LAN control to manage a collection of wireless access points. Communications are encrypted inside a DTLS CAPWAP tunnel. It uses UDP ports 5246 and 5247. 
+Split MAC – work is moved from the APs to the WLC which is why they are called lightweight APs. Real-Time traffic is still handled by the AP in order to provide suitable performance, the rest is handled by the WLC, this is known as ‘split-mac’. The AP operations of the split mac are; client handshake when connecting, beacons, performance monitoring, encryption and decryption, and clients in power save. The WLC operations of a split mac are; authentication, roaming control, 802.11 to 802.3 communication, radio frequency management, security management, and QoS management. 
+Traffic flow with autonomous APs
+Traffic flow with CAPWAP – management traffic between the AP and WLC also passes through the CAPWAP tunnel. LAG Link Aggregation (Etherchannel) is often used on the WLC to switch link. 
+FlexConnect – Traffic is forwarded locally when FlexConnect is configured. This is useful for small branch offices without a Wireless LAN Controller. 
+
+
+1.1.f Endpoints
+Endpoints are end user stations such as PCs, laptops, tablets, and smartphones. They request access to the application and the data travels across the network infrastructure. 
+
+1.1.g Servers
+The servers role is to host the application and data that is being requested by the endpoints. 
+
+1.1.h PoE
+Power over Ethernet. 
+
+
+1.2 Describe characteristics of network topology architectures
+
+1.2.a Two-tier 
+
+collapsed distribution and core layer. This is where the distribution and core are merged into one layer. 
+
+
+* * *
+
+<button onclick="history.back()">Go Back</button>
