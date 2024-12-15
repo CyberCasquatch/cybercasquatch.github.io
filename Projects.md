@@ -16,7 +16,12 @@ comments: false
 | [Nessus Lab](_posts/Projects/2024-03-21-NessusLab.md) |
 | [Sentinel Lab](_posts/Projects/2024-04-20-SentinelSIEMLab.md) |
 | [SOC Analyst Path Level 1 (THM)](_posts/Projects/2024-03-12-THMSOCLVL1Path.md) |
-| [CCNA Part1 200-301](_posts/Projects/2024-12-14-CCNA_part1.md) |
+| [CCNA Part 1 200-301](_posts/Projects/2024-12-14-CCNA_part1.md) |
+| [CCNA Part 2 200-301](_posts/Projects/2024-12-14-CCNA_part2.md) |
+| [CCNA Part 3 200-301](_posts/Projects/2024-12-14-CCNA_part3.md) |
+| [CCNA Part 4 200-301](_posts/Projects/2024-12-14-CCNA_part4.md) |
+| [CCNA Part 5 200-301](_posts/Projects/2024-12-14-CCNA_part5.md) |
+| [CCNA Part 6 200-301](_posts/Projects/2024-12-14-CCNA_part6.md) |
 
 * * *
 [Home](./index.md)
