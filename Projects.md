@@ -8,8 +8,8 @@ comments: false
 
 # A list of completed activities by the squatch
 
-| 2024              || 2025              |
-|:------------------||:------------------|
+| 2024              | | 2025              |
+|:------------------| |:------------------|
 | [Downloads Folder Cleanup](_posts/Projects/Python/2024-03-01-Download-file-cleanup.md) |
 | [Visual Packet Tracer](_posts/Projects/Python/2024-03-05-Visual-Packet_tracer.md) |
 | [Active Directory Lab](_posts/Projects/2024-03-10-ActiveDirectoryLab.md) |
