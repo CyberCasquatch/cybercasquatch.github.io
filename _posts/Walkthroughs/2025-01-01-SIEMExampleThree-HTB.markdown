@@ -7,21 +7,21 @@ comments: false
 tag: ['soc', 'siem', 'elastic']
 ---
 
-Walkthrough: SIEM Visualization Example 3 – Successful RDP Logon Related to Service Accounts
+Walkthrough: SIEM Visualisation Example 3 – Successful RDP Logon Related to Service Accounts
 ============================================================================================
 
-Monitoring successful RDP (Remote Desktop Protocol) logons by service accounts is crucial for detecting unauthorized activity or potential misuse of privileged accounts. This guide outlines the steps to create and analyze a Kibana visualization for this use case.
+Monitoring successful RDP (Remote Desktop Protocol) logons by service accounts is crucial for detecting unauthorised activity or potential misuse of privileged accounts. This guide outlines the steps to create and analyse a Kibana visualization for this use case.
 
 1\. Objective
 -------------
 
-The aim of this visualization is to:
+The aim of this visualisation is to:
 
 *   Identify successful RDP logons by service accounts.
 *   Highlight patterns of access to sensitive systems.
-*   Detect potentially unauthorized or unusual access activity.
+*   Detect potentially unauthorised or unusual access activity.
 
-\[Insert screenshot: Overview or example mockup of the final visualization\]
+\[Insert screenshot: Overview or example mockup of the final visualisation\]
 
 2\. Data Preparation
 --------------------
@@ -46,16 +46,16 @@ Test the query to ensure it retrieves accurate data.
 
 \[Insert screenshot: Query results showing successful RDP logons for service accounts\]
 
-3\. Creating the Visualization
+3\. Creating the Visualisation
 ------------------------------
 
-### Step 1: Navigate to the Visualize Tab
+### Step 1: Navigate to the Visualise Tab
 
-Open Kibana and go to the Visualize Library.
+Open Kibana and go to the Visualise Library.
 
-Choose a visualization type (e.g., Bar Chart, Line Chart, or Pie Chart).
+Choose a visualisation type (e.g., Bar Chart, Line Chart, or Pie Chart).
 
-\[Insert screenshot: Kibana Visualize tab with visualization options\]
+\[Insert screenshot: Kibana Visualise tab with visualization options\]
 
 ### Step 2: Configure the Data Source
 
@@ -78,20 +78,20 @@ Optionally, split the data by:
 
 \[Insert screenshot: Configured Y-Axis and X-Axis\]
 
-4\. Refining the Visualization
+4\. Refining the Visualisation
 ------------------------------
 
-### Customize Labels and Appearance
+### Customise Labels and Appearance
 
 Add meaningful titles (e.g., "Successful RDP Logons by Service Accounts").
 
-Customize axis labels, legends, and chart colors for better clarity.
+Customise axis labels, legends, and chart colors for better clarity.
 
-\[Insert screenshot: Finalized visualization with proper formatting\]
+\[Insert screenshot: Finalised visualisation with proper formatting\]
 
-### Save the Visualization
+### Save the Visualisation
 
-Save your visualization to an appropriate dashboard for quick access during incident response.
+Save your visualisation to an appropriate dashboard for quick access during incident response.
 
 \[Insert screenshot: Save confirmation dialog\]
 
@@ -105,13 +105,13 @@ Look for unexpected patterns, such as:
 *   A service account accessing a system it doesn’t usually access.
 *   RDP logons occurring at unusual hours.
 
-Investigate spikes in activity to determine if they are legitimate or indicative of unauthorized access.
+Investigate spikes in activity to determine if they are legitimate or indicative of unauthorised access.
 
 \[Insert screenshot: Highlighted anomalies in RDP logon activity\]
 
 ### Example Questions to Investigate:
 
-*   Are the service accounts logging into unauthorized systems?
+*   Are the service accounts logging into unauthorised systems?
 *   Do the access times align with scheduled maintenance windows or are they suspiciously irregular?
 
 6\. Practical Use Case
@@ -128,12 +128,12 @@ After investigation, the SOC team discovers the credentials were compromised and
 7\. Conclusion
 --------------
 
-This visualization is an essential tool for SOC teams to:
+This visualisation is an essential tool for SOC teams to:
 
 *   Monitor privileged account activity.
 *   Detect and investigate unusual patterns in RDP logons.
 *   Strengthen security policies around service account usage.
 
-\[Insert screenshot: Final visualization displayed in Kibana\]
+\[Insert screenshot: Final visualisation displayed in Kibana\]
 
 <button onclick="history.back()">Go Back</button>
