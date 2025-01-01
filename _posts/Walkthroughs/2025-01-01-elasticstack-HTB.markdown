@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Non-Cubed Elastic Stack Intro for HTB"
+title:  "Cubed Elastic Stack Intro for HTB"
 date: 2025-01-01
 author: C. Casquatch
 comments: false
