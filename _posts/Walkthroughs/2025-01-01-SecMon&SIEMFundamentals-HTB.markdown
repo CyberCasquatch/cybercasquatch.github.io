@@ -68,4 +68,5 @@ Effective triaging minimises response time and ensures critical threats receive 
 
 Mastering SIEM, SOC operations, and incident handling is essential for today’s cybersecurity professionals. By understanding SIEM fundamentals, leveraging SOC workflows, applying the MITRE ATT&CK Framework, developing robust use cases, and refining your triaging process, you’ll be well-equipped to handle the challenges of modern cybersecurity.
 
+<button onclick="history.back()">Go Back</button>
 For those looking to dive deeper, Hack The Box Academy's modules on Security Monitoring and SIEM Fundamentals offer practical, hands-on training to reinforce these concepts.
