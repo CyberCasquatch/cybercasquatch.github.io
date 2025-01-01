@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Security Monitoring & SIEM Fundamentals Notes for HTB Soc Path"
+title:  "Non-Cubed Modules into one: Security Monitoring & SIEM Fundamentals Notes for HTB Soc Path"
 date: 2025-01-01
 author: C. Casquatch
 comments: false
