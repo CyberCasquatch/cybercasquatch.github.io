@@ -1,4 +1,11 @@
-
+---
+layout: post
+title:  "Incident Handling Process notes from HTB"
+date: 2025-01-01
+author: C. Casquatch
+comments: false
+tag: ['soc', 'incident handling']
+---
 
 # Incident Handling Process
 
