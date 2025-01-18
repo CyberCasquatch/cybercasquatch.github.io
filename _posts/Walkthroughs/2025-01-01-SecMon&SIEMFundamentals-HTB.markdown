@@ -7,9 +7,7 @@ comments: false
 tag: ['soc', 'siem', 'security monitoring', 'incident response']
 ---
 
-# Mastering Security Operations: SIEM, SOC, and Incident Response Essentials
-
-In the ever-evolving landscape of cybersecurity, understanding the foundations of Security Information and Event Management (SIEM) and Security Operations Centres (SOC) is crucial. This post covers the essentials of SIEM, SOC, the MITRE ATT&CK framework, SIEM use case development, and triaging—providing you with a clear roadmap to mastering these critical concepts.
+> In the ever-evolving landscape of cybersecurity, understanding the foundations of Security Information and Event Management (SIEM) and Security Operations Centres (SOC) is crucial. This post covers the essentials of SIEM, SOC, the MITRE ATT&CK framework, SIEM use case development, and triaging—providing you with a clear roadmap to mastering these critical concepts.
 
 ## What is SIEM?
 
