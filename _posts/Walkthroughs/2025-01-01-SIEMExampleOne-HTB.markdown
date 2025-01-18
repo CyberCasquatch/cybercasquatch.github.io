@@ -7,9 +7,7 @@ comments: false
 tag: ['soc', 'siem', 'elastic']
 ---
 
-# Walkthrough: SIEM Visualization Example 1 – Failed Logon Attempts (All Users)
-
-Tracking failed logon attempts is a critical use case for any SIEM solution. This guide walks you through creating a visualization in Kibana to monitor failed logon attempts for all users.
+> Tracking failed logon attempts is a critical use case for any SIEM solution. This guide walks you through creating a visualization in Kibana to monitor failed logon attempts for all users.
 
 ## 1\. Objective
 
