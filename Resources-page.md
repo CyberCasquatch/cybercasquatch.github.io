@@ -7,7 +7,7 @@ comments: false
 ---
 
 
-_This page is used to store resources for various types of use cases and gathered from many different types of projects that I have completed. I have found these resources useful and so have tried to list & group them appropriately._
+_This page is used to store resources for various types of use cases and gathered from many different types of projects that I have completed. I have found these resources useful and have tried to list & group them appropriately._
 
 ### GENERAL
 * [Security Certification Roadmap - Paul Jerimy Media](https://pauljerimy.com/security-certification-roadmap/)
@@ -35,6 +35,15 @@ _This page is used to store resources for various types of use cases and gathere
 *	[Sysmon Configuration (Github)](https://github.com/olafhartong/sysmon-modular/blob/master/sysmonconfig.xml)
 *	[Sysmon Download](https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon)
 
+### ELASTIC SIEM
+* [Event Fields](https://www.elastic.co/guide/en/ecs/current/ecs-event.html#field-event-code)
+* [ECS Reference](https://www.elastic.co/guide/en/ecs/current/ecs-reference.html)
+* [Winlogbeat Fields](https://www.elastic.co/guide/en/beats/winlogbeat/current/exported-fields-winlog.html)
+* [ECS Fields - Winlogbeat Reference](https://www.elastic.co/guide/en/beats/winlogbeat/current/exported-fields-ecs.html)
+* [Security Module Fields](https://www.elastic.co/guide/en/beats/winlogbeat/master/exported-fields-security.html)
+* [Exported Fields - Filebeat Reference](https://www.elastic.co/guide/en/beats/filebeat/current/exported-fields.html)
+* [ECS Fields - Filebeat Reference](https://www.elastic.co/guide/en/beats/filebeat/current/exported-fields-ecs.html)
+  
 ***
 * [Running containers](https://docs.pwntools.com/en/stable/)
 * [Cross Site Scripting](https://owasp.org/www-community/attacks/xss/)
