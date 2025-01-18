@@ -7,9 +7,9 @@ comments: false
 tag: ['soc', 'siem', 'elastic']
 ---
 
-  SIEM Visualisation Example 4 Walkthrough
+>
 
-Walkthrough: SIEM Visualisation Example 4 - Users Added or Removed from a Local Group (Within a Specific Timeframe)
+
 ===================================================================================================================
 
 Introduction
