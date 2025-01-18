@@ -7,9 +7,8 @@ comments: false
 tag: ['soc', 'incident handling']
 ---
 
-# Incident Handling Process
 
-In the dynamic world of cybersecurity, incidents are not a question of "if" but "when." Organisations must be prepared to detect, respond to, and recover from incidents effectively. The Incident Handling Process is a structured approach to managing security events, mitigating their impact, and preventing future occurrences. Let's explore this process step by step, drawing insights from the Hack The Box Academy module.
+> In the dynamic world of cybersecurity, incidents are not a question of "if" but "when." Organisations must be prepared to detect, respond to, and recover from incidents effectively. The Incident Handling Process is a structured approach to managing security events, mitigating their impact, and preventing future occurrences. Let's explore this process step by step, drawing insights from the Hack The Box Academy module.
 
 ## 1. Preparation: Building the Foundation
 Preparation is the cornerstone of an effective incident response strategy. Without a solid foundation, the entire process can collapse under the pressure of a real-world incident.
