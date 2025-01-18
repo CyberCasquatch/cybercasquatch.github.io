@@ -7,136 +7,106 @@ comments: false
 tag: ['soc', 'siem', 'elastic']
 ---
 
-> In this walkthrough, we will cover the key concepts and tasks involved in the HackTheBox "Security Monitoring & SIEM Fundamentals" skills assessment. The assessment evaluates your understanding and practical skills related to security monitoring and SIEM configuration, log analysis, and event correlation.
+> This walkthrough follows along with the SOC Tier 1 Analyst assessment, detailing the investigation steps as we review security events in a home-cooked SOC environment.
 
-Step 1: Accessing the Security Monitoring Environment
------------------------------------------------------
+Introduction
+------------
 
-Start by gaining access to the lab environment where you’ll be working through the skills assessment. Make sure your SIEM platform is set up and ready to capture the necessary data streams.
+Congratulations! You've just been hired as a SOC Tier 1 analyst at Eagle. Today is your first day monitoring alerts and security events in a pre-configured dashboard. Here's what happened after meeting your senior analyst.
 
-*   Login to HackTheBox and access the relevant assessment environment.
-*   Ensure your SIEM system is properly configured to receive log data from the system under assessment (e.g., firewall, server, or endpoint).
+Key Insights from Senior Analyst
+--------------------------------
 
-### Screenshot 1: Logging into the HackTheBox Environment
+Here are some key details from your meeting with the senior analyst regarding the environment:
 
-Step 2: Reviewing Visualizations in the "SOC-Alerts" Dashboard
---------------------------------------------------------------
+*   The organisation has moved all hosting to the cloud; the old DMZ network is now shut down.
+*   The IT operations team consists of four core members, all with high privileges in the environment.
+*   The IT operations team often uses default administrator accounts despite warnings.
+*   All endpoint devices are hardened based on CIS hardening baselines, with limited whitelisting.
+*   Admin activities should only occur on Privileged Admin Workstations (PAWs).
+*   The Linux environment has very little activity and uses sudo for admin rights escalation.
+*   Strict naming conventions are followed for service accounts, which contain '-svc' and are created with complex passwords.
 
-The next steps involve reviewing different visualizations within the "SOC-Alerts" dashboard. For each visualization, you will assess the alerts and determine the appropriate action based on your analysis.
+If you are starting with a running instance, ensure to reset the target by clicking the "Reset Target" icon to regain access to the preconfigured dashboard.
 
-### Question 1: Review the "Failed logon attempts \[All users\]" visualization of the "SOC-Alerts" dashboard.
+Step 1: Access the Dashboard
+----------------------------
 
-Choose one of the following options:
+Now that you're ready, navigate to the target's IP address to access the SOC dashboard: **http://\[Target IP\]:5601**. Click on the side navigation toggle and select "Dashboard". Here, you will review the "SOC-Alerts" dashboard.
 
-*   Nothing suspicious
-*   Consult with IT Operations
-*   Escalate to a Tier 2/3 analyst
+### Visualization 1: Failed Logon Attempts (All Users)
 
-### Answer:
+This visualisation might help you spot potential brute force attacks. Look for any users with numerous failed attempts or multiple users trying to log in from the same endpoint device. At first glance, no significant issues arise, but an anomaly related to the "sql-svc1" account is noteworthy.
 
-Provide your answer here, based on your review of the failed login attempts for all users.
+**Insert Screenshot 1: Failed Logon Attempts (All Users)**
 
-### Screenshot 2: Review of Failed Logon Attempts \[All users\]
+### Visualization 2: Failed Logon Attempts (Disabled User)
 
-### Question 2: Review the "Failed logon attempts \[Disabled user\]" visualization of the "SOC-Alerts" dashboard.
+Here, you notice that the user "Anni" attempted to authenticate despite their account being disabled.
 
-Choose one of the following options:
+**Insert Screenshot 2: Failed Logon Attempts (Disabled User)**
 
-*   Nothing suspicious
-*   Consult with IT Operations
-*   Escalate to a Tier 2/3 analyst
+Step 2: Investigate Admin Logins
+--------------------------------
 
-### Answer:
+### Visualization 3: Failed Logon Attempts (Admin Users Only)
 
-Provide your answer here, based on your review of the failed login attempts for disabled users.
+For this visualisation, ensure to check if all events took place on Privileged Access Workstations (PAWs) or Domain Controllers. Admin login attempts should only occur on these machines.
 
-### Screenshot 3: Review of Failed Logon Attempts \[Disabled user\]
+**Insert Screenshot 3: Failed Logon Attempts (Admin Users Only)**
 
-### Question 3: Review the "Failed logon attempts \[Admin users only\]" visualization of the "SOC-Alerts" dashboard.
+### Visualization 4: RDP Logon for Service Account
 
-Choose one of the following options:
+Service accounts are set up with a specialised function. Is there anything suspicious about the RDP login here? Examine closely.
 
-*   Nothing suspicious
-*   Consult with IT Operations
-*   Escalate to a Tier 2/3 analyst
+**Insert Screenshot 4: RDP Logon for Service Account**
 
-### Answer:
+Step 3: Investigate Group Modifications
+---------------------------------------
 
-Provide your answer here, based on your review of the failed login attempts for admin users only.
+### Visualization 5: User Added or Removed from a Local Group
 
-### Screenshot 4: Review of Failed Logon Attempts \[Admin users only\]
+An administrator has added a user (represented only by their SID value) to the "Administrators" group. Should this be escalated to a Tier 2/3 analyst or should you consult with IT Operations first?
 
-### Question 4: Review the "RDP logon for service account" visualization of the "SOC-Alerts" dashboard.
+**Insert Screenshot 5: User Added or Removed from a Local Group**
 
-Choose one of the following options:
+### Visualization 6: Admin Logon Not From PAW
 
-*   Nothing suspicious
-*   Consult with IT Operations
-*   Escalate to a Tier 2/3 analyst
+As per the security policy, administrators should only log in remotely from PAWs. If there’s a login outside of this, should you escalate it or consult IT Operations first?
 
-### Answer:
+**Insert Screenshot 6: Admin Logon Not From PAW**
 
-Provide your answer here, based on your review of the RDP logon for service accounts.
+Step 4: Review SSH Logins
+-------------------------
 
-### Screenshot 5: Review of RDP Logon for Service Account
+### Visualization 7: SSH Logins
 
-### Question 5: Review the "User added or removed from a local group" visualization of the "SOC-Alerts" dashboard.
+Remember that the root user account should not be used regularly. Is there anything unusual in the SSH login records?
 
-Choose one of the following options:
+**Insert Screenshot 7: SSH Logins**
 
-*   Nothing suspicious
-*   Consult with IT Operations
-*   Escalate to a Tier 2/3 analyst
+### Questions:
 
-### Answer:
+#### Navigate to http://[Target IP]:5601, click on the side navigation toggle, and click on "Dashboard". Review the "Failed logon attempts [All users]" visualization of the "SOC-Alerts" dashboard. Choose one of the following as your answer: "Nothing suspicious", "Consult with IT Operations", "Escalate to a Tier 2/3 analyst"
+ANSWER:
 
-Provide your answer here, based on your review of user addition/removal from a local group.
+#### Navigate to http://[Target IP]:5601, click on the side navigation toggle, and click on "Dashboard". Review the "Failed logon attempts [Disabled user]" visualization of the "SOC-Alerts" dashboard. Choose one of the following as your answer: "Nothing suspicious", "Consult with IT Operations", "Escalate to a Tier 2/3 analyst"
+ANSWER:
 
-### Screenshot 6: Review of User Added or Removed from a Local Group
+#### Navigate to http://[Target IP]:5601, click on the side navigation toggle, and click on "Dashboard". Review the "Failed logon attempts [Admin users only]" visualization of the "SOC-Alerts" dashboard. Choose one of the following as your answer: "Nothing suspicious", "Consult with IT Operations", "Escalate to a Tier 2/3 analyst"
+ANSWER:
 
-### Question 6: Review the "Admin logon not from PAW" visualization of the "SOC-Alerts" dashboard.
+#### Navigate to http://[Target IP]:5601, click on the side navigation toggle, and click on "Dashboard". Review the "RDP logon for service account" visualization of the "SOC-Alerts" dashboard. Choose one of the following as your answer: "Nothing suspicious", "Consult with IT Operations", "Escalate to a Tier 2/3 analyst"
+ANSWER:
 
-Choose one of the following options:
+#### Navigate to http://[Target IP]:5601, click on the side navigation toggle, and click on "Dashboard". Review the "User added or removed from a local group" visualization of the "SOC-Alerts" dashboard. Choose one of the following as your answer: "Nothing suspicious", "Consult with IT Operations", "Escalate to a Tier 2/3 analyst"
+ANSWER:
 
-*   Nothing suspicious
-*   Consult with IT Operations
-*   Escalate to a Tier 2/3 analyst
+#### Navigate to http://[Target IP]:5601, click on the side navigation toggle, and click on "Dashboard". Review the "Admin logon not from PAW" visualization of the "SOC-Alerts" dashboard. Choose one of the following as your answer: "Nothing suspicious", "Consult with IT Operations", "Escalate to a Tier 2/3 analyst"
+ANSWER:
 
-### Answer:
+#### Navigate to http://[Target IP]:5601, click on the side navigation toggle, and click on "Dashboard". Review the "SSH Logins" visualization of the "SOC-Alerts" dashboard. Choose one of the following as your answer: "Nothing suspicious", "Consult with IT Operations", "Escalate to a Tier 2/3 analyst"
+ANSWER:
 
-Provide your answer here, based on your review of admin logons not coming from a PAW (Privileged Access Workstation).
-
-### Screenshot 7: Review of Admin Logon Not from PAW
-
-### Question 7: Review the "SSH Logins" visualization of the "SOC-Alerts" dashboard.
-
-Choose one of the following options:
-
-*   Nothing suspicious
-*   Consult with IT Operations
-*   Escalate to a Tier 2/3 analyst
-
-### Answer:
-
-Provide your answer here, based on your review of SSH logins.
-
-### Screenshot 8: Review of SSH Logins
-
-Step 3: Final Review and Report Generation
-------------------------------------------
-
-After completing your analysis of the dashboard visualizations and answering the assessment questions, generate a report summarising your findings and proposed actions.
-
-*   Document the findings for each visualization and the corresponding actions taken (e.g., escalating to a Tier 2/3 analyst, consulting with IT Operations).
-*   Include recommendations for improving security monitoring or SIEM configuration based on your analysis.
-
-### Screenshot 9: Generating the Final Report
-
-Conclusion
-----------
-
-By following these steps, you will have successfully completed the HackTheBox "Security Monitoring & SIEM Fundamentals" skills assessment. This process helps solidify your understanding of how SIEM systems work, including log collection, parsing, alerting, and incident response.
-
-As you move forward, keep refining your skills in SIEM, as this is a critical area of expertise for any security operations professional.
 
 <button onclick="history.back()">Go Back</button>
