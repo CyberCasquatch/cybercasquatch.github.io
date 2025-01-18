@@ -7,7 +7,7 @@ comments: false
 tag: ['elastic', 'siem', 'htb']
 ---
 
-# Walkthrough: Introduction to the Elastic Stack
+> Walkthrough: Introduction to the Elastic Stack
 
 The Elastic Stack, often referred to as the ELK Stack (Elasticsearch, Logstash, and Kibana), is a powerful suite of tools for collecting, searching, and visualising log data. This walkthrough outlines the essential concepts and steps in the module, with placeholders for screenshots to be added later.
 
