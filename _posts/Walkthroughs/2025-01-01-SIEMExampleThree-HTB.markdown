@@ -7,10 +7,7 @@ comments: false
 tag: ['soc', 'siem', 'elastic']
 ---
 
-Walkthrough: SIEM Visualisation Example 3 – Successful RDP Logon Related to Service Accounts
-============================================================================================
-
-Monitoring successful RDP (Remote Desktop Protocol) logons by service accounts is crucial for detecting unauthorised activity or potential misuse of privileged accounts. This guide outlines the steps to create and analyse a Kibana visualization for this use case.
+> Monitoring successful RDP (Remote Desktop Protocol) logons by service accounts is crucial for detecting unauthorised activity or potential misuse of privileged accounts. This guide outlines the steps to create and analyse a Kibana visualization for this use case.
 
 1\. Objective
 -------------
