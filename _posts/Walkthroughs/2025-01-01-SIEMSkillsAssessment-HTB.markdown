@@ -7,13 +7,7 @@ comments: false
 tag: ['soc', 'siem', 'elastic']
 ---
 
-Walkthrough: Security Monitoring & SIEM Fundamentals - HackTheBox Skills Assessment
-===================================================================================
-
-Introduction
-------------
-
-In this walkthrough, we will cover the key concepts and tasks involved in the HackTheBox "Security Monitoring & SIEM Fundamentals" skills assessment. The assessment evaluates your understanding and practical skills related to security monitoring and SIEM configuration, log analysis, and event correlation.
+> In this walkthrough, we will cover the key concepts and tasks involved in the HackTheBox "Security Monitoring & SIEM Fundamentals" skills assessment. The assessment evaluates your understanding and practical skills related to security monitoring and SIEM configuration, log analysis, and event correlation.
 
 Step 1: Accessing the Security Monitoring Environment
 -----------------------------------------------------
