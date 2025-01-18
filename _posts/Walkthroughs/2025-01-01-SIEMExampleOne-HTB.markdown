@@ -55,7 +55,7 @@ By following these steps, you can create and refine meaningful dashboards and vi
 
 ### Question:
 
-####Navigate to http://[Target IP]:5601, click on the side navigation toggle, and click on "Dashboard". Browse the refined visualization we created or the "Failed logon attempts [All users]" visualization, if it is available, and enter the number of logins for the sql-svc1 account as your answer.
+#### Navigate to http://[Target IP]:5601, click on the side navigation toggle, and click on "Dashboard". Browse the refined visualization we created or the "Failed logon attempts [All users]" visualization, if it is available, and enter the number of logins for the sql-svc1 account as your answer.
 ANSWER:
 
 <button onclick="history.back()">Go Back</button>
