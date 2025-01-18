@@ -7,130 +7,65 @@ comments: false
 tag: ['soc', 'siem', 'elastic']
 ---
 
-> Monitoring successful RDP (Remote Desktop Protocol) logons by service accounts is crucial for detecting unauthorised activity or potential misuse of privileged accounts. This guide outlines the steps to create and analyse a Kibana visualization for this use case.
+> In this SIEM visualization example, we aim to monitor successful RDP logons specifically related to service accounts. These accounts, which often have high privileges, should not be used for RDP logons. IT Operations confirms that all service accounts in the environment start with `svc-`.
 
-1\. Objective
--------------
+Setting Up the Target System
+----------------------------
 
-The aim of this visualisation is to:
+Navigate to the bottom of this section and click on **Click here to spawn the target system!**
 
-*   Identify successful RDP logons by service accounts.
-*   Highlight patterns of access to sensitive systems.
-*   Detect potentially unauthorised or unusual access activity.
+Access the system at `http://[Target IP]:5601`. Open the side navigation toggle and click on **"Dashboard"**.
 
-\[Insert screenshot: Overview or example mockup of the final visualisation\]
+### Using the Prebaked Dashboard
 
-2\. Data Preparation
---------------------
+*   Locate the prebaked dashboard and click the **"pencil"/edit** icon.
+*   Click **Create visualization** to start building a new visualization.
 
-### Indexing Log Data
+### Creating the Visualization
 
-Confirm your SIEM ingests RDP logon events and stores fields such as:
+1.  In the new window, configure the following:
 
-*   `event.action` (e.g., "logon-success")
-*   `logon.type` (e.g., "RDP")
-*   `user.account_type` or other indicators for service accounts.
+*   **Filter:** Add a filter for Event ID `4624` and Logon Type `RemoteInteractive` (`winlog.logon.type` field).
+*   **Index Pattern:** Use `windows*` to include relevant data.
+*   **Search Bar:** Verify fields like `user.name.keyword` to ensure correct data.
+*   **Visualization Type:** Select "Table" for this visualization.
 
-\[Insert screenshot: Sample log data showing successful RDP logon events\]
+3.  In the **Rows** settings, add fields such as:
 
-### Filtering Relevant Events
+*   `user.name.keyword` for the service account.
+*   `host.hostname.keyword` for the machine where the logon occurred.
+*   `related.ip.keyword` for the IP of the initiating machine.
 
-Use a query in Kibana to isolate successful RDP logons by service accounts. Example:
+5.  In the **Metrics** settings, select "count" as the metric to display the number of successful logons.
+6.  Apply a KQL query to filter service accounts starting with `svc-`:
+    
+    user.name: svc-\*
+    
 
-    event.action: "logon-success" AND logon.type: "RDP" AND user.account_type: "service"
+#### Screenshot Placeholder
 
-Test the query to ensure it retrieves accurate data.
+Add screenshots for the filter, rows, and metrics configurations, as well as the applied KQL query.
 
-\[Insert screenshot: Query results showing successful RDP logons for service accounts\]
+### Finalizing the Visualization
 
-3\. Creating the Visualisation
-------------------------------
+Ensure your table includes four columns:
 
-### Step 1: Navigate to the Visualise Tab
+*   The service account whose credentials generated the logon event.
+*   The machine where the logon occurred.
+*   The IP of the machine that initiated the logon attempt.
+*   The count of logon events within the specified time frame.
 
-Open Kibana and go to the Visualise Library.
+### Saving the Visualization
 
-Choose a visualisation type (e.g., Bar Chart, Line Chart, or Pie Chart).
+*   Click **Save and return** to add the visualization to the dashboard.
+*   Title the visualization appropriately and save the dashboard.
 
-\[Insert screenshot: Kibana Visualise tab with visualization options\]
+With these steps, you can effectively monitor successful RDP logons related to service accounts, ensuring better visibility into potential security issues.
 
-### Step 2: Configure the Data Source
+###QUESTIONS
 
-Select the appropriate index pattern containing your log data.
+####Navigate to http://[Target IP]:5601, click on the side navigation toggle, and click on "Dashboard". Browse the visualization we created or the "RDP logon for service account" visualization, if it is available, and enter the IP of the machine that initiated the successful RDP logon using service account credentials as your answer.
+ANSWER:
 
-Apply the filtered query for successful RDP logons by service accounts.
-
-\[Insert screenshot: Data source configuration with index pattern and query\]
-
-### Step 3: Define the Metrics
-
-Y-Axis: Count of successful RDP logons.
-
-X-Axis: Time intervals (e.g., daily, weekly).
-
-Optionally, split the data by:
-
-*   Hostnames: To track which systems were accessed.
-*   Usernames: To see which service accounts are logging in.
-
-\[Insert screenshot: Configured Y-Axis and X-Axis\]
-
-4\. Refining the Visualisation
-------------------------------
-
-### Customise Labels and Appearance
-
-Add meaningful titles (e.g., "Successful RDP Logons by Service Accounts").
-
-Customise axis labels, legends, and chart colors for better clarity.
-
-\[Insert screenshot: Finalised visualisation with proper formatting\]
-
-### Save the Visualisation
-
-Save your visualisation to an appropriate dashboard for quick access during incident response.
-
-\[Insert screenshot: Save confirmation dialog\]
-
-5\. Analyzing the Results
--------------------------
-
-### Detecting Anomalies
-
-Look for unexpected patterns, such as:
-
-*   A service account accessing a system it doesn’t usually access.
-*   RDP logons occurring at unusual hours.
-
-Investigate spikes in activity to determine if they are legitimate or indicative of unauthorised access.
-
-\[Insert screenshot: Highlighted anomalies in RDP logon activity\]
-
-### Example Questions to Investigate:
-
-*   Are the service accounts logging into unauthorised systems?
-*   Do the access times align with scheduled maintenance windows or are they suspiciously irregular?
-
-6\. Practical Use Case
-----------------------
-
-### Scenario
-
-A service account logs into an RDP session during non-business hours.
-
-After investigation, the SOC team discovers the credentials were compromised and used by an attacker to access sensitive systems.
-
-\[Insert screenshot: Example use case with anomalous RDP logon events\]
-
-7\. Conclusion
---------------
-
-This visualisation is an essential tool for SOC teams to:
-
-*   Monitor privileged account activity.
-*   Detect and investigate unusual patterns in RDP logons.
-*   Strengthen security policies around service account usage.
-
-\[Insert screenshot: Final visualisation displayed in Kibana\]
 
 <button onclick="history.back()">Go Back</button>
