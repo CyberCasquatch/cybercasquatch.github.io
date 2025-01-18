@@ -7,10 +7,7 @@ comments: false
 tag: ['soc', 'siem', 'elastic']
 ---
 
-Walkthrough: SIEM Visualization Example 2 – Failed Logon Attempts (Disabled Users)
-==================================================================================
-
-Monitoring failed logon attempts for disabled users is critical for detecting potential misuse of inactive accounts, a common target for malicious actors. This guide outlines the process of creating a visualization in Kibana to track these events.
+> Monitoring failed logon attempts for disabled users is critical for detecting potential misuse of inactive accounts, a common target for malicious actors. This guide outlines the process of creating a visualization in Kibana to track these events.
 
 1\. Objective
 -------------
