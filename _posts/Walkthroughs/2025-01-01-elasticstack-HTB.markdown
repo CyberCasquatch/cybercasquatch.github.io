@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Cubed Elastic Stack Intro for HTB"
+title:  "CSecurity Monitoring & SIEM Fundamentals Module: Intro to Elastic Stack"
 date: 2025-01-01
 author: C. Casquatch
 comments: false
