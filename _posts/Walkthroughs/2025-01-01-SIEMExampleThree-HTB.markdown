@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "SIEM Visualisation Example 3: Successful RDP Logon Related to Service Accounts"
+title:  "Security Monitoring & SIEM Fundamentals Module: SIEM Visualisation Example 3 - Successful RDP Logon Related to Service Accounts"
 date: 2025-01-01
 author: C. Casquatch
 comments: false
