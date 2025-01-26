@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Incident Handling Process notes from HTB"
+title:  "Incident Handling Process Module: notes"
 date: 2025-01-01
 author: C. Casquatch
 comments: false
