@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "SIEM Visualisation Example 2: Failed Logon Attempts (Disabled Users)"
+title:  "Security Monitoring & SIEM Fundamentals Module: SIEM Visualisation Example 2 - Failed Logon Attempts (Disabled Users)"
 date: 2025-01-01
 author: C. Casquatch
 comments: false
