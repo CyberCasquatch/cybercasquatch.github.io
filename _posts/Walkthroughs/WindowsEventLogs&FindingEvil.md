@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Windows Event Logs and Finding Evil"
+title:  "Windows Event Logs and Finding Evil: Windows Event Logs "
 date: 2025-01-27
 author: C. Casquatch
 comments: false
