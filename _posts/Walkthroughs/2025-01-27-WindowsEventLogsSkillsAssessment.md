@@ -7,7 +7,7 @@ comments: false
 tag: ['windows', 'event logs', 'htb']
 ---
 
-> Skills assemssment for Windows Event Logs and Finidng Evil
+> Skills assessment for Windows Event Logs and Finidng Evil
 
 RDP to [Target IP] using the provided credentials, examine the logs located in the C:\Logs\* directories, and answer the questions below.
 
