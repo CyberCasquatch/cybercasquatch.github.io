@@ -134,4 +134,19 @@ Summarizes all fields present in the specified sourcetype.
 - [Splunk Documentation](https://docs.splunk.com/Documentation/SplunkCloud/latest/Search/)
 
 
+### Questions
+
+#### Navigate to http://[Target IP]:8000, open the "Search & Reporting" application, and find through an SPL search against all data the account name with the highest amount of Kerberos authentication ticket requests. Enter it as your answer.
+ANSWER:
+
+#### Navigate to http://[Target IP]:8000, open the "Search & Reporting" application, and find through an SPL search against all 4624 events the count of distinct computers accessed by the account name SYSTEM. Enter it as your answer.
+ANSWER:
+
+#### Navigate to http://[Target IP]:8000, open the "Search & Reporting" application, and find through an SPL search against all 4624 events the account name that made the most login attempts within a span of 10 minutes. Enter it as your answer.
+ANSWER:
+
+
+
+
+
 <button onclick="history.back()">Go Back</button>
