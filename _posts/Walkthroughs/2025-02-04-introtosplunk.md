@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Introduction to Splunk and SPL"
+title:  "Understanding log sources & investigating with Splunk: Introduction to Splunk and SPL"
 date: 2025-02-4
 author: C. Casquatch
 comments: false
