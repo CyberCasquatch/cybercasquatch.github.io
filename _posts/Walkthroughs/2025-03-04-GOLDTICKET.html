@@ -1,0 +1,97 @@
+---
+layout: post
+title:  "Golden Ticket: Windows Attacks & Defense"
+date: 2025-03-4
+author: C. Casquatch
+comments: false
+tag: ['windows', 'golden ticket', 'htb']
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Ticket Attack Walkthrough</title>
+</head>
+<body>
+
+    <h1>Golden Ticket Attack</h1>
+    <hr>
+
+    <h2>Description</h2>
+    <p>The <strong>Kerberos Golden Ticket</strong> attack allows an attacker to forge tickets that let them impersonate any user within the domain, essentially granting them the same privileges as a Domain Controller. This is possible due to the unique <code>krbtgt</code> account, which is automatically created when a domain is set up. This account is disabled and cannot be renamed, deleted, or re-enabled. The <strong>Key Distribution Centre (KDC)</strong> service uses the <code>krbtgt</code> password to generate a key that signs all Kerberos tickets.</p>
+    
+    <p>If an attacker obtains the password hash of <code>krbtgt</code>, they can generate valid Kerberos Ticket-Granting Tickets (TGTs). These forged tickets are accepted throughout the domain because they are signed using the trusted <code>krbtgt</code> password hash. With this, an attacker can escalate privileges, move laterally between domains, and maintain persistence within the network undetected.</p>
+
+    <p>Golden Ticket attacks generally require domain admin privileges as a prerequisite to extract the <code>krbtgt</code> hash.</p>
+
+    <h2>Attack</h2>
+    <p>To carry out the Golden Ticket attack, we will use the popular tool <a href="https://github.com/gentilkiwi/mimikatz">Mimikatz</a>, which can generate forged TGTs. The basic syntax involves the following parameters:</p>
+    <ul>
+        <li><code>/domain:</code> The domain name.</li>
+        <li><code>/sid:</code> The domain SID.</li>
+        <li><code>/rc4:</code> The password hash of <code>krbtgt</code>.</li>
+        <li><code>/user:</code> The username for which the ticket will be generated.</li>
+        <li><code>/id:</code> The Relative Identifier (RID) of the user.</li>
+    </ul>
+    <p>Before running Mimikatz, we first need to obtain the <code>krbtgt</code> password hash and the domain SID. This can be done using tools such as <code>PowerView</code> or through the <code>DCSync</code> attack (as shown in previous posts). Here’s how we can proceed:</p>
+
+    <h3>Step 1: Obtain the Domain SID and <code>krbtgt</code> Password Hash</h3>
+    <p>We will use the <code>Get-DomainSID</code> function from <a href="https://github.com/PowerShellMafia/PowerSploit">PowerSploit</a> to retrieve the domain SID. Then, we use the <code>DCSync</code> attack to extract the <code>krbtgt</code> password hash.</p>
+
+    <p><em>Insert your own screenshot here showing the extraction of the <code>krbtgt</code> hash and domain SID.</em></p>
+
+    <h3>Step 2: Generate the Golden Ticket</h3>
+    <p>With the necessary information (domain SID, <code>krbtgt</code> hash), we can generate the Golden Ticket using Mimikatz. Here's the command syntax:</p>
+    <pre><code>mimikatz.exe "lsadump::lsa /domain:<domain> /sid:<sid> /rc4:<krbtgt_hash>"</code></pre>
+
+    <p>The <code>/ptt</code> parameter ensures that the ticket is passed into the current session.</p>
+
+    <p><em>Insert your own screenshot here showing the creation and injection of the Golden Ticket.</em></p>
+
+    <h3>Step 3: Verify Ticket Functionality</h3>
+    <p>To confirm the ticket is working, we can attempt to access a network share or any other resource that the forged account should have access to. For example, we can list the contents of the C$ share of the Domain Controller:</p>
+    <pre><code>dir \\dc1\c$</code></pre>
+
+    <p><em>Insert your own screenshot here showing the access to the C$ share using the forged ticket.</em></p>
+
+    <h2>Prevention</h2>
+    <p>Preventing the Golden Ticket attack is difficult, as it requires blocking the ability to forge valid tickets, which is the standard function of the KDC. However, there are several mitigation strategies that can be employed:</p>
+    <ul>
+        <li>Restrict privileged users from authenticating to non-essential devices.</li>
+        <li>Regularly reset the <code>krbtgt</code> password, ensuring that it is done securely with a script like <a href="https://github.com/microsoftarchive/New-KrbtgtKeys.ps1">KrbtgtKeys.ps1</a>.</li>
+        <li>Implement SIDHistory filtering between domains to prevent cross-domain privilege escalation.</li>
+    </ul>
+
+    <h2>Detection</h2>
+    <p>Detecting Golden Ticket abuse requires monitoring and correlating abnormal authentication patterns. This can be achieved by tracking user behaviour and being alert to any privileged users logging in from unauthorised devices or locations. Key event IDs to monitor include:</p>
+    <ul>
+        <li><strong>4624:</strong> Successful login.</li>
+        <li><strong>4625:</strong> Failed login attempts.</li>
+    </ul>
+
+    <p>Another method for detection is monitoring for Ticket Granting Service (TGS) requests for users who don’t have a corresponding TGT. However, this is often noisy and requires significant filtering due to the volume of legitimate tickets.</p>
+
+    <h3>Additional Detection Techniques</h3>
+    <ul>
+        <li>If SID filtering is enabled, event ID 4675 will be triggered during cross-domain privilege escalation attempts.</li>
+    </ul>
+
+    <p><em>Insert your own screenshot here showing event logs related to Golden Ticket detection.</em></p>
+
+    <h2>Resources</h2>
+    <ul>
+        <li><a href="https://github.com/microsoftarchive/New-KrbtgtKeys.ps1">New-KrbtgtKeys.ps1: A script to reset the <code>krbtgt</code> account password and related keys while minimising Kerberos issues.</a></li>
+        <li><a href="https://github.com/gentilkiwi/mimikatz">Mimikatz – Active Directory Security: A tool for performing Kerberos and other attacks in Active Directory.</a></li>
+        <li><a href="https://github.com/PowerShellMafia/PowerSploit">PowerSploit - PowerView.ps1: A script to help with domain enumeration and SID extraction.</a></li>
+    </ul>
+
+  Practice the techniques shown in this section. What is the NTLM hash of the krbtgt user?
+  
+
+</body>
+</html>
+
+
+<button onclick="history.back()">Go Back</button>
