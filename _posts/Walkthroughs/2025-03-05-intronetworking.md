@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "NOTES: Intro to Metwork Traffic Analysis"
+title:  "NOTES: Intro to Network Traffic Analysis"
 date: 2025-03-4
 author: C. Casquatch
 comments: false
