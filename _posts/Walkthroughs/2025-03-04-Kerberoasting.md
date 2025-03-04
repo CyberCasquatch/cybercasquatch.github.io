@@ -86,17 +86,14 @@ If we go back to our playground environment and configure the user `svc-iam` (pr
 
 ![Honeypot detection setup](your-screenshot-path.jpg)
 
-Be Careful!
------------
-
 Although we give examples of honeypot detections in many of the attacks described, it does not mean an AD environment should implement every single one. That would make it evident to a threat actor that the AD administrator(s) have set many traps. We must consider all the detections and enforce the ones that work best for our AD environment.
 
-QUESTIONS
+### QUESTIONS
 
-Connect to the target and perform a Kerberoasting attack. What is the password for the svc-iam user?
+#### Connect to the target and perform a Kerberoasting attack. What is the password for the svc-iam user?
 ANSWER:
 
-After performing the Kerberoasting attack, connect to DC1 (172.16.18.3) as 'htb-student:HTB_@cademy_stdnt!' and look at the logs in Event Viewer. What is the ServiceSid of the webservice user?
+#### After performing the Kerberoasting attack, connect to DC1 (172.16.18.3) as 'htb-student:HTB_@cademy_stdnt!' and look at the logs in Event Viewer. What is the ServiceSid of the webservice user?
 ANSWER:
 
 <button onclick="history.back()">Go Back</button>
