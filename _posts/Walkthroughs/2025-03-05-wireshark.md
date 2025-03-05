@@ -1,0 +1,190 @@
+---
+layout: post
+title:  "NOTES: Wireshark: Intro to Network Traffic Analysis"
+date: 2025-03-4
+author: C. Casquatch
+comments: false
+tag: ['traffic analysis', 'networking', 'wireshark', 'htb']
+---
+
+Wireshark is a free and open-source network traffic analyser much like tcpdump but with a graphical interface. 
+
+Wireshark is multi-platform and capable of capturing live data off many different interface types (including WiFi, USB, and Bluetooth) and saving the traffic to several different formats. Wireshark allows the user to dive much deeper into the inspection of network packets than other tools. What makes Wireshark truly powerful is the analysis capability it provides, giving a detailed insight into the traffic.
+
+Features and Capabilities
+-------------------------
+
+*   Deep packet inspection for hundreds of different protocols
+*   Graphical and TTY interfaces
+*   Capable of running on most operating systems
+*   Supports Ethernet, IEEE 802.11, PPP/HDLC, ATM, Bluetooth, USB, Token Ring, Frame Relay, FDDI, among others
+*   Decryption capabilities for IPsec, ISAKMP, Kerberos, SNMPv3, SSL/TLS, WEP, and WPA/WPA2
+
+Requirements for Use
+--------------------
+
+### Windows
+
+*   The Universal C Runtime (included with Windows 10 and Windows Server 2019). Older versions require KB2999226 or KB3118401.
+*   64-bit AMD64/x86-64 or 32-bit x86 processor
+*   500 MB RAM (more for larger capture files)
+*   500 MB disk space
+*   Modern display (1280 × 1024 or higher recommended)
+*   Supported network card for capturing Ethernet and 802.11 traffic
+
+### Linux
+
+*   Runs on most UNIX and UNIX-like platforms
+*   Binary packages available for most distributions
+*   To check if Wireshark is installed:
+`which wireshark`*   To install Wireshark:
+`sudo apt install wireshark`
+
+TShark vs. Wireshark (Terminal vs. GUI)
+---------------------------------------
+
+TShark is a terminal-based tool that shares many features with Wireshark, making it useful for machines without a GUI. Wireshark, on the other hand, is a feature-rich graphical interface for traffic capture and analysis.
+
+### Basic TShark Commands
+
+*   `tshark -D` - Display available interfaces
+*   `tshark -i eth0 -w /tmp/test.pcap` - Capture packets on eth0 and write to a file
+*   `tshark -i eth0 -f "host 172.16.146.2"` - Apply a capture filter
+
+Wireshark GUI Walkthrough
+-------------------------
+
+Wireshark consists of three main panes:
+
+1.  **Packet List:** Displays an overview of each captured packet
+2.  **Packet Details:** Breaks down packet information based on encapsulation layers
+3.  **Packet Bytes:** Shows packet data in ASCII or hex format
+
+Performing Your First Capture
+-----------------------------
+
+Starting a capture in Wireshark is straightforward. Select an interface, apply any necessary filters, and begin capturing packets.
+
+Filters in Wireshark
+--------------------
+
+### Capture Filters
+
+Capture filters are applied before starting a capture and use BPF syntax:
+
+*   `host x.x.x.x` - Capture traffic for a specific host
+*   `port 80` - Capture HTTP traffic
+*   `not port 22` - Exclude SSH traffic
+
+### Display Filters
+
+Display filters refine results after capturing traffic:
+
+*   `ip.addr == 192.168.1.1` - Show traffic involving this IP
+*   `tcp.port == 443` - Show HTTPS traffic
+
+Saving a Capture
+----------------
+
+To save a capture:
+
+*   Select _File → Save_
+*   Choose a file format (default: .pcap)
+
+Termshark
+---------
+
+Termshark is a terminal-based UI for packet analysis. Download it from [GitHub](https://github.com/gcla/termshark/releases).
+
+Placeholder for Screenshots
+---------------------------
+
+_Add your own screenshots here to illustrate key points._
+
+
+Wireshark Advanced Usage
+========================
+
+In this section, we will explore some of Wireshark's more advanced functionalities. The developers have equipped it with numerous features, including the ability to track TCP sessions and extract data such as files and images. With a wide range of plugins available, Wireshark remains one of the most powerful tools for network traffic analysis.
+
+Plugins
+-------
+
+Wireshark's **Statistics** and **Analyse** tabs offer a suite of plugins that provide valuable insights into network traffic. While we cannot cover every available feature in this guide, we encourage you to experiment as you become more comfortable with the tool.
+
+### The Statistics and Analyse Tabs
+
+These tabs provide in-depth analytics and breakdowns of network data. Using them, we can generate reports on network usage, pinpoint the most active hosts, analyse conversations between endpoints, and dissect data by protocol or IP address.
+
+### Analyse Tab
+
+The **Analyse** tab provides access to several essential functions, including:
+
+*   Following TCP streams to reconstruct full conversations
+*   Filtering network traffic by conversation type
+*   Creating new packet filters
+*   Reviewing expert information generated by Wireshark
+
+Following TCP Streams
+---------------------
+
+Wireshark can reassemble TCP packets to reconstruct entire conversations in a readable format. This feature allows for the extraction of embedded data, such as images and files, from captured network traffic.
+
+### How to Follow a TCP Stream
+
+1.  Right-click on a packet from the relevant stream.
+2.  Select **Follow → TCP Stream**.
+3.  A new window will open, displaying the reassembled conversation.
+
+Alternatively, you can use the filter `tcp.stream eq #` to isolate a specific conversation within the packet capture.
+
+Extracting Data and Files from a Capture
+----------------------------------------
+
+Wireshark supports the extraction of various data types from captured streams. However, for a successful extraction, the full conversation must have been captured. If fragments are missing, the tool will be unable to reconstruct the original file.
+
+### How to Extract Files
+
+1.  Ensure the capture is complete and then stop it.
+2.  Navigate to **File → Export**.
+3.  Select the appropriate protocol format (e.g., DICOM, HTTP, SMB).
+
+Extracting FTP Data
+-------------------
+
+The File Transfer Protocol (FTP) is commonly used to move data between servers and clients. FTP operates over TCP, utilising:
+
+*   **Port 20:** Used for data transfers.
+*   **Port 21:** Handles control commands such as authentication, file listings, and transfers.
+
+Wireshark provides several useful filters for analysing FTP traffic:
+
+*   `ftp` – Displays all FTP-related traffic, helping identify hosts and servers communicating via FTP.
+*   `ftp.request.command` – Displays control commands exchanged over port 21, revealing potential usernames, passwords, and filenames.
+*   `ftp-data` – Displays file transfer data over port 20, allowing for the reconstruction of transmitted files.
+
+### Steps to Extract FTP Data
+
+1.  Filter the capture for FTP traffic using `ftp`.
+2.  Examine command exchanges with `ftp.request.command` to identify files and authentication details.
+3.  Locate the desired file and apply the `ftp-data` filter.
+4.  Select the relevant packet and follow the TCP stream.
+5.  Change the display format to **Raw** and save the extracted file.
+6.  Verify the extraction by checking the file type.
+
+Guided Lab: Traffic Analysis Workflow
+
+### QUESITONS
+
+#### What was the name of the new user created on mrb3n's host?
+ANSWER:
+
+#### How many total packets were there in the Guided-analysis PCAP?
+ANSWER:
+
+#### What was the suspicious port that was being used?
+ANSWER:
+
+
+
+<button onclick="history.back()">Go Back</button>
