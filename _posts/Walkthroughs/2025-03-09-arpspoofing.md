@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "NOTES: ARP Spoofing & Abnormality Detection: Intermediate Network Traffic Analysis"
-date: 2025-03-4
+date: 2025-03-9
 author: C. Casquatch
 comments: false
 tag: ['traffic analysis', 'networking', 'arp spoofing', 'htb']
