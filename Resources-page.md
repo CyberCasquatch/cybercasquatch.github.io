@@ -11,7 +11,8 @@ _This page is used to store resources for various types of use cases and gathere
 
 ### GENERAL
 * [Security Certification Roadmap - Paul Jerimy Media](https://pauljerimy.com/security-certification-roadmap/)
-
+* [DFIR Report](https://thedfirreport.com/)
+* 
 ### YOUTUBE
 * [Professor Messer - YouTube](https://www.youtube.com/@professormesser)
 *	[John Hammond - YouTube](https://www.youtube.com/channel/UCVeW9qkBjo3zosnqUbG7CFw)
@@ -34,6 +35,8 @@ _This page is used to store resources for various types of use cases and gathere
 *	[OWASP Top Ten](https://owasp.org/www-project-top-ten/)
 *	[Sysmon Configuration (Github)](https://github.com/olafhartong/sysmon-modular/blob/master/sysmonconfig.xml)
 *	[Sysmon Download](https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon)
+* [Uncoder.io](https://uncoder.io/)
+* [Chainsaw](https://github.com/WithSecureLabs/chainsaw)
 
 ### ELASTIC SIEM
 * [Event Fields](https://www.elastic.co/guide/en/ecs/current/ecs-event.html#field-event-code)
@@ -43,7 +46,24 @@ _This page is used to store resources for various types of use cases and gathere
 * [Security Module Fields](https://www.elastic.co/guide/en/beats/winlogbeat/master/exported-fields-security.html)
 * [Exported Fields - Filebeat Reference](https://www.elastic.co/guide/en/beats/filebeat/current/exported-fields.html)
 * [ECS Fields - Filebeat Reference](https://www.elastic.co/guide/en/beats/filebeat/current/exported-fields-ecs.html)
-  
+
+### YARA
+*	[DFIR Report: Yara Rules](https://github.com/The-DFIR-Report/Yara-Rules)
+*	[https://osintframework.com/](https://github.com/lockfale/osint-framework)
+*	[https://www.varonis.com/blog/what-is-osint](https://www.varonis.com/blog/what-is-osint)
+*	[Open Source YARA Rules](https://github.com/mikesxrs/Open-Source-YARA-rules/tree/master)
+*	[YARA Rules](https://github.com/Yara-Rules/rules/tree/master/malware)
+*	[VirusTotal-Docs](https://virustotal.github.io/yara/)
+*	[YARA Documentation](https://yara.readthedocs.io/en/latest/)
+
+### SIGMA
+* [DFIR Repoirt: Sigma Rules](https://github.com/The-DFIR-Report/Sigma-Rules)
+* [SIGMA-detection-rules](https://github.com/mdecrevoisier/SIGMA-detection-rules)
+* [JOESandbox+Sigma](https://github.com/joesecurity/sigma-rules)
+* [SigmaHQ](https://github.com/SigmaHQ/sigma/tree/master/rules) 
+
+------------------------------------------------------------------------------
+
 ***
 * [Running containers](https://docs.pwntools.com/en/stable/)
 * [Cross Site Scripting](https://owasp.org/www-community/attacks/xss/)
