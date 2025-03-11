@@ -62,6 +62,17 @@ _This page is used to store resources for various types of use cases and gathere
 * [JOESandbox+Sigma](https://github.com/joesecurity/sigma-rules)
 * [SigmaHQ](https://github.com/SigmaHQ/sigma/tree/master/rules) 
 
+### CCNA
+* [Port Assignments](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/cc959828(v=technet.10))
+* [IP Routing - Troubleshooting](https://www.cisco.com/c/en/us/tech/ip/ip-routing/tsd-technology-support-troubleshooting-technotes-list.html#t6)
+* [Config optional Spanning Tree features](https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst3560/software/release/12-2_52_se/configuration/guide/3560scg/swstpopt.html#wp1031380)
+* [Administrative Distance](https://www.cisco.com/c/en/us/support/docs/ip/border-gateway-protocol-bgp/15986-admin-distance.html)
+* [WLC Config Guide](https://www.cisco.com/c/en/us/td/docs/wireless/controller/8-5/config-guide/b_cg85/wlan_security.html#ID996)
+* [IP Routing - Troubleshooting](https://www.cisco.com/c/en/us/tech/ip/ip-routing/tsd-technology-support-troubleshooting-technotes-list.html#t6)
+* [WLC Layer 2 & 3 Security Compatibility Matrix](https://www.cisco.com/c/en/us/support/docs/wireless/4400-series-wireless-lan-controllers/106082-wlc-compatibility-matrix.html#matrix)
+* [Switches: ARP or CAM](https://www.cisco.com/c/en/us/support/docs/switches/catalyst-6500-series-switches/71079-arp-cam-tableissues.html#backinfo)
+* [IPV6 Address Types](https://www.ripe.net/media/documents/ipv6-address-types.pdf)
+
 ------------------------------------------------------------------------------
 
 ***
