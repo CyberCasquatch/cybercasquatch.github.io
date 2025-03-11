@@ -4,7 +4,7 @@ title:  "NOTES: Application Layer Attacks: Intermediate Network Traffic Analysis
 date: 2025-03-9
 author: C. Casquatch
 comments: false
-tag: ['traffic analysis', 'networking', 'http', 'XSS', 'telnet', 'udp', 'SSL', 'DNS' 'htb']
+tag: ['traffic analysis', 'networking', 'http', 'XSS', 'telnet', 'udp', 'SSL', 'DNS', 'htb']
 ---
 
 
