@@ -1,3 +1,5 @@
+DRAFT
+<!--
 ---
 layout: post
 title:  "Security Monitoring & SIEM Fundamentals: SIEM Visualisation Example 4 - Users Added Or Removed From a Local Group (Within A Specific Timeframe)"
@@ -6,7 +8,7 @@ author: C. Casquatch
 comments: false
 tag: ['soc', 'siem', 'elastic']
 ---
-
+-->
 > In this SIEM visualisation example, we aim to monitor user additions or removals from the local **"Administrators"** group. This visualisation focuses on identifying changes made to high-privilege groups within a specific timeframe, from 5 March 2023 to the present.
 
 
