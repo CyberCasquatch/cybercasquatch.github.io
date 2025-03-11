@@ -4,7 +4,7 @@ title:  "Print Spooler & NTLM Relaying: Windows Attacks & Defense"
 date: 2025-03-4
 author: C. Casquatch
 comments: false
-tag: ['windows', 'ntlm', 'spooler' 'htb']
+tag: ['windows', 'ntlm', 'spooler', 'htb']
 ---
 
 =============================
