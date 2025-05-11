@@ -21,9 +21,9 @@ _Make sure to download the Brutus.zip to a safe place to analyse._
 #### Analyse the auth.log. What is the IP address used by the attacker to carry out a brute force attack?
 
 -- I don't have a screenshot for this one, my notes say that I used:
-'''
+```
 less auth.log
-'''
+```
 to find the IP address.
 
 
@@ -39,23 +39,23 @@ to find the IP address.
 ![Task 3](/assets/images/Brutus/lol@tryingtaskthree.JPG)
 
 -- Here I tried the 
-'''
+```
 last -f wtmp
-'''
+```
 but it didn't work - we don't see the time stamp we want here.
 ![Task 3](/assets/images/Brutus/task3more.JPG)
 
 -- Here I tried 
-'''
+```
 who wtmp
-'''
+```
 However, we need the seconds for our time stamp so this doesn't work for us. Close, but not the answer.
 ![Task 3](/assets/images/Brutus/task3.JPG)
 
 -- Here I tried 
-'''
+```
 utmpdump wtmp
-'''
+```
 Now I can see seconds in the time stamps. Cool cool cool. I want to see root and the attacker's IP, and it will be the first one in the line with these two pieces of info because we are looking for the login time.
 ![Task 3](/assets/images/Brutus/task3(2).JPG)
 
