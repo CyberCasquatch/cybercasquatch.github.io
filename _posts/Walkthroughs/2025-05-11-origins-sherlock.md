@@ -52,7 +52,7 @@ _Make sure to download the Origins.zip to a safe place to analyse._
 - I used the hint for this one. We can filter for 'ftp-data' and find the answer. 
 
 #### Attackers were able to compromise the credentials of a backup SSH server. What is the password for this SSH server?
-- I used the hint for this one as well. We can go to File-> Export Objects-> FTP-Data. The files here are may contain the info we need.
+- I used the hint for this one as well. We can go to File-> Export Objects-> FTP-Data. The files here may contain the info we need.
 ![Task 7](/assets/images/Origins/task7.JPG)
 ![Task 7](/assets/images/Origins/task7c.JPG)
 
