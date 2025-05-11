@@ -13,6 +13,7 @@ tag: ['very easy', 'Brutus', 'sherlock', 'HTB']
 
 ### Environments and Utilities Used
 * Parrot OS
+* Terminal
 
 _Make sure to download the Brutus.zip to a safe place to analyse._
 
