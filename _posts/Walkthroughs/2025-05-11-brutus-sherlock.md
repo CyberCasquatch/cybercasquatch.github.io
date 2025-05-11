@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Sherlock Brutus: Very Easy"
-date:   2024-05-11
+date:   2025-05-11
 author: C. Casquatch
 comments: false
 tag: ['very easy', 'Brutus', 'sherlock', 'HTB']
