@@ -11,13 +11,16 @@ tag: ['very easy', 'Brutus', 'sherlock', 'HTB']
 > After gaining access to the server, the attacker performed additional activities, which we can track using auth.log. Although auth.log is primarily used for brute-force analysis, 
 > we will delve into the full potential of this artifact in our investigation, including aspects of privilege escalation, persistence, and even some visibility into command execution."
 
+
 ### Environments and Utilities Used
 * Parrot OS
 * Terminal
 
 _Make sure to download the Brutus.zip to a safe place to analyse._
 
-### Tasks
+
+## Tasks
+
 
 #### Analyse the auth.log. What is the IP address used by the attacker to carry out a brute force attack?
 
