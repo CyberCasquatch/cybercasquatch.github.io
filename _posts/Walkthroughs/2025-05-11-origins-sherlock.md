@@ -63,7 +63,7 @@ _Make sure to download the Origins.zip to a safe place to analyse._
 #### The scope of the incident is huge as Forela's s3 buckets were also compromised and several GB of data were stolen and leaked.
 #### It was also discovered that the attackers used social engineering to gain access to sensitive data and extort it. 
 #### What is the internal email address used by the attacker in the phishing email to gain access to sensitive data stored on s3 buckets?
-- This answer can be found when you read the first file we opened for task 7.
+- This answer can be found in the same .txt file we used for task 8.
 
 * * *
 
