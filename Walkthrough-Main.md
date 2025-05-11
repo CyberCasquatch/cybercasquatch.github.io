@@ -17,6 +17,7 @@ comments: false
 
 ## Hack The Box
 * * *
+### [Sherlock: Brutus](_posts/Walkthroughs/2025-05-11-brutus-sherlock.md)
 ### [SIEM Example One - HTB](_posts/Walkthroughs/2025-01-01-SIEMExampleOne-HTB.markdown)
 ### [SIEM Example Two - HTB](_posts/Walkthroughs/2025-01-01-SIEMExampleTwo-HTB.markdown)
 ### [SIEM Example Three - HTB](_posts/Walkthroughs/2025-01-01-SIEMExampleThree-HTB.markdown)
