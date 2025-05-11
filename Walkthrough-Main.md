@@ -17,12 +17,8 @@ comments: false
 
 ## Hack The Box
 * * *
+### [Sherlock: Origins](_posts/Walkthroughs/2025-05-11-origins-sherlock.md)
 ### [Sherlock: Brutus](_posts/Walkthroughs/2025-05-11-brutus-sherlock.md)
-### [SIEM Example One - HTB](_posts/Walkthroughs/2025-01-01-SIEMExampleOne-HTB.markdown)
-### [SIEM Example Two - HTB](_posts/Walkthroughs/2025-01-01-SIEMExampleTwo-HTB.markdown)
-### [SIEM Example Three - HTB](_posts/Walkthroughs/2025-01-01-SIEMExampleThree-HTB.markdown)
-### [SIEM Example Four - HTB](_posts/Walkthroughs/2025-01-01-SIEMExampleFour-HTB.markdown)
-### [SIEM Skills Assessment - HTB](_posts/Walkthroughs/2025-01-01-SIEMSkillsAssessment-HTB.markdown)
 * * *
 
 [Home](./index.md)
