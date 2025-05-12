@@ -15,6 +15,7 @@ tag: ['very easy', 'Origins', 'sherlock', 'HTB', 'malware analysis']
 * Parrot OS
 * Terminal
 * Ghidra
+* VirusTotal
 
 _Make sure to download the Loggy.zip to a safe place to analyse._
 
