@@ -4,7 +4,7 @@ title:  "Sherlock Loggy: Very Easy"
 date:   2025-05-12
 author: C. Casquatch
 comments: false
-tag: ['very easy', 'Origins', 'sherlock', 'HTB', 'malware analysis']
+tag: ['very easy', 'Loggy', 'sherlock', 'HTB', 'malware analysis']
 ---
 
 > From HTB website, our scenario "Janice from accounting is beside herself! She was contacted by the SOC to tell her that her work credentials were found on the dark web by the threat intel team. 
