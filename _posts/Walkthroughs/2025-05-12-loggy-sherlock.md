@@ -100,6 +100,7 @@ strings Loggy.exe | grep -i "addressname"
 #### What are the threat actor’s credentials?
 :( I have looked in the same place of the file that other users have reported that they found the credentials but I could not find them in the same place.
 This screenshot shows the place in the malware that these credentials were found for other users but in my case I couldn't see them.
+And until I am smart enough to know where else to look I will leave this question empty.
 ![Task 7](/assets/images/Loggy/task7a.JPG)
 
 
