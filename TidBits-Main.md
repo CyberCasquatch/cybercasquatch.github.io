@@ -6,7 +6,7 @@ author: C. Casquatch
 comments: false
 ---
 
-## Short and sweet insights
+## Brain farts
 ### notes for future squatch
 
 ***
