@@ -7,7 +7,7 @@ comments: false
 ---
 
 ## Short and sweet insights
-### The first 7 TidBit writings are from a wordpress blog that I had.
+### notes for future squatch
 
 ***
 
