@@ -7,7 +7,7 @@ comments: false
 ---
 
 
-_This page is used to store resources for various types of use cases and gathered from many different types of projects that I have completed. I have found these resources useful and have tried to list & group them appropriately._
+_There might be something useful to you, here._
 
 ### GENERAL
 * [Security Certification Roadmap - Paul Jerimy Media](https://pauljerimy.com/security-certification-roadmap/)
