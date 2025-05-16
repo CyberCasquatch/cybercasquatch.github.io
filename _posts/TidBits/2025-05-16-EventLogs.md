@@ -17,3 +17,5 @@ deletion. Administrators determine which events to log, in accordance with their
 Application logs contain events logged by applications. Which events get logged is determined by the
 application developers.
 System logs contain events logged by the operating system, such as driver issues during startup
+
+<button onclick="history.back()">Go Back</button>
