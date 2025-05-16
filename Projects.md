@@ -6,7 +6,7 @@ author: C. Casquatch
 comments: false
 ---
 
-# A list of completed activities by the squatch
+# A list of activities by the squatch
 
 | 2024                                                                                   | 2025        |
 |:---------------------------------------------------------------------------------------|:------------|
