@@ -16,7 +16,7 @@ comments: false
 |:------------------|
 |[TidBit Event Logs](_posts/TidBits/2025-05-16-EventLogs.md) |
 |[TidBit Crown Jewel 1 + 2](_posts/TidBits/2025-05-16-TBCJ12.md) |
-
+|[First GNS3 Network](_posts/TidBits/2025-05-18-FirstGNS3.md) |
 
 | 2024              |
 |:------------------|
