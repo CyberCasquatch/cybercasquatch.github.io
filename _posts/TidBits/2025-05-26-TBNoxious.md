@@ -115,7 +115,7 @@ Open `Statistics -> Endpoints` in Wireshark to view the top talkers. Look for IP
 - Save to a file and use:
 
   ```bash
-  hashcat -a 0 -m 5600 hashfile.txt rockyou.txt
+  hashcat -a 0 -m 5600 /path/to/file/hashfile.txt /path/to/file/rockyou.txt
   ```
 
 **Note:** Don’t forget the colon after `NTProofStr` – it’ll save you 30 minutes of frustration.
