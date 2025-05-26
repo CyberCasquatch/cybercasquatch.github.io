@@ -161,7 +161,7 @@ show running-config interface gi0/x
 
 SW1:
 ![Screenshot 9](/assets/images/GNS3/vlans/VLANS&Trunk/sw1verifyint.png)
-![Screenshot 10](/aassets/images/GNS3/vlans/VLANS&Trunk/sw2configs.png)
+![Screenshot 10](/assets/images/GNS3/vlans/VLANS&Trunk/sw2configs.png)
 ![Screenshot 11](/assets/images/GNS3/vlans/VLANS&Trunk/sw3configs.png)
 
 ---
