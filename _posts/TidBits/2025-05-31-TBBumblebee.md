@@ -40,7 +40,7 @@ You should see the `sqlite>` prompt.
 
 To view the schema of the `phpbb_users` table:
 ```
-.schema php_users
+.schema phpbb_users
 ```
 
 ![screenshot 2](/assets/images/bumblebee/screenshot2.png)
