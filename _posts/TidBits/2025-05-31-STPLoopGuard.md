@@ -13,7 +13,9 @@ Lab by [Rene Molenaar](https://gns3vault.com/switching/spanning-tree-loop-guard)
 
 # GNS3Vault Lab: Spanning Tree Loop Guard (Modified Topology)
 
-This is a step-by-step guide for completing the **Spanning Tree Loop Guard** lab using the following **modified topology**, where **SW2 and SW3 are swapped** to ensure Loop Guard can be demonstrated properly.
+This is a step-by-step guide for completing the **Spanning Tree Loop Guard** lab using the following **modified topology**, where **SW2 and SW3 are swapped** to ensure Loop Guard can be demonstrated properly. 
+
+PSA: I could not, for the life of me, get SW3 to attain an alt port but SW2 would (I probably didn't check the addresses properly; i'm going to assume human error at this point since i could get SW2 to take the alt port) 
 
 ## 🖥️ Modified Topology
 
