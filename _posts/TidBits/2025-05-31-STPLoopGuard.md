@@ -9,155 +9,131 @@ tag: ['GNS3', 'root guard', 'Networking', 'spanning-tree']
 
 > Loops
 
-**Objective:**
-- Configure SW1 as the root bridge for VLAN 1.
-- Configure STP so that SW3's gi0/1 interface becomes an Alternate Port.
-- Simulate a unidirectional link from SW2 by filtering BPDUs.
-- Enable Loop Guard on SW3 and observe its behavior.
+Lab by [Rene Molenaar](https://gns3vault.com/switching/spanning-tree-loop-guard)
+
+# GNS3Vault Lab: Spanning Tree Loop Guard (Modified Topology)
+
+This is a step-by-step guide for completing the **Spanning Tree Loop Guard** lab using the following **modified topology**, where **SW2 and SW3 are swapped** to ensure Loop Guard can be demonstrated properly.
+
+## 🖥️ Modified Topology
+
+![Screenshot topology](/assets/images/GNS3/STPLoopGuard/topology.png)
+
+- **SW1 gi0/1 <-> SW3 gi0/0**
+- **SW1 gi0/0 <-> SW2 gi0/0**
+- **SW3 gi0/1 <-> SW2 gi0/1**
+
+## 🎯 Lab Objectives
+
+1. Configure SW1 as the root bridge for VLAN 1.
+2. Configure your spanning-tree topology so the gi0/x interface on **SW2** becomes an alternate port.
+3. Configure the gi0/1 interface on **SW3** to not send or receive any BPDUs (simulate a loop).
+4. Enable Loop Guard on all switches to detect the loop and block the offending port.
+5. Verify the loop is detected and **SW2** shuts its gi0/x interface.
 
 ---
 
-## Topology Used
+## 🔧 Step-by-Step Configuration
 
-![Screenshot topology](/assets/images/GNS3/STPLoopGuard/topology.png)
+### 🟩 Step 1: Make SW1 the Root Bridge
 
-- SW1 gi0/1 <--> SW2 gi0/0
-- SW1 gi0/0 <--> SW3 gi0/0
-- SW2 gi0/1 <--> SW3 gi0/1
+```
+SW1(config)# spanning-tree vlan 1 priority 0
+```
+
+This sets a lower priority to ensure SW1 becomes the root bridge.
+
+![Screenshot 1](/assets/images/GNS3/STPLoopGuard/sw1spantree.png)
 
 ---
 
-## Step-by-Step Configuration
+### 🟩 Step 2: Let STP Elect Alternate Port
 
-### Step 1: Set SW1 as the Root Bridge
-```bash
-conf t
-spanning-tree vlan 1 priority 0
-end
+Allow STP to calculate paths. On **SW2**, one interface should become an alternate port.
+
+Verify:
+
+```
+SW2# show spanning-tree vlan 1
 ```
 
-![Screenshot 1](/assets/images/GNS3/STPLoopGuard/sw1root.png)
+You should see one port in **Alternate** state.
 
-### Step 2: Lower Priority on SW2 and SW3
-```bash
-conf t
-spanning-tree vlan 1 priority 28672
-end
-```
-Do this on **both SW2 and SW3**.
-
-**[Insert Screenshot: SW2 and SW3 STP priority confirmation]**
-![Screenshot 2](/assets/images/GNS3/STPLoopGuard/sw2rootverification.png)
-![Screenshot 3](/assets/images/GNS3/STPLoopGuard/sw3rootverification.png)
-
-### Step 3: Adjust STP Path Cost
-
-On **SW3**:
-```bash
-conf t
-interface gi0/0  # SW3 to SW1
- spanning-tree vlan 1 cost 10
-interface gi0/1  # SW3 to SW2
- spanning-tree vlan 1 cost 100
-end
-```
-
-This ensures SW3 prefers the path via SW1.
-
-**[Insert Screenshot: SW3 STP port roles after cost adjustment]**
-![Screenshot topology](/assets/images/GNS3/STPLoopGuard/topology.png)
-
-### Step 4: Enable Loop Guard on SW3
-```bash
-conf t
-interface gi0/1
- spanning-tree guard loop
-end
-```
-
-**[Insert Screenshot: Loop Guard configured]**
-![Screenshot topology](/assets/images/GNS3/STPLoopGuard/topology.png)
-
-### Step 5: Simulate Unidirectional Link by Filtering BPDUs
-On **SW2**:
-```bash
-conf t
-interface gi0/1
- spanning-tree bpdufilter enable
-end
-```
-
-This stops SW2 from sending BPDUs to SW3.
-
-**[Insert Screenshot: BPDU filter enabled]**
-![Screenshot topology](/assets/images/GNS3/STPLoopGuard/topology.png)
-
-### Step 6: Wait and Check for Inconsistent Port
-After ~60 seconds, check SW3:
-```bash
-show spanning-tree inconsistentports
-```
-
-Expected:
-```
-Name                Interface             Inconsistency
-------------------  --------------------  ------------------
-VLAN0001            Gi0/1                 Loop Inconsistent
-```
-
-**[Insert Screenshot Placeholder: Expected Inconsistent Port Output]**
-![Screenshot topology](/assets/images/GNS3/STPLoopGuard/topology.png)
+![Screenshot 2](/assets/images/GNS3/STPLoopGuard/sw2spantree.png)
+![Screenshot 3](/assets/images/GNS3/STPLoopGuard/sw3spantree.png)
 
 ---
 
-## ⚠️ Outcome
+### 🟩 Step 3: Disable BPDUs on SW3 gi0/1
 
-Despite completing all configuration steps and verifying that:
-- SW1 was elected root
-- STP path costs favored SW1 over SW2
-- Loop Guard was enabled
-- BPDUs were filtered from SW2
+This simulates a misconfigured or malicious device.
 
-... the `show spanning-tree inconsistentports` output **did not show any loop-inconsistent ports**.
+```
+SW3(config)# interface gi0/1
+SW3(config-if)# spanning-tree bpdufilter enable
+```
 
-### ❓ Why?
-This appears to be a limitation of the **Cisco IOSvL2 15.2-1** image in GNS3:
+This stops BPDUs on gi0/1.
 
-- Alternate port roles were not consistently assigned.
-- Loop Guard behavior was not fully triggered.
-
-### 🧪 Conclusion
-The lab structure and configs are correct, but due to the limitations in IOSvL2, Loop Guard could not be fully demonstrated in this virtual environment. Consider trying this lab on real switches (e.g. Cisco 2960) or in a more feature-complete emulator.
-
-**[Insert Screenshot: show spanning-tree vlan 1 final status on SW3]**
-![Screenshot topology](/assets/images/GNS3/STPLoopGuard/topology.png)
+![Screenshot 4](/assets/images/GNS3/STPLoopGuard/sw3bpdufilterenable.png)
 
 ---
 
-## ✅ Commands Summary
-```bash
-! Set root bridge
-spanning-tree vlan 1 priority 0
+### 🟩 Step 4: Enable Loop Guard
 
-! Lower other switches' priority
-spanning-tree vlan 1 priority 28672
+Apply globally (if supported):
 
-! Set cost
-interface gi0/0
- spanning-tree vlan 1 cost 10
-interface gi0/1
- spanning-tree vlan 1 cost 100
-
-! Enable Loop Guard
-interface gi0/1
- spanning-tree guard loop
-
-! Filter BPDUs (simulate failure)
-interface gi0/1
- spanning-tree bpdufilter enable
-
-! Check for loop
-show spanning-tree inconsistentports
 ```
+SW1(config)# spanning-tree loopguard default
+SW2(config)# spanning-tree loopguard default
+SW3(config)# spanning-tree loopguard default
+```
+
+Or per-interface:
+
+```
+SWx(config)# interface gi0/x
+SWx(config-if)# spanning-tree guard loop
+```
+
+Apply to all inter-switch links.
+
+---
+
+### 🟩 Step 5: Verify Detection
+
+On **SW2**, the alternate port may transition to forwarding since no BPDUs are received from SW3.
+
+Loop Guard should detect the issue and block the port as **Loop Inconsistent**.
+
+Check with:
+
+```
+SW2# show spanning-tree inconsistentports
+```
+![Screenshot 1](/assets/images/GNS3/STPLoopGuard/sw2inconsistentport.png)
+
+You should see:
+
+```
+Name                   Interface                Inconsistency
+--------------------- ------------------------ --------------
+VLAN0001              Gi0/1                    Loop Inconsistent
+```
+
+This means Loop Guard is working and a loop is prevented.
+
+---
+
+## 🧹 Restore Normal Operation
+
+```
+SW3(config)# interface gi0/1
+SW3(config-if)# no spanning-tree bpdufilter enable
+
+SW2# clear spanning-tree inconsistentports
+```
+
+---
 
 <button onclick="history.back()">Go Back</button>
