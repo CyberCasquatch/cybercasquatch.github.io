@@ -35,14 +35,15 @@ sqlite3 phpbb.sqlite3
 
 You should see the `sqlite>` prompt.
 
-![screenshot 1](assets/images/bumblebee/screenshot1.png)
+![screenshot 1](/assets/images/bumblebee/screenshot1.png)
+
 
 To view the schema of the `phpbb_users` table:
 ```
 .schema php_users
 ```
 
-![screenshot 2](assets/images/bumblebee/screenshot2.png)
+![screenshot 2](/assets/images/bumblebee/screenshot2.png)
 
 ---
 
@@ -53,7 +54,7 @@ Run the following query:
 SELECT user_id, username, user_email, user_lastvisit, user_ip FROM phpbb_users;
 ```
 
-![screenshot 3](assets/images/bumblebee/screenshot3.png)
+![screenshot 3](/assets/images/bumblebee/screenshot3.png)
 
 To narrow it down further:
 ```
@@ -91,7 +92,7 @@ WHERE poster_id = 52;
 
 From the `post_text`, we find HTML content.
 
-![screenshot 4](assets/images/bumblebee/screenshot4.png)
+![screenshot 4](/assets/images/bumblebee/screenshot4.png)
 
 Export to HTML:
 ```
@@ -102,7 +103,7 @@ Export to HTML:
 
 The file will be saved in the directory your terminal is pointed to.
 
-![screenshot 5](assets/images/bumblebee/screenshot5.png)
+![screenshot 5](/assets/images/bumblebee/screenshot5.png)
 
 Look for this function in the HTML:
 
@@ -149,7 +150,7 @@ Query the `phpbb_config` table:
 SELECT * FROM phpbb_config WHERE config_name LIKE 'ldap_%';
 ```
 
-![screenshot 6](assets/images/bumblebee/screenshot6.png)
+![screenshot 6](/assets/images/bumblebee/screenshot6.png)
 
 ---
 
@@ -162,7 +163,7 @@ grep -E '^10.255.254.2' access.log | head
 
 Look for the last quoted string in the line. That’s your user agent.
 
-![screenshot 8](assets/images/bumblebee/screenshot8.png)
+![screenshot 8](/assets/images/bumblebee/screenshot8.png)
 
 ---
 
@@ -184,7 +185,7 @@ FROM
 INNER JOIN phpbb_users ON phpbb_log.user_id = phpbb_users.user_id;
 ```
 
-![screenshot 7](assets/images/bumblebee/screenshot7.png)
+![screenshot 7](/assets/images/bumblebee/screenshot7.png)
 
 Note the timestamp and IP address of the action.
 
@@ -202,7 +203,7 @@ Explanation:
 - `:1` filters for times starting with 1 (10:00–19:59).
 - `tail` gets the latest relevant lines.
 
-![screenshot 9](assets/images/bumblebee/screenshot9.png)
+![screenshot 9](/assets/images/bumblebee/screenshot9.png)
 
 Note: The write-up indicates that you have to subtract an hour from the log time to get UTC. Not sure why—maybe just take their word for it.
 
