@@ -10,7 +10,7 @@ comments: false
 
 ## Hack The Box
 * * *
-### [Sherlock: Logjammer](_posts/Walkthroughs/2025-06-02-Logjammer.md)
+### [Sherlock: Logjammer](_posts/Walkthroughs/2025-06-02-Log-jammer.md)
 ### [Sherlock: Origins](_posts/Walkthroughs/2025-05-11-origins-sherlock.md)
 ### [Sherlock: Brutus](_posts/Walkthroughs/2025-05-11-brutus-sherlock.md)
 * * *
