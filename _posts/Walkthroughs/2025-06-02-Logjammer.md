@@ -145,7 +145,7 @@ The original write-up for this used Splunk - I didn't use that to analyse these 
   2. Search other logs (System, PowerShell, etc.) for Event ID 104.
   3. Note which **log name** was cleared and by whom.
 
-![Task 12](/aassets/images/LogJammer/screenshot8.png)
+![Task 12](/assets/images/LogJammer/screenshot8.png)
 
 ---
 
