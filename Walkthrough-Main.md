@@ -6,7 +6,14 @@ author: C. Casquatch
 comments: false
 ---
 
-# Welcome to the ultimate hub for all kinds of walkthroughs.
+# Welcome to the hub of walkthroughs
+
+## Hack The Box
+* * *
+### [Sherlock: Logjammer](_posts/Walkthroughs/2025-06-02-Logjammer.md)
+### [Sherlock: Origins](_posts/Walkthroughs/2025-05-11-origins-sherlock.md)
+### [Sherlock: Brutus](_posts/Walkthroughs/2025-05-11-brutus-sherlock.md)
+* * *
 
 ## TryHackMe
 * * *
@@ -14,11 +21,5 @@ comments: false
 ### [Snort Room Walkthrough](_posts/Walkthroughs/2024-09-03-Snort-Walkthrough.markdown)
 ### [CI/CD Pipeline Room Walkthrough](_posts/Walkthroughs/2024-04-16-CI-CD-Pipeline.md)
 * * * 
-
-## Hack The Box
-* * *
-### [Sherlock: Origins](_posts/Walkthroughs/2025-05-11-origins-sherlock.md)
-### [Sherlock: Brutus](_posts/Walkthroughs/2025-05-11-brutus-sherlock.md)
-* * *
 
 [Home](./index.md)
