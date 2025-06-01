@@ -7,7 +7,7 @@ comments: false
 tag: ['GNS3', 'bpduguard', 'Networking', 'spanning-tree']
 ---
 
-> Lab from ![Renee Molenaar](https://gns3vault.com/switching/spanning-tree-bpdu-guard)
+> Lab from [Renee Molenaar](https://gns3vault.com/switching/spanning-tree-bpdu-guard)
 
 
 ![topology](/assets/images/GNS3/STPBPDUguard/topology.png)
