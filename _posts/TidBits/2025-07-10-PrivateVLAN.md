@@ -96,21 +96,27 @@ SW1(config-if)# no shutdown
 ### Confirm VLAN configs
 
 > Showing all Vlans
+
 ![Screenshot 2](/assets/images/GNS3/vlans/privatevlan/confirmvlanconfigvlan.png)
 
 > VLAN gi0/0 configuration
+
 ![Screenshot 3](/assets/images/GNS3/vlans/privatevlan/vlanconfigg00.png)
 
 > VLAN gi0/1 configuration
+
 ![Screenshot 4](/assets/images/GNS3/vlans/privatevlan/vlanconfigg01.png)
 
 > VLAN gi0/2 configuration
+
 ![Screenshot 5](/assets/images/GNS3/vlans/privatevlan/vlanconfigg02.png)
 
 > VLAN gi0/3 configuration
+
 ![Screenshot 6](/assets/images/GNS3/vlans/privatevlan/vlanconfigg03.png)
 
 > VLAN gi1/0 configuration
+
 ![Screenshot 7](/assets/images/GNS3/vlans/privatevlan/vlanconfigg10.png)
 
 
@@ -174,9 +180,11 @@ WWW2(config-if)# no shutdown
 Use ping from each router to validate.
 
 > Pinging from DNS2 to confirm success or fail
+
 ![Screenshot 8](/assets/images/GNS3/vlans/privatevlan/DNS2pingtest.png)
 
 > Pinging from WWW2 to confirm success or fail
+
 ![Screenshot 9](/assets/images/GNS3/vlans/privatevlan/WWW2egping.png)
 
 
