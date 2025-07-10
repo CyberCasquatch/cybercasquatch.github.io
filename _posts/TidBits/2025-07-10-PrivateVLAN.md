@@ -8,7 +8,7 @@ tag: ['GNS3', 'PRIVATE-VLAN', 'Networking', 'vlan']
 ---
 
 > Lab from [Renee Molenaar](https://gns3vault.com/switching/private-vlan)
-
+> NOTE: I know there is a mismatch on interfaces between the fast ethernet and gigabit ethernet.
 
 ## 🧱 Topology Overview
 
