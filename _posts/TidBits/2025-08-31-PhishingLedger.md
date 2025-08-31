@@ -7,9 +7,14 @@ comments: false
 tag: ['phishing', 'ledger',]
 ---
 
--- Phishing Attack regarding Ledger 
+-- Phishing Attack regarding Ledger - this was an excercise for myself to see what I could find out. 
 
 ## Overview
+
+There are letters being sent to Ledger customers that try to get the victim to input a secret passphrase into a website that is owned by scammers.
+
+![Photo1](/assets/images/xss/Picture1.png) !! Photo of letter
+
 
 [#StopTheScammers](https://www.ledger.com/phishing-campaigns-status)
 
@@ -20,18 +25,17 @@ The IP address for ledger.easycheckactivate.com is 104.250.164.8
 It comes from Iran and belongs to LinitedNetwork-AS Network LTD, GB.
 A TLS certificate was issued by XeroSSL RSA Domain Secure Site CA on August 28th 2025 and if valid for 3 months.
 
-This domain name is targeting the [Ledger](https://www.ledger.com/ledger-live) Crypto Wallet brand. We assume costumer information for this phishing attempt has come from the [2020 Breach](https://haveibeenpwned.com/Breach/Ledger#:~:text=In%20June%202020%2C%20the%20hardware%20crypto%20wallet%20manufacturer,and%20included%20names%2C%20physical%20addresses%20and%20phone%20numbers.) that has compromised customer email addresses, names, phone numbers, and physical addresses. You can also read Ledger's response [here](https://www.ledger.com/addressing-the-july-2020-e-commerce-and-marketing-data-breach)
+This domain name is targeting the [Ledger](https://www.ledger.com/ledger-live) Crypto Wallet brand. We assume costumer information for this phishing attempt has come from the [2020 Breach](https://haveibeenpwned.com/Breach/Ledger#:~:text=In%20June%202020%2C%20the%20hardware%20crypto%20wallet%20manufacturer,and%20included%20names%2C%20physical%20addresses%20and%20phone%20numbers.) that has compromised email addresses, names, phone numbers, and physical addresses. You can also read Ledger's response [here](https://www.ledger.com/addressing-the-july-2020-e-commerce-and-marketing-data-breach)
 
 I found an article talking about it [here](https://meme-insider.com/en/article/ledger-transaction-check-update-2025/) - they just talk about the update but don't mention anything about a phishing campaign.
 
 ## Start:
 
-I wanted to figure out where the letter came from. 
-
-![Photo1](/assets/images/xss/Picture1.png) !! Photo of letter
+I wanted to figure out where the letter came from. So i started with the physical. 
 
 I looked into the barcode on the envelope.
-![Photo1](/assets/images/xss/Picture1.png) !! Photo of envelope
+![Photo2](/assets/images/xss/Picture1.png) !! Photo of envelope
+
 
 I did not take care with the stamp. I forcused on the barcode and lettering on top. 
 
@@ -62,7 +66,7 @@ The domain 'easycheckactivate.com' appears to impersonate legitimate financial/b
 And the path at the end? It's a Base64 encoded string using the victim's name. I have left it out of this report as with other personal details.
 
 I started with urlvoid.com:
-![Photo1](/assets/images/xss/Picture1.png) !! urlvoid.com
+![Photo3](/assets/images/xss/Picture1.png) !! urlvoid.com
 
 Here it says the domain was registered on the 2nd of August 2025. The letter was recieved a week after this registration. 
 The letter also indicates a time crunch of the end of August for the target to follow the instructions from the QR code to apply a new security feature called 'Transaction Check'. 
@@ -128,7 +132,7 @@ I found Uzair Gadit [here](https://en.incarabia.com/disruptcom-commits-us100mill
 
 OK, let's do a whois lookup on the domain 'easycheckactivate.com'. This time i used whois.domaintools.com - because why not. 
 
-![Photo1](/assets/images/xss/Picture1.png) !! whois.domaintools
+![Photo4](/assets/images/xss/Picture1.png) !! whois.domaintools
 
 info from this check:
 ```
@@ -193,7 +197,7 @@ URL of the ICANN WHOIS Data Problem Reporting System: http://wdprs.internic.net/
 
 what's matbao.net?
 
-![Photo1](/assets/images/xss/Picture1.png) !! matbao.net
+![Photo5](/assets/images/xss/Picture1.png) !! matbao.net
 
 Oh, right. Domain services. 
 
