@@ -11,7 +11,7 @@ tag: ['phishing', 'ledger',]
 
 ## Overview
 
-[#StopTheScammers(https://www.ledger.com/phishing-campaigns-status)]
+[#StopTheScammers](https://www.ledger.com/phishing-campaigns-status)
 
 Virus total shows nothing for ledger.easycheckactivate.com and easycheckactivate.com
 URL.io has potential malicious activity. 
@@ -20,7 +20,7 @@ The IP address after ledger.easycheckactivate.com is 104.250.164.8
 It comes from Iran and belongs to LinitedNetwork-AS Network LTD, GB.
 A TLS certificate was issued by XeroSSL RSA Domain Secure Site CA on August 28th 2025 and if valid for 3 months.
 
-This domain name is targeting the Ledger [(https://www.ledger.com/ledger-live)] Crypto Wallet brand.
+This domain name is targeting the [Ledger](https://www.ledger.com/ledger-live) Crypto Wallet brand.
 
 
 ## Start:
@@ -41,12 +41,12 @@ Scanned at 21.08.2025 @ 2130
 
 I left the barcode covered, as the DPID (delivery Point Identifier) is there. 
 The customer information have been left as a 'filler' mark, which means that we don't get to know where it come from other than it was processed in the western syndey letter facility.
-Basic bitch information on barcoding [This(https://auspost.com.au/content/dam/auspost_corp/media/documents/barcode-and-labels-guide.pdf)] and [This(https://auspost.com.au/content/dam/auspost_corp/media/documents/barcoding-fact-sheet.pdf)]
-From [here(https://tritonstore.com.au/australia-post-barcode/)] I gathered that it is a 4-state 37-cust barcode.
-But [This(https://auspost.com.au/content/dam/auspost_corp/media/documents/customer-barcode-technical-specifications-aug2012.pdf)] document is the one I used to decode the bar until i figured out that the customer information
+Basic bitch information on barcoding [This](https://auspost.com.au/content/dam/auspost_corp/media/documents/barcode-and-labels-guide.pdf) and [This](https://auspost.com.au/content/dam/auspost_corp/media/documents/barcoding-fact-sheet.pdf)
+From [here](https://tritonstore.com.au/australia-post-barcode/) I gathered that it is a 4-state 37-cust barcode.
+But [This](https://auspost.com.au/content/dam/auspost_corp/media/documents/customer-barcode-technical-specifications-aug2012.pdf) document is the one I used to decode the bar until i figured out that the customer information
 is only a 'filler' bar. Which means I won't be able to pinpoint anything about the sender from here.
 
-[This(https://www.dynamsoft.com/barcode-reader/barcode-types/australian-post/)] site has a good examlpe of what i was hoping to have in the 'customer information' section of the barcode. But alas, we are not so lucky.
+[This](https://www.dynamsoft.com/barcode-reader/barcode-types/australian-post/) site has a good examlpe of what i was hoping to have in the 'customer information' section of the barcode. But alas, we are not so lucky.
 
 After I decided that I had enough Sherlocking my way through the envelope, I decided it was time to try and get the url for the QR code. 
 
@@ -63,7 +63,7 @@ I started with urlvoid.com:
 
 Here it says the domain was registered on the 2nd of August 2025. The letter was recieved a week after this registration. 
 The letter also indicates a time crunch of the end of August for the target to follow the instructions from the QR code to apply a new security feature called 'Transaction Check'. 
-We can update ourselves about it [here(https://www.ledger.com/academy/glossary/transaction-check)]
+We can update ourselves about it [here](https://www.ledger.com/academy/glossary/transaction-check)
 
 Next I did a whois lookup on the IP address from ipvoid.com:
 
@@ -232,7 +232,7 @@ traceroute to ledger.easycheckactivate.com (104.250.164.8), 64 hops max, 40 byte
 25  * ae18.1179.edge-vrf.cr1.egh.as49581.net (185.91.127.86)  423.350 ms  370.456 ms
 26  104.250.164.8 (104.250.164.8)  355.778 ms  430.869 ms  349.575 ms
 ```
-(changed first 4 lines for privacy)
+(chnged first 4 lines for privacy)
 Our hops include Australia, Los Angeles, Santa Clara, London, Amsterdam, Haarlem, Macarne. 
 The last three lines, the traffic goes through two different network providers (AS44592 -> AS49581) before reaching a server that's deliberately obscuring its hostname. 
 The last line shows the final destination, the server hosting the scam site. 
