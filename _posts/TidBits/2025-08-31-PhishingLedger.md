@@ -14,14 +14,15 @@ tag: ['phishing', 'ledger',]
 [#StopTheScammers](https://www.ledger.com/phishing-campaigns-status)
 
 Virus total shows nothing for ledger.easycheckactivate.com and easycheckactivate.com
-URL.io has potential malicious activity. 
+URL.io has potential malicious activity listed. 
 
-The IP address after ledger.easycheckactivate.com is 104.250.164.8
+The IP address for ledger.easycheckactivate.com is 104.250.164.8
 It comes from Iran and belongs to LinitedNetwork-AS Network LTD, GB.
 A TLS certificate was issued by XeroSSL RSA Domain Secure Site CA on August 28th 2025 and if valid for 3 months.
 
 This domain name is targeting the [Ledger](https://www.ledger.com/ledger-live) Crypto Wallet brand.
 
+I found an article talking about it [here](https://meme-insider.com/en/article/ledger-transaction-check-update-2025/) - they just talk about the update but don't mention anything about a phishing campaign.
 
 ## Start:
 
@@ -52,11 +53,11 @@ There are other options for decoding that i didn't use; they include coding/prog
 
 After I decided that I had enough Sherlocking my way through the envelope, I decided it was time to try and get the url for the QR code. 
 
-I opened the camera app on my phone and hovered over the QR code. When the url appeared, I copied it and put it through the ringer. 
+I opened the camera app on my phone and hovered over the QR code. When the url appeared, I copied it and put it through a few tests. 
 
-URL: https://ledger.easycheckactivate.com/cloudflare/(BASE64 Encoded target name)
+URL: https(:)//ledger(.)easycheckactivate(.)com/cloudflare/(BASE64 Encoded target name)
 
-The basis of the url is clever but faulty. We can see it trying to impersonate the ledger wedbsite with a subdoamin at the front. 
+The basis of the url is clever but faulty. We can see it trying to impersonate the ledger wedbsite with a subdomain at the front. 
 The domain 'easycheckactivate.com' appears to impersonate legitimate financial/banking services. 
 And the path at the end? It's a Base64 encoded string using the victim's name. I have left it out of this report as with other personal details.
 
@@ -65,7 +66,7 @@ I started with urlvoid.com:
 
 Here it says the domain was registered on the 2nd of August 2025. The letter was recieved a week after this registration. 
 The letter also indicates a time crunch of the end of August for the target to follow the instructions from the QR code to apply a new security feature called 'Transaction Check'. 
-We can update ourselves about it [here](https://www.ledger.com/academy/glossary/transaction-check)
+We can update ourselves about 'Transaction Check' [here](https://www.ledger.com/academy/glossary/transaction-check)
 
 Next I did a whois lookup on the IP address from ipvoid.com:
 
@@ -122,6 +123,8 @@ OrgAbuseRef:    https://rdap.arin.net/registry/entity/GADIT3-ARIN
 ```
 
 Ahhh, VPN. of course. don't be stupid. 
+I looked into GADIT3-ARIN and found [this](https://www.whois.com/whois/104.37.4.3) and [this](https://www.abuseipdb.com/whois/45.74.0.243)
+I found Uzair Gadit [here](https://en.incarabia.com/disruptcom-commits-us100million-to-ai-startups-720046.html), [here](https://techeconomy.ng/disrupt-com-to-invest-100m-in-next-gen-ai-startups/), and [here](https://www.crunchbase.com/person/uzair-gadit) - this last one has that PureVPN from the information above.
 
 OK, let's do a whois lookup on the domain 'easycheckactivate.com'. This time i used whois.domaintools.com - because why not. 
 
@@ -236,7 +239,7 @@ traceroute to ledger.easycheckactivate.com (104.250.164.8), 64 hops max, 40 byte
 ```
 (chnged first 4 lines for privacy)
 Our hops include Australia, Los Angeles, Santa Clara, London, Amsterdam, Haarlem, Macarne. 
-The last three lines, the traffic goes through two different network providers (AS44592 -> AS49581) before reaching a server that's deliberately obscuring its hostname. 
+The last three lines, the traffic goes through two different network providers (AS44592 -> AS49581) before reaching a server that's deliberately obscuring its' hostname. 
 The last line shows the final destination, the server hosting the scam site. 
 
 
