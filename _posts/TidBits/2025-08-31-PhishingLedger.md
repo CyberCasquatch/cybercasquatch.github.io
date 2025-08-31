@@ -18,7 +18,7 @@ There are letters being sent to Ledger customers that try to get the victim to i
 
 [#StopTheScammers](https://www.ledger.com/phishing-campaigns-status)
 
-Virus total shows nothing for ledger.easycheckactivate.com and easycheckactivate.com
+Virustotal shows nothing for ledger.easycheckactivate.com and easycheckactivate.com
 URL.io has potential malicious activity listed. 
 
 The IP address for ledger.easycheckactivate.com is 104.250.164.8
@@ -54,6 +54,8 @@ There are other options for decoding that i didn't use; they include coding/prog
 
 
 [This](https://www.dynamsoft.com/barcode-reader/barcode-types/australian-post/) site has a good examlpe of what i was hoping to have in the 'customer information' section of the barcode. But alas, we are not so lucky.
+
+## Middle 
 
 After I decided that I had enough Sherlocking my way through the envelope, I decided it was time to try and get the url for the QR code. 
 
@@ -316,15 +318,38 @@ Multiple routing paths exist to this server - suggesting it's using anycast or l
 Same final destination networks (AS49581) in both traces - confirms the server infrastructure.
 Consistent European hosting despite different routes getting there.
 
+## End
 
+I decided to stop here. I've had my fun. 
 
+What have we learned, ladies and germs?
 
+Targeted, Not Random
+- The base64-encoded URL contained a specific name, indicating this isn't mass spam but targeted phishing.
+- Suggests scammers used the obtained data from the 2020 breach.
 
+Geographic Deception
+- Domain registered shows Kuala Lumpur (likely fake/proxy servers)
+- Actual Server IP geolocation points to Iran
+- Multiple routing paths through US/Europe to same destination. Clear attempt to obscure true origins.
 
+Sophisticated Operation
+- Professional distributed hosting and infrastructure with load balancing.
+- Anycast routing suggesting resilient, hard-to-block setup.
+- Not amateur scammers - organised crime?
 
+Cryptocurrency Focus
+- "Ledger" subdomain targeting crypto hardware wallet users.
+- PHysical mail + QR code attack vector shows multi-channel approach.
+- High-value target demographic (crypto investors)
 
+Security Implications
+- Server deliberately hiding hostname information.
+- International infrastructure makes law inforcement difficult.
+- Physical mail delivery to Australia suggests broad international reach.
+- Combination of Iranian hosting + Malaysian registration complicates jurisdiction.
 
-
+Bottom line: This is a well-resourced, internatonally coordinated scam operation specifically targeting cryptocurrency users with personalised attacks and sophisticated technical infrastructure. 
 
 
 <button onclick="history.back()">Go Back</button>
