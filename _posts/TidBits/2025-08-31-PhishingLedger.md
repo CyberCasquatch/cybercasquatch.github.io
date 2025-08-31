@@ -20,7 +20,7 @@ The IP address for ledger.easycheckactivate.com is 104.250.164.8
 It comes from Iran and belongs to LinitedNetwork-AS Network LTD, GB.
 A TLS certificate was issued by XeroSSL RSA Domain Secure Site CA on August 28th 2025 and if valid for 3 months.
 
-This domain name is targeting the [Ledger](https://www.ledger.com/ledger-live) Crypto Wallet brand. We assume costumer information for this phishing attempt has come from the [2020 Breach](https://haveibeenpwned.com/Breach/Ledger#:~:text=In%20June%202020%2C%20the%20hardware%20crypto%20wallet%20manufacturer,and%20included%20names%2C%20physical%20addresses%20and%20phone%20numbers.). You can also read Ledger's response [here](https://www.ledger.com/addressing-the-july-2020-e-commerce-and-marketing-data-breach)
+This domain name is targeting the [Ledger](https://www.ledger.com/ledger-live) Crypto Wallet brand. We assume costumer information for this phishing attempt has come from the [2020 Breach](https://haveibeenpwned.com/Breach/Ledger#:~:text=In%20June%202020%2C%20the%20hardware%20crypto%20wallet%20manufacturer,and%20included%20names%2C%20physical%20addresses%20and%20phone%20numbers.) that has compromised customer email addresses, names, phone numbers, and physical addresses. You can also read Ledger's response [here](https://www.ledger.com/addressing-the-july-2020-e-commerce-and-marketing-data-breach)
 
 I found an article talking about it [here](https://meme-insider.com/en/article/ledger-transaction-check-update-2025/) - they just talk about the update but don't mention anything about a phishing campaign.
 
