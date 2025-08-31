@@ -238,6 +238,76 @@ The last three lines, the traffic goes through two different network providers (
 The last line shows the final destination, the server hosting the scam site. 
 
 
+Now traceroute for the IP address:
+
+```
+traceroute to 104.250.164.8 (104.250.164.8), 64 hops max, 40 byte packets
+1  [LOCAL ROUTER]  ~2 ms
+2  [ISP GATEWAY]  ~25 ms  
+3  [ISP NETWORK]  ~25 ms
+4  [ISP NETWORK]  ~30 ms
+ 5  203-220-16-161.tpgi.com.au (203.220.16.161)  36.462 ms  21.995 ms
+    203-220-16-165.tpgi.com.au (203.220.16.165)  30.826 ms
+ 6  nme-apt-col-wgw3-be90.tpgi.com.au (203.219.58.125)  29.193 ms  30.082 ms  30.253 ms
+ 7  nme-apt-col-crt2-be-100.tpgi.com.au (27.32.160.2)  20.250 ms
+    nme-apt-col-crt1-be-200.tpgi.com.au (27.32.160.65)  30.004 ms
+    nme-apt-col-crt2-be-100.tpgi.com.au (27.32.160.2)  28.422 ms
+ 8  syd-apt-ros-crt4-be-60.tpgi.com.au (203.26.22.121)  38.294 ms
+    syd-apt-ros-crt3-be-60.tpgi.com.au (203.26.22.117)  35.615 ms
+    syd-apt-ros-crt4-be-60.tpgi.com.au (203.26.22.121)  39.952 ms
+ 9  syd-apt-ros-int3-be-100.tpg.com.au (203.29.134.59)  37.549 ms  39.725 ms  39.261 ms
+10  sjo-b23-link.ip.twelve99.net (62.115.188.4)  200.933 ms  189.103 ms  189.326 ms
+11  sjo-bb1-link.ip.twelve99.net (62.115.139.16)  190.575 ms  189.125 ms  189.037 ms
+12  den-bb2-link.ip.twelve99.net (62.115.139.113)  268.534 ms
+    den-bb1-link.ip.twelve99.net (62.115.139.105)  217.220 ms  219.824 ms
+13  kanc-bb2-link.ip.twelve99.net (62.115.137.115)  392.523 ms
+    chi-bb1-link.ip.twelve99.net (62.115.115.77)  349.645 ms
+    kanc-bb2-link.ip.twelve99.net (62.115.137.115)  404.502 ms
+14  chi-bb2-link.ip.twelve99.net (62.115.136.102)  408.500 ms  389.320 ms
+    nyk-bb5-link.ip.twelve99.net (62.115.139.32)  340.997 ms
+15  * ewr-bb2-link.ip.twelve99.net (62.115.132.134)  408.984 ms  349.303 ms
+16  ldn-b3-link.ip.twelve99.net (62.115.140.73)  409.497 ms
+    ldn-bb2-link.ip.twelve99.net (62.115.139.247)  412.965 ms  322.519 ms
+17  ldn-b3-link.ip.twelve99.net (62.115.140.71)  341.515 ms
+    interlinkgmbh-ic-381329.ip.twelve99-cust.net (62.115.154.161)  412.104 ms
+    ldn-b3-link.ip.twelve99.net (62.115.122.181)  320.915 ms
+18  r4-lon1-gb.as5405.net (94.103.180.20)  407.995 ms
+    interlinkgmbh-ic-381329.ip.twelve99-cust.net (62.115.154.161)  334.327 ms  336.538 ms
+19  r1-ams2-nl.as5405.net (94.103.180.68)  333.126 ms
+    r4-lon1-gb.as5405.net (94.103.180.20)  390.466 ms
+    r1-ams2-nl.as5405.net (94.103.180.68)  331.727 ms
+20  r1-ams2-nl.as5405.net (94.103.180.68)  338.816 ms
+    45.153.83.101 (45.153.83.101)  336.508 ms  319.293 ms
+21  45.153.83.101 (45.153.83.101)  335.728 ms
+    45.153.83.99 (45.153.83.99)  330.699 ms *
+22  r1-ams2-nl.as5405.net (94.103.180.68)  355.339 ms
+    45.153.83.101 (45.153.83.101)  425.097 ms
+    ae18.1179.edge-vrf.cr1.egh.as49581.net (185.91.127.86)  408.355 ms
+23  104.250.164.8 (104.250.164.8)  338.711 ms *  333.661 ms
+```
+(chnged first 4 lines for privacy)
+This shows a different route to the same destination.
+Hops 10-16: Twelve99 Network (Telia)
+Hop 10: San Jose, California (sjo = San Jose)
+Hop 11: San Jose backbone
+Hop 12: Denver, Colorado (den)
+Hop 13: Kansas City (kanc) and Chicago (chi)
+Hop 14: Chicago and New York (nyk)
+Hop 15: Newark (ewr)
+Hop 16: London (ldn)
+
+Hops 17-23: Final network hops
+Hop 17-18: Interlink GmbH customer connection and AS5405 network
+Hop 19-20: Amsterdam, Netherlands (ams2-nl)
+Hop 22: Same AS49581 network you saw before
+Hop 23: Final destination
+
+What this reveals:
+Multiple routing paths exist to this server - suggesting it's using anycast or load balancing.
+Same final destination networks (AS49581) in both traces - confirms the server infrastructure.
+Consistent European hosting despite different routes getting there.
+
+
 
 
 
