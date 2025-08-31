@@ -40,11 +40,13 @@ Machine number 462
 Scanned at 21.08.2025 @ 2130
 
 I left the barcode covered, as the DPID (delivery Point Identifier) is there. 
-The customer information have been left as a 'filler' mark, which means that we don't get to know where it come from other than it was processed in the western syndey letter facility.
+The customer information have been left as a 'filler' mark, which means that we don't get to know where it came from other than it was processed in Sydney.
 Basic bitch information on barcoding [This](https://auspost.com.au/content/dam/auspost_corp/media/documents/barcode-and-labels-guide.pdf) and [This](https://auspost.com.au/content/dam/auspost_corp/media/documents/barcoding-fact-sheet.pdf)
 From [here](https://tritonstore.com.au/australia-post-barcode/) I gathered that it is a 4-state 37-cust barcode.
 But [This](https://auspost.com.au/content/dam/auspost_corp/media/documents/customer-barcode-technical-specifications-aug2012.pdf) document is the one I used to decode the bar until i figured out that the customer information
 is only a 'filler' bar. Which means I won't be able to pinpoint anything about the sender from here.
+There are other options for decoding that i didn't use; they include coding/programming. 
+
 
 [This](https://www.dynamsoft.com/barcode-reader/barcode-types/australian-post/) site has a good examlpe of what i was hoping to have in the 'customer information' section of the barcode. But alas, we are not so lucky.
 
