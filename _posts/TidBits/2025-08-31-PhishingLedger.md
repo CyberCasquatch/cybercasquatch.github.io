@@ -13,19 +13,25 @@ tag: ['phishing', 'ledger',]
 
 There are letters being sent to Ledger customers that try to get the victim to input a secret passphrase into a website that is owned by scammers.
 
-![Photo1](/assets/images/xss/Picture1.png) !! Photo of letter
+![Photo1](/assets/images/LedgerPhish/ledgerletter.HEIC)
 
 
 [#StopTheScammers](https://www.ledger.com/phishing-campaigns-status)
 
-Virustotal shows nothing for ledger.easycheckactivate.com and easycheckactivate.com
+I started investigating this a couple of days ago. Since then Virustotal has come in with the goods, so i can post them here. 
+
+As of 17 hours ago Virustotal shows 1 security vendor flagging 'ledger.easycheckactivate.com', 1 for 'easycheckactivate.com', and 2 for 104.250.164.8.
+You can check the detection, details, and relations for all three on the Virustotal website [here](9https://www.virustotal.com/gui/ip-address/104.250.164.8/detection), [here](https://www.virustotal.com/gui/url/1cf8c362d67780e1a408c06be457c79b16794db23b22bd1e4de0d7d88ed020aa/details), and [here](https://www.virustotal.com/gui/url/502fe48c222dc06100fad157a8556e1709c01bde5adb8a4e59721b8c1f8115b5)
+
 URL.io has potential malicious activity listed. 
 
-The IP address for ledger.easycheckactivate.com is 104.250.164.8
-It comes from Iran and belongs to LinitedNetwork-AS Network LTD, GB.
-A TLS certificate was issued by XeroSSL RSA Domain Secure Site CA on August 28th 2025 and if valid for 3 months.
+-The IP address for ledger.easycheckactivate.com is 104.250.164.8
+-It comes from Iran and belongs to LinitedNetwork-AS Network LTD, GB.
+-A TLS certificate was issued by XeroSSL RSA Domain Secure Site CA on August 28th 2025 and if valid for 3 months.
 
-This domain name is targeting the [Ledger](https://www.ledger.com/ledger-live) Crypto Wallet brand. We assume costumer information for this phishing attempt has come from the [2020 Breach](https://haveibeenpwned.com/Breach/Ledger#:~:text=In%20June%202020%2C%20the%20hardware%20crypto%20wallet%20manufacturer,and%20included%20names%2C%20physical%20addresses%20and%20phone%20numbers.) that has compromised email addresses, names, phone numbers, and physical addresses. You can also read Ledger's response [here](https://www.ledger.com/addressing-the-july-2020-e-commerce-and-marketing-data-breach)
+This domain name is targeting the [Ledger](https://www.ledger.com/ledger-live) Crypto Wallet brand. We assume costumer information for this phishing attempt has come from the [2020 Breach](https://haveibeenpwned.com/Breach/Ledger#:~:text=In%20June%202020%2C%20the%20hardware%20crypto%20wallet%20manufacturer,and%20included%20names%2C%20physical%20addresses%20and%20phone%20numbers.) that has compromised email addresses, names, phone numbers, and physical addresses. 
+
+You can also read Ledger's response [here](https://www.ledger.com/addressing-the-july-2020-e-commerce-and-marketing-data-breach)
 
 I found an article talking about it [here](https://meme-insider.com/en/article/ledger-transaction-check-update-2025/) - they just talk about the update but don't mention anything about a phishing campaign.
 
@@ -34,20 +40,21 @@ I found an article talking about it [here](https://meme-insider.com/en/article/l
 I wanted to figure out where the letter came from. So i started with the physical. 
 
 I looked into the barcode on the envelope.
-![Photo2](/assets/images/xss/Picture1.png) !! Photo of envelope
+![Photo2](/assets/images/LedgerPhish/envelope.heic)
 
 
 I did not take care with the stamp. I forcused on the barcode and lettering on top. 
 
-SWLF - Sydney West Letter Facility
-CFCP - Culler Facer Canceller Preparation, for sorting small letters (The CFCP applies a barcode using black ink)
-Machine number 462
-Scanned at 21.08.2025 @ 2130
+-SWLF - Sydney West Letter Facility
+-CFCP - Culler Facer Canceller Preparation, for sorting small letters (The CFCP applies a barcode using black ink)
+-Machine number 462
+-Scanned at 21.08.2025 @ 2130
 
-I left the barcode covered, as the DPID (delivery Point Identifier) is there. 
-The customer information have been left as a 'filler' mark, which means that we don't get to know where it came from other than it was processed in Sydney.
-Basic bitch information on barcoding [This](https://auspost.com.au/content/dam/auspost_corp/media/documents/barcode-and-labels-guide.pdf) and [This](https://auspost.com.au/content/dam/auspost_corp/media/documents/barcoding-fact-sheet.pdf)
+-I left the barcode covered, as the DPID (delivery Point Identifier) is there. 
+-The customer information have been left as a 'filler' mark, which means that we don't get to know where it came from other than it was processed in Sydney.
+-Basic bitch information on barcoding [This](https://auspost.com.au/content/dam/auspost_corp/media/documents/barcode-and-labels-guide.pdf) and [This](https://auspost.com.au/content/dam/auspost_corp/media/documents/barcoding-fact-sheet.pdf)
 From [here](https://tritonstore.com.au/australia-post-barcode/) I gathered that it is a 4-state 37-cust barcode.
+
 But [This](https://auspost.com.au/content/dam/auspost_corp/media/documents/customer-barcode-technical-specifications-aug2012.pdf) document is the one I used to decode the bar until i figured out that the customer information
 is only a 'filler' bar. Which means I won't be able to pinpoint anything about the sender from here.
 There are other options for decoding that i didn't use; they include coding/programming. 
@@ -63,12 +70,12 @@ I opened the camera app on my phone and hovered over the QR code. When the url a
 
 URL: https(:)//ledger(.)easycheckactivate(.)com/cloudflare/(BASE64 Encoded target name)
 
-The basis of the url is clever but faulty. We can see it trying to impersonate the ledger wedbsite with a subdomain at the front. 
-The domain 'easycheckactivate.com' appears to impersonate legitimate financial/banking services. 
-And the path at the end? It's a Base64 encoded string using the victim's name. I have left it out of this report as with other personal details.
+The basis of the url is clever. We can see it trying to impersonate the ledger wedbsite with a subdomain at the front. 
+-The domain 'easycheckactivate.com' appears to impersonate legitimate financial/banking services. 
+-And the path at the end? It's a Base64 encoded string using the victim's name. I have left it out of this report as with other personal details.
 
 I started with urlvoid.com:
-![Photo3](/assets/images/xss/Picture1.png) !! urlvoid.com
+![Photo3](/assets/images/LedgerPhish/urlvoidcom.png)
 
 Here it says the domain was registered on the 2nd of August 2025. The letter was recieved a week after this registration. 
 The letter also indicates a time crunch of the end of August for the target to follow the instructions from the QR code to apply a new security feature called 'Transaction Check'. 
@@ -129,12 +136,12 @@ OrgAbuseRef:    https://rdap.arin.net/registry/entity/GADIT3-ARIN
 ```
 
 Ahhh, VPN. of course. don't be stupid. 
-I looked into GADIT3-ARIN and found [this](https://www.whois.com/whois/104.37.4.3) and [this](https://www.abuseipdb.com/whois/45.74.0.243)
-I found Uzair Gadit [here](https://en.incarabia.com/disruptcom-commits-us100million-to-ai-startups-720046.html), [here](https://techeconomy.ng/disrupt-com-to-invest-100m-in-next-gen-ai-startups/), and [here](https://www.crunchbase.com/person/uzair-gadit) - this last one has that PureVPN from the information above.
+-I looked into GADIT3-ARIN and found [this](https://www.whois.com/whois/104.37.4.3) and [this](https://www.abuseipdb.com/whois/45.74.0.243)
+-I found Uzair Gadit [here](https://en.incarabia.com/disruptcom-commits-us100million-to-ai-startups-720046.html), [here](https://techeconomy.ng/disrupt-com-to-invest-100m-in-next-gen-ai-startups/), and [here](https://www.crunchbase.com/person/uzair-gadit) - this last one has that PureVPN from the information above.
 
 OK, let's do a whois lookup on the domain 'easycheckactivate.com'. This time i used whois.domaintools.com - because why not. 
 
-![Photo4](/assets/images/xss/Picture1.png) !! whois.domaintools
+![Photo4](/assets/images/LedgerPhish/whoisdomaintools.png)
 
 info from this check:
 ```
@@ -199,11 +206,11 @@ URL of the ICANN WHOIS Data Problem Reporting System: http://wdprs.internic.net/
 
 what's matbao.net?
 
-![Photo5](/assets/images/xss/Picture1.png) !! matbao.net
+![Photo5](/assets/images/LedgerPhish/matbao.png)
 
-Oh, right. Domain services. 
+Oh, right. Domain registration, web hosting services, website development, digital certificates, cloud computing. 
 
-Keep up. VPNs, texas, Malaysia, Iran. Ok. 
+Keep up. Vietnam for domain services, Malaysia for fake registration, Iran for hosting. Ok. 
 
 At this point i want to do a traceroute on the IP and the domain..
 
@@ -243,9 +250,11 @@ traceroute to ledger.easycheckactivate.com (104.250.164.8), 64 hops max, 40 byte
 25  * ae18.1179.edge-vrf.cr1.egh.as49581.net (185.91.127.86)  423.350 ms  370.456 ms
 26  104.250.164.8 (104.250.164.8)  355.778 ms  430.869 ms  349.575 ms
 ```
-(chnged first 4 lines for privacy)
+(changed first 4 lines for privacy)
 Our hops include Australia, Los Angeles, Santa Clara, London, Amsterdam, Haarlem, Macarne. 
+
 The last three lines, the traffic goes through two different network providers (AS44592 -> AS49581) before reaching a server that's deliberately obscuring its' hostname. 
+
 The last line shows the final destination, the server hosting the scam site. 
 
 
@@ -296,27 +305,37 @@ traceroute to 104.250.164.8 (104.250.164.8), 64 hops max, 40 byte packets
     ae18.1179.edge-vrf.cr1.egh.as49581.net (185.91.127.86)  408.355 ms
 23  104.250.164.8 (104.250.164.8)  338.711 ms *  333.661 ms
 ```
-(chnged first 4 lines for privacy)
-This shows a different route to the same destination.
-Hops 10-16: Twelve99 Network (Telia)
-Hop 10: San Jose, California (sjo = San Jose)
-Hop 11: San Jose backbone
-Hop 12: Denver, Colorado (den)
-Hop 13: Kansas City (kanc) and Chicago (chi)
-Hop 14: Chicago and New York (nyk)
-Hop 15: Newark (ewr)
-Hop 16: London (ldn)
+(changed first 4 lines for privacy)
 
-Hops 17-23: Final network hops
-Hop 17-18: Interlink GmbH customer connection and AS5405 network
-Hop 19-20: Amsterdam, Netherlands (ams2-nl)
-Hop 22: Same AS49581 network you saw before
-Hop 23: Final destination
+This shows a different route to the same destination.
+-Hops 10-16: Twelve99 Network (Telia)
+-Hop 10: San Jose, California (sjo = San Jose)
+-Hop 11: San Jose backbone
+-Hop 12: Denver, Colorado (den)
+-Hop 13: Kansas City (kanc) and Chicago (chi)
+-Hop 14: Chicago and New York (nyk)
+-Hop 15: Newark (ewr)
+-Hop 16: London (ldn)
+
+-Hops 17-23: Final network hops
+-Hop 17-18: Interlink GmbH customer connection and AS5405 network
+-Hop 19-20: Amsterdam, Netherlands (ams2-nl)
+-Hop 22: Same AS49581 network you saw before
+-Hop 23: Final destination
 
 What this reveals:
+
 Multiple routing paths exist to this server - suggesting it's using anycast or load balancing.
 Same final destination networks (AS49581) in both traces - confirms the server infrastructure.
 Consistent European hosting despite different routes getting there.
+
+Next, I have a look at urlscan.io for 'ledger(.)easycheckactivate(.)com' and this is what we see first:
+(This was before Virustotal had been updated with the information of the IP address)
+![Photo6](/assets/images/LedgerPhish/urlscanio1.png)
+
+In the end, Virustotal confirms what we have revealed throughout this process. 
+
+* * *
 
 ## End
 
