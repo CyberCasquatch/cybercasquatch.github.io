@@ -35,6 +35,10 @@ You can also read Ledger's response [here](https://www.ledger.com/addressing-the
 
 I found an article talking about it [here](https://meme-insider.com/en/article/ledger-transaction-check-update-2025/) - they just talk about the update but don't mention anything about a phishing campaign.
 
+There are also a couple of reddit posts with similar or the same kind of letters - all calling out the phishing attempt.
+
+* * *
+
 ## Start:
 
 I wanted to figure out where the letter came from. So i started with the physical. 
