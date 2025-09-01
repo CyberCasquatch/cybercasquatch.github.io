@@ -7,7 +7,7 @@ comments: false
 tag: ['phishing', 'ledger',]
 ---
 
--- Phishing Attack regarding Ledger - this was an excercise for myself to see what I could find out. 
+> Phishing Attack regarding Ledger - this was an excercise for myself to see what I could find out. 
 
 ## Overview
 
