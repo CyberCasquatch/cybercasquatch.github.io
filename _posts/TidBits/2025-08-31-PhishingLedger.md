@@ -21,7 +21,7 @@ There are letters being sent to Ledger customers that try to get the victim to i
 I started investigating this a couple of days ago. Since then Virustotal has come in with the goods, so i can post them here. 
 
 As of 17 hours ago Virustotal shows 1 security vendor flagging 'ledger.easycheckactivate.com', 1 for 'easycheckactivate.com', and 2 for 104.250.164.8.
-You can check the detection, details, and relations for all three on the Virustotal website [here](9https://www.virustotal.com/gui/ip-address/104.250.164.8/detection), [here](https://www.virustotal.com/gui/url/1cf8c362d67780e1a408c06be457c79b16794db23b22bd1e4de0d7d88ed020aa/details), and [here](https://www.virustotal.com/gui/url/502fe48c222dc06100fad157a8556e1709c01bde5adb8a4e59721b8c1f8115b5)
+You can check the detection, details, and relations for all three on the Virustotal website [here](https://www.virustotal.com/gui/ip-address/104.250.164.8/detection), [here](https://www.virustotal.com/gui/url/1cf8c362d67780e1a408c06be457c79b16794db23b22bd1e4de0d7d88ed020aa/details), and [here](https://www.virustotal.com/gui/url/502fe48c222dc06100fad157a8556e1709c01bde5adb8a4e59721b8c1f8115b5)
 
 URL.io has potential malicious activity listed. 
 
