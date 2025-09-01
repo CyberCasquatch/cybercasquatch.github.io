@@ -255,7 +255,7 @@ traceroute to ledger.easycheckactivate.com (104.250.164.8), 64 hops max, 40 byte
 26  104.250.164.8 (104.250.164.8)  355.778 ms  430.869 ms  349.575 ms
 ```
 (changed first 4 lines for privacy)
-Our hops include Australia, Los Angeles, Santa Clara, London, Amsterdam, Haarlem, Macarne. 
+Our hops include Australia, Los Angeles, Santa Clara, London, Amsterdam. 
 
 The last three lines, the traffic goes through two different network providers (AS44592 -> AS49581) before reaching a server that's deliberately obscuring its' hostname. 
 
