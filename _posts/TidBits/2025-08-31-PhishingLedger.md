@@ -25,9 +25,9 @@ You can check the detection, details, and relations for all three on the Virusto
 
 URL.io also has potential malicious activity listed. I got most of my details from here before they arrived on VT.
 
--The IP address for ledger.easycheckactivate.com is 104.250.164.8
--It comes from Iran and belongs to LimitedNetwork-AS Network LTD, GB.
--A TLS certificate was issued by XeroSSL RSA Domain Secure Site CA on August 28th 2025 and if valid for 3 months.
+- The IP address for ledger.easycheckactivate.com is 104.250.164.8
+- It comes from Iran and belongs to LimitedNetwork-AS Network LTD, GB.
+- A TLS certificate was issued by XeroSSL RSA Domain Secure Site CA on August 28th 2025 and if valid for 3 months.
 
 This domain name is targeting the [Ledger](https://www.ledger.com/ledger-live) Crypto Wallet brand. We assume costumer information for this phishing attempt has come from the [2020 Breach](https://haveibeenpwned.com/Breach/Ledger#:~:text=In%20June%202020%2C%20the%20hardware%20crypto%20wallet%20manufacturer,and%20included%20names%2C%20physical%20addresses%20and%20phone%20numbers.) that has compromised email addresses, names, phone numbers, and physical addresses. 
 
