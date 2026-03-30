@@ -11,6 +11,9 @@ comments: false
 
 ***
 
+|2026               |
+|:------------------|
+|[TidBit Portswigger Path Traversal](_posts/TidBits/2026-03-31-PortswiggerPathTraversal.md) |
 
 |2025               |
 |:------------------|
