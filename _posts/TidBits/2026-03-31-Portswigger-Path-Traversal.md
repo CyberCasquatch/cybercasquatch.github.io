@@ -1,9 +1,9 @@
 ---
 layout: post
 title:  "Portswigger Path Traversal"
-date:   2026-03-31
+date:   2026-03-30
 author: C. Casquatch
-category: TidBit
+category: TidBits
 comments: false
 tag: ['portswigger', 'burpsuite', 'path traversal', appsec]
 ---
