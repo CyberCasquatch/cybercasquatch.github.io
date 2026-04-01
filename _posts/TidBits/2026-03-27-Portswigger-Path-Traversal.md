@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Portswigger Path Traversal"
-date:   2026-03-30
+date:   2026-03-27
 author: C. Casquatch
 category: TidBits
 comments: false
