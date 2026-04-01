@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Portswigger Access Control"
-date:   2026-03-31
+date:   2026-03-26
 author: C. Casquatch
 category: TidBits
 comments: false
