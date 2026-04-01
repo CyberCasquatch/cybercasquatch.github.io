@@ -13,6 +13,7 @@ comments: false
 
 |2026               |
 |:------------------|
+|[TidBit Portswigger Access Control](_posts/TidBits/2026-03-31-PortswiggerAccessControl.md) |
 |[TidBit Portswigger Path Traversal](_posts/TidBits/2026-03-31-PortswiggerPathTraversal.md) |
 
 |2025               |
