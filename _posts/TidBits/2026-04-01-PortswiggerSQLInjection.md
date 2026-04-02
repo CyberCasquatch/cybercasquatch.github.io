@@ -15,8 +15,7 @@ tag: ['portswigger', 'burpsuite', 'sql injection', 'appsec']
 ## Lab 1 — SQL Injection in Category Filter
 
 This lab was vulnerable in the product category filter. No Burp was needed — the injection was done directly in the URL.
-Original Query
-When clicking a category like "Gifts" the URL becomes:
+Original Query - When clicking a category like "Gifts" the URL becomes:
 ```
 /filter?category=Gifts
 ```
