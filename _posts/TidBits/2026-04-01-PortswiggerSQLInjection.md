@@ -60,6 +60,7 @@ Entering administrator'-- in the username field didn't work initially because th
 The key realisation was that the required validation is client-side only — the server doesn't actually need the password if the SQL injection comments it out. The fix was simply to type any random characters in the password field to satisfy the browser's form validation.
 
 How the Injection Works
+
 The original login query looks something like:
 ```
 SELECT * FROM users WHERE username = 'administrator' AND password = 'yourpassword'
