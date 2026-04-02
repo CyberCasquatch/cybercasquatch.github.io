@@ -56,7 +56,6 @@ Since 1=1 is always true, every product in the database is returned.
 This lab had a SQL injection vulnerability in the login form. The goal was to log in as the administrator without knowing the password.
 
 
-Initial Gotcha — Client-Side Form Validation
 Entering administrator'-- in the username field didn't work initially because the password field was marked as required in the HTML, so the browser wouldn't submit the form without something in it. Attempting to bypass via the URL (/login/administrator'--) also didn't work.
 The key realisation was that the required validation is client-side only — the server doesn't actually need the password if the SQL injection comments it out. The fix was simply to type any random characters in the password field to satisfy the browser's form validation.
 
