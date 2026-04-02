@@ -27,6 +27,7 @@ SELECT * FROM products WHERE category = 'Gifts' AND released = 1
 The `released = 1` condition is what hides unreleased products from users.
 
 **The Injection**
+
 By modifying the URL to:
 ```
 /filter?category=Gifts'--
