@@ -1,3 +1,13 @@
+---
+layout: post
+title:  "UART"
+date:   2026-04-03
+author: C. Casquatch
+comments: false
+categories: Projects
+tags: ['uart','hardware hacking']
+---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
