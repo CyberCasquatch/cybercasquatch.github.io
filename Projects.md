@@ -11,7 +11,7 @@ comments: false
 | 2024                                                                                   | 2026        |
 |:---------------------------------------------------------------------------------------|:------------|
 | [Downloads Folder Cleanup](_posts/Projects/Python/2024-03-01-Download-file-cleanup.md) | [Voron 2.4 Build](_posts/Projects/2026-01-20-Big-Iron.md)|
-| [Visual Packet Tracer](_posts/Projects/Python/2024-03-05-Visual-Packet_tracer.md)      |             |
+| [Visual Packet Tracer](_posts/Projects/Python/2024-03-05-Visual-Packet_tracer.md)      | [All About UART](_posts/Projects/2026-04-03-AllAboutUART.md)|
 | [Active Directory Lab](_posts/Projects/2024-03-10-ActiveDirectoryLab.md)               |             |
 | [Nessus Lab](_posts/Projects/2024-03-21-NessusLab.md)                                  |             |
 | [Sentinel Lab](_posts/Projects/2024-04-20-SentinelSIEMLab.md)                          |             |
