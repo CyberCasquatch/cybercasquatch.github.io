@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resources — CyberCasquatch</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d0d0d; --surface: #141414; --border: #222;
+    --accent: #00ff9d; --accent2: #ff6b35; --text: #e0e0e0; --muted: #555;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: 'Syne', sans-serif; line-height: 1.7; }
+  body::before {
+    content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 999;
+    background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.03) 2px, rgba(0,0,0,0.03) 4px);
+  }
+  nav {
+    border-bottom: 1px solid var(--border); padding: 1.25rem 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    position: sticky; top: 0; background: rgba(13,13,13,0.95); backdrop-filter: blur(8px); z-index: 100;
+  }
+  .nav-logo { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 0.9rem; color: var(--accent); text-decoration: none; }
+  .nav-logo span { color: var(--text); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--muted); text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+  .hero { max-width: 900px; margin: 0 auto; padding: 4rem 2rem 2.5rem; border-bottom: 1px solid var(--border); }
+  .hero-tag { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--accent); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem; }
+  .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.75rem; }
+  .hero p { color: var(--muted); font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; }
+  .main { max-width: 900px; margin: 0 auto; padding: 3rem 2rem 6rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 2.5rem; align-items: start; }
+  .section { }
+  .section-header { border-bottom: 1px solid var(--border); padding-bottom: 0.6rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; }
+  .section-title { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--muted); }
+  .resource-link {
+    display: flex; align-items: center; justify-content: space-between;
+    text-decoration: none; border: 1px solid var(--border); background: var(--surface);
+    padding: 0.75rem 1rem; margin-bottom: 0.5rem;
+    transition: border-color 0.2s, background 0.2s; font-size: 0.88rem;
+  }
+  .resource-link:hover { border-color: var(--accent); background: #161616; }
+  .resource-link:hover .rlink-text { color: var(--accent); }
+  .resource-link:hover .arrow { color: var(--accent); }
+  .rlink-text { color: var(--text); font-weight: 600; }
+  .rlink-domain { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--muted); margin-top: 0.1rem; }
+  .arrow { color: var(--border); flex-shrink: 0; margin-left: 0.75rem; font-size: 0.85rem; }
+  footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--muted); }
+  footer a { color: var(--accent); text-decoration: none; }
+  @keyframes fadeUp { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
+  .section { animation: fadeUp 0.4s ease both; }
+  .section:nth-child(odd) { animation-delay: 0.05s; }
+  .section:nth-child(even) { animation-delay: 0.1s; }
+
+  .full-width { grid-column: 1 / -1; }
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="/"><span>//</span> CyberCasquatch</a>
+  <ul class="nav-links">
+    <li><a href="/TidBits-Main">TidBits</a></li>
+    <li><a href="/Walkthrough-Main">Walkthroughs</a></li>
+    <li><a href="/Resources-page" class="active">Resources</a></li>
+    <li><a href="/Projects">Projects</a></li>
+    <li><a href="https://github.com/CyberCasquatch/cybercasquatch.github.io">GitHub</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="hero-tag">// Reference Pile</div>
+  <h1>Resources</h1>
+  <p>There might be something useful to you here.</p>
+</div>
+
+<div class="main">
+
+  <div class="section">
+    <div class="section-header"><div class="section-title">General</div></div>
+    <a class="resource-link" href="https://pauljerimy.com/security-certification-roadmap/" target="_blank">
+      <div><div class="rlink-text">Security Certification Roadmap</div><div class="rlink-domain">pauljerimy.com</div></div><span class="arrow">↗</span>
+    </a>
+    <a class="resource-link" href="https://thedfirreport.com/" target="_blank">
+      <div><div class="rlink-text">DFIR Report</div><div class="rlink-domain">thedfirreport.com</div></div><span class="arrow">↗</span>
+    </a>
+  </div>
+
+  <div class="section">
+    <div class="section-header"><div class="section-title">YouTube</div></div>
+    <a class="resource-link" href="https://www.youtube.com/@professormesser" target="_blank">
+      <div><div class="rlink-text">Professor Messer</div><div class="rlink-domain">youtube.com</div></div><span class="arrow">↗</span>
+    </a>
+    <a class="resource-link" href="https://www.youtube.com/channel/UCVeW9qkBjo3zosnqUbG7CFw" target="_blank">
+      <div><div class="rlink-text">John Hammond</div><div class="rlink-domain">youtube.com</div></div><span class="arrow">↗</span>
+    </a>
+    <a class="resource-link" href="https://www.youtube.com/channel/UCPiN9NPjIer8Do9gUFxKv7A" target="_blank">
+      <div><div class="rlink-text">InsiderPhD</div><div class="rlink-domain">youtube.com</div></div><span class="arrow">↗</span>
+    </a>
+    <a class="resource-link" href="https://www.youtube.com/@MyDFIR" target="_blank">
+      <div><div class="rlink-text">MyDFIR</div><div class="rlink-domain">youtube.com</div></div><span class="arrow">↗</span>
+    </a>
+  </div>
+
+  <div class="section">
+    <div class="section-header"><div class="section-title">OSINT</div></div>
+    <a class="resource-link" href="https://github.com/laramies/theHarvester" target="_blank">
+      <div><div class="rlink-text">theHarvester</div><div class="rlink-domain">github.com</div></div><span class="arrow">↗</span>
+    </a>
+    <a class="resource-link" href="https://osintframework.com/" target="_blank">
+      <div><div class="rlink-text">OSINT Framework</div><div class="rlink-domain">osintframework.com</div></div><span class="arrow">↗</span>
+    </a>
+    <a class="resource-link" href="https://www.varonis.com/blog/what-is-osint" target="_blank">
+      <div><div class="rlink-text">What is OSINT?</div><div class="rlink-domain">varonis.com</div></div><span class="arrow">↗</span>
+    </a>
+  </div>
+
+  <div class="section">
+    <div class="section-header"><div class="section-title">Technical Assistance</div></div>
+    <a class="resource-link" href="https://attack.mitre.org/" target="_blank">
+      <div><div class="rlink-text">MITRE ATT&amp;CK</div><div class="rlink-domain">attack.mitre.org</div></div><span class="arrow">↗</span>
+    </a>
+    <a class="resource-link" href="https://owasp.org/www-project-top-ten/" target="_blank">
+      <div><div class="rlink-text">OWASP Top Ten</div><div class="rlink-domain">owasp.org</div></div><span class="arrow">↗</span>
+    </a>
+    <a class="resource-link" href="https://github.com/olafhartong/sysmon-modular/blob/master/sysmonconfig.xml" target="_blank">
+      <div><div class="rlink-text">Sysmon Configuration</div><div class="rlink-domain">github.com</div></div><span class="arrow">↗</span>
+    </a>
+    <a class="resource-link" href="https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon" target="_blank">
+      <div><div class="rlink-text">Sysmon Download</div><div class="rlink-domain">microsoft.com</div></div><span class="arrow">↗</span>
+    </a>
+    <a class="resource-link" href="https://uncoder.io/" target="_blank">
+      <div><div class="rlink-text">Uncoder.io</div><div class="rlink-domain">uncoder.io</div></div><span class="arrow">↗</span>
+    </a>
+    <a class="resource-link" href="https://github.com/WithSecureLabs/chainsaw" target="_blank">
+      <div><div class="rlink-text">Chainsaw</div><div class="rlink-domain">github.com</div></div><span class="arrow">↗</span>
+    </a>
+  </div>
+
+  <div class="section">
+    <div class="section-header"><div class="section-title">Elastic SIEM</div></div>
+    <a class="resource-link" href="https://www.elastic.co/guide/en/ecs/current/ecs-event.html#field-event-code" target="_blank">
+      <div><div class="rlink-text">Event Fields</div><div class="rlink-domain">elastic.co</div></div><span class="arrow">↗</span>
+    </a>
+    <a class="resource-link" href="https://www.elastic.co/guide/en/ecs/current/ecs-reference.html" target="_blank">
+      <div><div class="rlink-text">ECS Reference</div><div class="rlink-domain">elastic.co</div></div><span class="arrow">↗</span>
+    </a>
+    <a class="resource-link" href="https://www.elastic.co/guide/en/beats/winlogbeat/current/exported-fields-winlog.html" target="_blank">
+      <div><div class="rlink-text">Winlogbeat Fields</div><div class="rlink-domain">elastic.co</div></div><span class="arrow">↗</span>
+    </a>
+    <a class="resource-link" href="https://www.elastic.co/guide/en/beats/filebeat/current/exported-fields.html" target="_blank">
+      <div><div class="rlink-text">Filebeat Exported Fields</div><div class="rlink-domain">elastic.co</div></div><span class="arrow">↗</span>
+    </a>
+  </div>
+
+  <div class="section">
+    <div class="section-header"><div class="section-title">Case Studies</div></div>
+    <a class="resource-link" href="https://corporate.target.com/news-features/article/2013/12/important-notice-unauthorized-access-to-payment-ca" target="_blank">
+      <div><div class="rlink-text">Target Breach</div><div class="rlink-domain">corporate.target.com</div></div><span class="arrow">↗</span>
+    </a>
+    <a class="resource-link" href="https://www.csoonline.com/article/569163/cybercriminal-group-mails-malicious-usb-dongles-to-targeted-companies.html" target="_blank">
+      <div><div class="rlink-text">Malicious USB Dongles</div><div class="rlink-domain">csoonline.com</div></div><span class="arrow">↗</span>
+    </a>
+  </div>
+
+  <div class="section">
+    <div class="section-header"><div class="section-title">YARA</div></div>
+    <a class="resource-link" href="https://github.com/The-DFIR-Report/Yara-Rules" target="_blank">
+      <div><div class="rlink-text">DFIR Report Yara Rules</div><div class="rlink-domain">github.com</div></div><span class="arrow">↗</span>
+    </a>
+    <a class="resource-link" href="https://github.com/mikesxrs/Open-Source-YARA-rules/tree/master" target="_blank">
+      <div><div class="rlink-text">Open Source YARA Rules</div><div class="rlink-domain">github.com</div></div><span class="arrow">↗</span>
+    </a>
+    <a class="resource-link" href="https://github.com/Yara-Rules/rules/tree/master/malware" target="_blank">
+      <div><div class="rlink-text">YARA Rules (Malware)</div><div class="rlink-domain">github.com</div></div><span class="arrow">↗</span>
+    </a>
+    <a class="resource-link" href="https://yara.readthedocs.io/en/latest/" target="_blank">
+      <div><div class="rlink-text">YARA Documentation</div><div class="rlink-domain">readthedocs.io</div></div><span class="arrow">↗</span>
+    </a>
+    <a class="resource-link" href="https://virustotal.github.io/yara/" target="_blank">
+      <div><div class="rlink-text">VirusTotal YARA Docs</div><div class="rlink-domain">virustotal.github.io</div></div><span class="arrow">↗</span>
+    </a>
+  </div>
+
+  <div class="section">
+    <div class="section-header"><div class="section-title">Sigma</div></div>
+    <a class="resource-link" href="https://github.com/The-DFIR-Report/Sigma-Rules" target="_blank">
+      <div><div class="rlink-text">DFIR Report Sigma Rules</div><div class="rlink-domain">github.com</div></div><span class="arrow">↗</span>
+    </a>
+    <a class="resource-link" href="https://github.com/mdecrevoisier/SIGMA-detection-rules" target="_blank">
+      <div><div class="rlink-text">SIGMA Detection Rules</div><div class="rlink-domain">github.com</div></div><span class="arrow">↗</span>
+    </a>
+    <a class="resource-link" href="https://github.com/SigmaHQ/sigma/tree/master/rules" target="_blank">
+      <div><div class="rlink-text">SigmaHQ Rules</div><div class="rlink-domain">github.com</div></div><span class="arrow">↗</span>
+    </a>
+    <a class="resource-link" href="https://github.com/joesecurity/sigma-rules" target="_blank">
+      <div><div class="rlink-text">JOESandbox Sigma Rules</div><div class="rlink-domain">github.com</div></div><span class="arrow">↗</span>
+    </a>
+  </div>
+
+  <div class="section">
+    <div class="section-header"><div class="section-title">CCNA</div></div>
+    <a class="resource-link" href="https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/cc959828(v=technet.10)" target="_blank">
+      <div><div class="rlink-text">Port Assignments</div><div class="rlink-domain">microsoft.com</div></div><span class="arrow">↗</span>
+    </a>
+    <a class="resource-link" href="https://www.cisco.com/c/en/us/support/docs/ip/border-gateway-protocol-bgp/15986-admin-distance.html" target="_blank">
+      <div><div class="rlink-text">Administrative Distance</div><div class="rlink-domain">cisco.com</div></div><span class="arrow">↗</span>
+    </a>
+    <a class="resource-link" href="https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst3560/software/release/12-2_52_se/configuration/guide/3560scg/swstpopt.html#wp1031380" target="_blank">
+      <div><div class="rlink-text">Spanning Tree Optional Features</div><div class="rlink-domain">cisco.com</div></div><span class="arrow">↗</span>
+    </a>
+    <a class="resource-link" href="https://www.cisco.com/c/en/us/td/docs/wireless/controller/8-5/config-guide/b_cg85/wlan_security.html#ID996" target="_blank">
+      <div><div class="rlink-text">WLC Config Guide</div><div class="rlink-domain">cisco.com</div></div><span class="arrow">↗</span>
+    </a>
+    <a class="resource-link" href="https://www.ripe.net/media/documents/ipv6-address-types.pdf" target="_blank">
+      <div><div class="rlink-text">IPv6 Address Types</div><div class="rlink-domain">ripe.net</div></div><span class="arrow">↗</span>
+    </a>
+  </div>
+
+  <div class="section">
+    <div class="section-header"><div class="section-title">Web &amp; Misc</div></div>
+    <a class="resource-link" href="https://owasp.org/www-community/attacks/xss/" target="_blank">
+      <div><div class="rlink-text">Cross Site Scripting (XSS)</div><div class="rlink-domain">owasp.org</div></div><span class="arrow">↗</span>
+    </a>
+    <a class="resource-link" href="https://scapy.readthedocs.io/en/latest/introduction.html" target="_blank">
+      <div><div class="rlink-text">Scapy Documentation</div><div class="rlink-domain">readthedocs.io</div></div><span class="arrow">↗</span>
+    </a>
+    <a class="resource-link" href="https://docs.pwntools.com/en/stable/" target="_blank">
+      <div><div class="rlink-text">pwntools Documentation</div><div class="rlink-domain">pwntools.com</div></div><span class="arrow">↗</span>
+    </a>
+    <a class="resource-link" href="https://www.w3schools.com/js/default.asp" target="_blank">
+      <div><div class="rlink-text">JavaScript Tutorial</div><div class="rlink-domain">w3schools.com</div></div><span class="arrow">↗</span>
+    </a>
+  </div>
+
+</div>
+
+<footer>
+  <a href="/">← Home</a> &nbsp;·&nbsp; CyberCasquatch &nbsp;·&nbsp; <a href="https://github.com/CyberCasquatch/cybercasquatch.github.io">GitHub</a>
+</footer>
+</body>
+</html>
