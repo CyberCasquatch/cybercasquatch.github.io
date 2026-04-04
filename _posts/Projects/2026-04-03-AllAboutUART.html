@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All About UART — A Hacking Writeup</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d0d0d;
+    --surface: #141414;
+    --border: #222;
+    --accent: #00ff9d;
+    --accent2: #ff6b35;
+    --text: #e0e0e0;
+    --muted: #666;
+    --code-bg: #1a1a1a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Syne', sans-serif;
+    line-height: 1.7;
+    padding: 0 1rem;
+  }
+
+  /* Scanline overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0,0,0,0.03) 2px,
+      rgba(0,0,0,0.03) 4px
+    );
+    pointer-events: none;
+    z-index: 999;
+  }
+
+  .container {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 4rem 0 6rem;
+  }
+
+  /* Header */
+  header {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .tag {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 0.2rem 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+
+  h1 {
+    font-size: clamp(2.2rem, 6vw, 3.8rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+  }
+
+  h1 span {
+    color: var(--accent);
+  }
+
+  .subtitle {
+    color: var(--muted);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    margin-top: 1rem;
+  }
+
+  .meta {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+
+  .meta span { color: var(--accent2); }
+
+  /* Gear list */
+  .gear-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .gear-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 1rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    position: relative;
+  }
+
+  .gear-item::before {
+    content: '▸';
+    color: var(--accent);
+    margin-right: 0.5rem;
+  }
+
+  /* Sections */
+  h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 3rem 0 1rem;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  h2::before {
+    content: '';
+    display: block;
+    width: 3px;
+    height: 1.4rem;
+    background: var(--accent);
+    flex-shrink: 0;
+  }
+
+  h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--accent2);
+    margin: 2rem 0 0.75rem;
+    font-family: 'JetBrains Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.85rem;
+  }
+
+  p { margin-bottom: 1rem; color: var(--text); font-size: 0.97rem; }
+
+  /* Code blocks */
+  pre {
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    overflow-x: auto;
+    margin: 1.25rem 0;
+    line-height: 1.6;
+    color: #ccc;
+  }
+
+  code {
+    font-family: 'JetBrains Mono', monospace;
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    padding: 0.1em 0.4em;
+    font-size: 0.85em;
+    color: var(--accent);
+  }
+
+  /* Callout boxes */
+  .callout {
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent2);
+    background: var(--surface);
+    padding: 1rem 1.25rem;
+    margin: 1.5rem 0;
+    font-size: 0.92rem;
+  }
+
+  .callout.success {
+    border-left-color: var(--accent);
+  }
+
+  .callout.warning {
+    border-left-color: #ffcc00;
+  }
+
+  .callout-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent2);
+    margin-bottom: 0.4rem;
+  }
+
+  .callout.success .callout-label { color: var(--accent); }
+  .callout.warning .callout-label { color: #ffcc00; }
+
+  /* UART frame diagram */
+  .frame-diagram {
+    display: flex;
+    margin: 1.5rem 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    overflow-x: auto;
+  }
+
+  .frame-bit {
+    border: 1px solid var(--border);
+    padding: 0.6rem 0.5rem;
+    text-align: center;
+    min-width: 60px;
+    flex: 1;
+  }
+
+  .frame-bit.start { background: #1a2a1a; color: var(--accent); border-color: var(--accent); }
+  .frame-bit.data { background: #1a1a2a; color: #7b9fff; border-color: #7b9fff; }
+  .frame-bit.parity { background: #2a2a1a; color: #ffcc00; border-color: #ffcc00; }
+  .frame-bit.stop { background: #2a1a1a; color: var(--accent2); border-color: var(--accent2); }
+
+  .frame-bit .label { font-size: 0.6rem; color: var(--muted); margin-top: 0.2rem; }
+
+  /* Divider */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2.5rem 0;
+  }
+
+  /* Credits */
+  .credits {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 1.5rem;
+    margin-top: 3rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+  }
+
+  .credits a { color: var(--accent); text-decoration: none; }
+  .credits a:hover { text-decoration: underline; }
+
+  /* PIN result */
+  .pin-result {
+    background: var(--surface);
+    border: 1px solid var(--accent);
+    padding: 1.5rem;
+    text-align: center;
+    margin: 1.5rem 0;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .pin-result .pin {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.3em;
+    display: block;
+  }
+
+  .pin-result .pin-label {
+    font-size: 0.7rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-top: 0.5rem;
+  }
+
+  ul {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  li { margin-bottom: 0.4rem; font-size: 0.97rem; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .container > * {
+    animation: fadeIn 0.4s ease both;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <div class="tag">Course Writeup</div>
+    <h1>All About <span>UART</span></h1>
+    <p class="subtitle">// Brown Fine Security — Hardware Hacking Series</p>
+    <div class="meta">
+      <div>Platform <span>Raspberry Pi Pico 2</span></div>
+      <div>OS <span>macOS Tahoe 26.3</span></div>
+      <div>Difficulty <span>Beginner–Intermediate</span></div>
+    </div>
+  </header>
+
+  <p>This is my writeup for the <em>All About UART</em> course by Brown Fine Security. Going in, I had no hardware hacking experience — I'm more of a software person. The course is well structured and can be done in a couple of hours if you're already familiar with embedded hardware, or a solid afternoon if you're new to it like I was. I ran into a bunch of Mac-specific issues that the course doesn't cover (it assumes Linux), so I've documented all of my troubleshooting here too.</p>
+
+  <h2>Gear</h2>
+  <div class="gear-grid">
+    <div class="gear-item">Raspberry Pi Pico 2 (with headers pre-soldered)</div>
+    <div class="gear-item">Multimeter</div>
+    <div class="gear-item">USB to UART Adapter</div>
+    <div class="gear-item">HiLetgo USB Logic Analyser (8ch)</div>
+  </div>
+  <p>I got the Pico 2 with headers already soldered because I didn't feel like soldering for this one. Skipped the soldering session in the course for the same reason.</p>
+
+  <hr class="divider">
+
+  <h2>UART Theory</h2>
+
+  <h3>Electronic Communication Fundamentals</h3>
+  <p>The course starts with voltage as information — how analog signals work versus digital signals, the difference between parallel and serial communication, and directionality of data. UART is <strong>full duplex</strong>, meaning both devices can send and receive simultaneously.</p>
+
+  <h3>Wiring</h3>
+  <p>UART uses four lines: <strong>VCC</strong>, <strong>TX</strong> (transmit), <strong>RX</strong> (receive), and <strong>GND</strong>. The key thing to remember is that TX on one device connects to RX on the other, and vice versa. Ground connects to ground.</p>
+
+  <h3>Asynchronous Communication & Baud Rate</h3>
+  <p>Unlike SPI or I2C which use a shared clock line, UART is asynchronous — there's no clock. Instead, both devices agree in advance on the timing of transmissions. This is the <strong>baud rate</strong>: the number of signal changes per second.</p>
+  <p>Common baud rates:</p>
+  <ul>
+    <li>9600</li>
+    <li>19200</li>
+    <li>38400</li>
+    <li>57600</li>
+    <li><strong>115200</strong> — most common</li>
+  </ul>
+  <p>Both devices must use the exact same baud rate or data will be misinterpreted. This caught me out later.</p>
+
+  <h3>UART Data Frame</h3>
+  <p>The data frame is the smallest section of data transmitted — think of it like a packet in networking. Each frame contains:</p>
+
+  <div class="frame-diagram">
+    <div class="frame-bit start">1<div class="label">Start</div></div>
+    <div class="frame-bit data">4–8<div class="label">Data bits</div></div>
+    <div class="frame-bit parity">1<div class="label">Parity</div></div>
+    <div class="frame-bit stop">1–2<div class="label">Stop bits</div></div>
+  </div>
+
+  <p><strong>Parity</strong> is an optional error detection mechanism. With even parity, the bit is set so the total number of 1s in the frame is even. With odd parity, it's odd. Both devices must agree: none, odd, or even.</p>
+
+  <p>UART is referred to in shorthand as <code>baud, databits, parity, stopbits</code>. For example: <code>115200 8N1</code> (pronounced "eight none one") — 115200 baud, 8 data bits, no parity, 1 stop bit.</p>
+
+  <h3>TTL vs RS-232</h3>
+  <p>Most embedded devices use TTL voltage levels (3.3V or 5V). Legacy RS-232 uses different voltage ranges (e.g. -3V to -15V as logic high). Importantly, TTL devices are not resistant to different voltages — putting 5V into a 3.3V system can damage it. In those cases you need a logic level shifter.</p>
+
+  <div class="callout warning">
+    <div class="callout-label">⚠ Important</div>
+    For UART to work, both devices must agree on: baud rate, data bits, parity, stop bits, and voltage level. If any of these don't match, communication will fail.
+  </div>
+
+  <hr class="divider">
+
+  <h2>Flashing the Pico 2</h2>
+
+  <p>The course firmware is a <code>.uf2</code> file called <code>all_about_uart.uf2</code>. To flash it:</p>
+
+  <ol style="padding-left:1.5rem; margin-bottom:1rem;">
+    <li>Hold the <strong>BOOTSEL</strong> button on the Pico 2</li>
+    <li>Plug in via USB while holding the button</li>
+    <li>Release once the drive mounts</li>
+    <li>Copy the <code>.uf2</code> file to the drive</li>
+  </ol>
+
+  <pre>cp ~/Downloads/all_about_uart.uf2 /Volumes/RP2350/</pre>
+
+  <div class="callout">
+    <div class="callout-label">Note — Mac vs Linux</div>
+    On Linux the command uses <code>/Volumes/RPI-RP2</code>. On Mac with a Pico 2 (RP2350 chip), the drive mounts as <code>RP2350</code>. This is correct and expected — it is in bootloader mode.
+  </div>
+
+  <p>After copying, the drive disappears and the Pico reboots — that's normal and means it worked. The LED did not flash after booting, which I initially thought was an error. It's not — the <code>all_about_uart</code> firmware doesn't blink an LED. It just sits there waiting for a serial connection.</p>
+
+  <hr class="divider">
+
+  <h2>Logic Analyser Theory</h2>
+
+  <p>A digital signal is binary data transformed by a serial communication protocol into voltage levels over time — an electrical signal with two states (LOW and HIGH) that changes over time to represent binary data.</p>
+
+  <p>Tools for capturing digital signals:</p>
+  <ul>
+    <li><strong>Multimeter</strong> — too slow for serial data</li>
+    <li><strong>Logic analyser</strong> — just right</li>
+    <li><strong>Oscilloscope</strong> — great but usually overkill and expensive</li>
+  </ul>
+
+  <p>On a timing diagram: the X-axis is time, the Y-axis is voltage level (HIGH or LOW). For UART specifically, the start bit is always LOW, followed by data bits, an optional parity bit, and a stop bit (usually HIGH).</p>
+
+  <hr class="divider">
+
+  <h2>Setting Up the Logic Analyser (Mac Troubleshooting)</h2>
+
+  <p>The course uses Linux and recommends <code>sudo apt install pulseview sigrok-firmware-fx2lafw</code>. On Mac, <code>apt</code> doesn't exist — you need Homebrew. This is where things got complicated.</p>
+
+  <h3>HiLetgo USB Logic Analyser</h3>
+  <p>The HiLetgo 8-channel analyser uses a Cypress FX2 chip and is driven by the <code>fx2lafw</code> firmware — one of the best supported devices in sigrok.</p>
+
+  <h3>Attempt 1: Homebrew PulseView</h3>
+  <pre>brew install pulseview</pre>
+  <div class="callout">
+    <div class="callout-label">❌ Failed</div>
+    PulseView has been removed from Homebrew's formula list entirely. It no longer exists there.
+  </div>
+
+  <h3>Attempt 2: Pre-built .app from sigrok.org</h3>
+  <p>Downloaded the macOS binary from sigrok.org. Hit two missing library errors in a row:</p>
+  <pre>Library not loaded: /usr/local/opt/python@3.12/...
+Library not loaded: /usr/local/opt/dbus/lib/libdbus-1.3.dylib</pre>
+  <p>Fixed by installing the missing dependencies:</p>
+  <pre>brew install python@3.12
+brew install dbus</pre>
+  <p>After that, PulseView opened but showed nothing — running from terminal revealed a Python version mismatch. The app bundle had Python 3.13 paths hardcoded but was looking for 3.12 stdlib. Not fixable without rebuilding.</p>
+
+  <h3>Attempt 3: DSView</h3>
+  <p>Switched to DSView (by DreamSourceLab), which is a maintained fork of PulseView with proper macOS builds. Downloaded the <code>.dmg</code> from <a href="https://www.dreamsourcelab.com/download/" style="color:var(--accent)">dreamsourcelab.com</a>.</p>
+  <p>DSView opened fine, but the HiLetgo didn't appear in the device list. Checking the terminal output revealed the cause:</p>
+  <pre>sr: dslogic: Scan DSLogic device... Found: 0
+sr: dscope: Scan DSCope device... Found: 0</pre>
+  <div class="callout">
+    <div class="callout-label">❌ Failed</div>
+    DSView 1.3.2 only scans for DreamSourceLab's own hardware. Third-party fx2lafw devices like the HiLetgo are not supported.
+  </div>
+
+  <h3>Attempt 4: Sigrok-CLI + Build PulseView from Source</h3>
+  <pre>brew install sigrok-cli</pre>
+  <pre>sigrok-cli --scan
+# fx2lafw - Saleae Logic with 8 channels: D0 D1 D2 D3 D4 D5 D6 D7</pre>
+  <div class="callout success">
+    <div class="callout-label">✓ HiLetgo detected by sigrok-cli</div>
+    The device was alive and working. The issue was purely with the GUI apps.
+  </div>
+
+  <p>Built PulseView from source against local Homebrew libraries:</p>
+  <pre>brew install cmake pkg-config libsigrok libsigrokdecode \
+  glib glibmm@2.66 libusb boost qt@5
+git clone https://github.com/sigrokproject/pulseview.git
+cd pulseview && mkdir build && cd build
+cmake .. -DCMAKE_PREFIX_PATH="$(brew --prefix qt@5)" \
+         -DCMAKE_BUILD_TYPE=Release
+make -j4</pre>
+
+  <p>Hit three compile errors due to API changes in newer library versions. Fixed them by patching the source:</p>
+
+  <ul>
+    <li><code>storesession.cpp</code> — <code>Glib::DateTime</code> vs <code>Glib::TimeVal</code> mismatch</li>
+    <li><code>decodesignal.cpp</code> — <code>SRD_OUTPUT_LOGIC</code> removed in libsigrokdecode 0.5.3</li>
+    <li><code>decoder.cpp</code> — <code>srd_decoder_logic_output_channel</code> struct removed in libsigrokdecode 0.5.3</li>
+  </ul>
+
+  <div class="callout success">
+    <div class="callout-label">✓ PulseView compiled and running</div>
+    After patching all three files, the build succeeded and PulseView opened with the HiLetgo detected.
+  </div>
+
+  <div class="callout warning">
+    <div class="callout-label">💡 Alternative for Mac users</div>
+    If you don't want to go through all of this, run a Linux VM with USB passthrough. The apt install command just works on Ubuntu and saves a lot of pain.
+  </div>
+
+  <hr class="divider">
+
+  <h2>Connecting to the Pico via Serial</h2>
+
+  <p>The course uses various terminal tools. On Mac, the simplest that worked for me was <strong>miniterm</strong> via pyserial.</p>
+
+  <pre>pip3 install pyserial --break-system-packages
+python3 -m serial.tools.miniterm /dev/cu.usbserial-AB9BHU7G 115200</pre>
+
+  <p>To find your port name first:</p>
+  <pre>ls /dev/cu.*</pre>
+
+  <p>Look for something like <code>/dev/cu.usbserial-XXXXXXXX</code>. Once connected you should see the firmware's password prompt.</p>
+
+  <div class="callout success">
+    <div class="callout-label">✓ Connected</div>
+    Password: <code>pico2</code> — enters the main menu with options 1–5.
+  </div>
+
+  <p>To quit miniterm: <strong>Ctrl+]</strong></p>
+
+  <hr class="divider">
+
+  <h2>The Challenge — Brute Forcing the UART PIN</h2>
+
+  <p>The main menu has an <strong>Unlock</strong> option (option 4) that prompts for a 3-digit PIN. The task is to brute force it using a Python script over serial.</p>
+
+  <p>The course provides a starter script. The two changes needed for Mac:</p>
+
+  <pre># Change 1: Update the port name (Linux uses /dev/ttyUSB0, Mac is different)
+port='/dev/cu.usbserial-AB9BHU7G',
+
+# Change 2: Match the correct baud rate
+baudrate=115200,</pre>
+
+  <p>Close miniterm first (only one program can hold the serial port at a time), then run:</p>
+  <pre>python3 brute.py</pre>
+
+  <p>The script loops through every PIN from <code>000</code> to <code>999</code>, sends each one via the Unlock menu, and checks if the response contains <code>"Incorrect PIN"</code>. If that phrase is absent, the PIN was accepted.</p>
+
+  <div class="callout warning">
+    <div class="callout-label">Gotcha</div>
+    The script waits for the <code>Password:</code> prompt on startup. If the Pico already booted before the script connected, it missed it. Fix: unplug and replug the Pico right after starting the script.
+  </div>
+
+  <div class="pin-result">
+    <span class="pin">067</span>
+    <div class="pin-label">PIN cracked after 68 attempts</div>
+  </div>
+
+  <hr class="divider">
+
+  <h2>Why This Matters</h2>
+
+  <p>This is a great demonstration of why UART security matters on real hardware:</p>
+  <ul>
+    <li><strong>PINs should never be hardcoded</strong> in firmware</li>
+    <li><strong>Rate limiting</strong> is essential — without lockout after failed attempts, brute force is trivial</li>
+    <li><strong>UART debug ports</strong> on production devices should be disabled or physically removed</li>
+    <li>An attacker with physical access and a $10 USB-to-UART adapter can do exactly what we just did</li>
+  </ul>
+
+  <hr class="divider">
+
+  <div class="credits">
+    <div style="color:var(--accent); margin-bottom:0.75rem; font-weight:700;">Course Credits</div>
+    <div style="margin-bottom:0.4rem;">Andrew Bellini — <a href="https://links.digitalandrew.io">links.digitalandrew.io</a> · <a href="https://www.youtube.com/@D1gitalAndrew">YouTube</a></div>
+    <div>Matt Brown — <a href="https://brownfinesecurity.com">brownfinesecurity.com</a> · <a href="https://www.youtube.com/@mattbrwn">YouTube</a></div>
+    <div style="margin-top:0.75rem; color:var(--muted);">All About UART — Brown Fine Security</div>
+  </div>
+
+</div>
+</body>
+</html>
