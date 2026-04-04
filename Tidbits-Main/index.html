@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TidBits — CyberCasquatch</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d0d0d; --surface: #141414; --border: #222;
+    --accent: #00ff9d; --accent2: #ff6b35; --text: #e0e0e0; --muted: #555;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: 'Syne', sans-serif; line-height: 1.7; }
+  body::before {
+    content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 999;
+    background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.03) 2px, rgba(0,0,0,0.03) 4px);
+  }
+  nav {
+    border-bottom: 1px solid var(--border); padding: 1.25rem 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    position: sticky; top: 0; background: rgba(13,13,13,0.95); backdrop-filter: blur(8px); z-index: 100;
+  }
+  .nav-logo { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 0.9rem; color: var(--accent); text-decoration: none; }
+  .nav-logo span { color: var(--text); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--muted); text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+  .hero { max-width: 860px; margin: 0 auto; padding: 4rem 2rem 2.5rem; border-bottom: 1px solid var(--border); }
+  .hero-tag { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--accent); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem; }
+  .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.75rem; }
+  .hero p { color: var(--muted); font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; }
+  .main { max-width: 860px; margin: 0 auto; padding: 3rem 2rem 6rem; }
+  .year-block { margin-bottom: 2.5rem; }
+  .year-label {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--accent);
+    border: 1px solid var(--accent); display: inline-block; padding: 0.15rem 0.6rem;
+    letter-spacing: 0.12em; margin-bottom: 1rem;
+  }
+  .post-card {
+    display: block; text-decoration: none; border: 1px solid var(--border);
+    background: var(--surface); padding: 1rem 1.25rem; margin-bottom: 0.6rem;
+    transition: border-color 0.2s, background 0.2s;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .post-card:hover { border-color: var(--accent); background: #161616; }
+  .post-card:hover .arrow { color: var(--accent); transform: translateX(3px); }
+  .post-title { font-size: 0.92rem; font-weight: 700; color: var(--text); }
+  .post-badge {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.62rem;
+    padding: 0.15rem 0.5rem; border: 1px solid var(--border); color: var(--muted);
+    white-space: nowrap; flex-shrink: 0; margin-left: 1rem;
+  }
+  .badge-htb { border-color: #ff4444; color: #ff4444; }
+  .badge-net { border-color: #aa44ff; color: #aa44ff; }
+  .badge-web { border-color: var(--accent2); color: var(--accent2); }
+  .badge-dfir { border-color: #44aaff; color: #44aaff; }
+  .arrow { color: var(--border); margin-left: 0.75rem; transition: color 0.2s, transform 0.2s; flex-shrink: 0; }
+  footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--muted); }
+  footer a { color: var(--accent); text-decoration: none; }
+  @keyframes fadeUp { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
+  .year-block { animation: fadeUp 0.4s ease both; }
+  .year-block:nth-child(2) { animation-delay: 0.05s; }
+  .year-block:nth-child(3) { animation-delay: 0.1s; }
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="/"><span>//</span> CyberCasquatch</a>
+  <ul class="nav-links">
+    <li><a href="/TidBits-Main" class="active">TidBits</a></li>
+    <li><a href="/Walkthrough-Main">Walkthroughs</a></li>
+    <li><a href="/Resources-page">Resources</a></li>
+    <li><a href="/Projects">Projects</a></li>
+    <li><a href="https://github.com/CyberCasquatch/cybercasquatch.github.io">GitHub</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="hero-tag">// Brain Farts</div>
+  <h1>TidBits</h1>
+  <p>Notes for future squatch — quick references, observations, and things worth remembering.</p>
+</div>
+
+<div class="main">
+
+  <div class="year-block">
+    <div class="year-label">2026</div>
+    <a class="post-card" href="/TidBits-Main/_posts/TidBits/2026-03-31-PortswiggerAccessControl.md">
+      <div class="post-title">Portswigger Access Control</div>
+      <div style="display:flex;align-items:center">
+        <span class="post-badge badge-web">Web</span>
+        <span class="arrow">→</span>
+      </div>
+    </a>
+    <a class="post-card" href="/TidBits-Main/_posts/TidBits/2026-03-31-PortswiggerPathTraversal.md">
+      <div class="post-title">Portswigger Path Traversal</div>
+      <div style="display:flex;align-items:center">
+        <span class="post-badge badge-web">Web</span>
+        <span class="arrow">→</span>
+      </div>
+    </a>
+  </div>
+
+  <div class="year-block">
+    <div class="year-label">2025</div>
+    <a class="post-card" href="/MST/"><div class="post-title">MST</div><div style="display:flex;align-items:center"><span class="post-badge badge-net">Net</span><span class="arrow">→</span></div></a>
+    <a class="post-card" href="/Etherchannel/"><div class="post-title">Etherchannel</div><div style="display:flex;align-items:center"><span class="post-badge badge-net">Net</span><span class="arrow">→</span></div></a>
+    <a class="post-card" href="/PrivateVLAN/"><div class="post-title">Private VLAN</div><div style="display:flex;align-items:center"><span class="post-badge badge-net">Net</span><span class="arrow">→</span></div></a>
+    <a class="post-card" href="/PVRST/"><div class="post-title">PVRST</div><div style="display:flex;align-items:center"><span class="post-badge badge-net">Net</span><span class="arrow">→</span></div></a>
+    <a class="post-card" href="/BPDUGUard/"><div class="post-title">BPDU Guard</div><div style="display:flex;align-items:center"><span class="post-badge badge-net">Net</span><span class="arrow">→</span></div></a>
+    <a class="post-card" href="/TBBumblebee/"><div class="post-title">Bumblebee Sherlock</div><div style="display:flex;align-items:center"><span class="post-badge badge-htb">HTB</span><span class="arrow">→</span></div></a>
+    <a class="post-card" href="/STPLoopGuard/"><div class="post-title">STP LoopGuard</div><div style="display:flex;align-items:center"><span class="post-badge badge-net">Net</span><span class="arrow">→</span></div></a>
+    <a class="post-card" href="/STP1/"><div class="post-title">STP 1</div><div style="display:flex;align-items:center"><span class="post-badge badge-net">Net</span><span class="arrow">→</span></div></a>
+    <a class="post-card" href="/UDLD/"><div class="post-title">UDLD in GNS3</div><div style="display:flex;align-items:center"><span class="post-badge badge-net">Net</span><span class="arrow">→</span></div></a>
+    <a class="post-card" href="/VACL/"><div class="post-title">VACL Lab</div><div style="display:flex;align-items:center"><span class="post-badge badge-net">Net</span><span class="arrow">→</span></div></a>
+    <a class="post-card" href="/TBNoxious/"><div class="post-title">Noxious Sherlock</div><div style="display:flex;align-items:center"><span class="post-badge badge-htb">HTB</span><span class="arrow">→</span></div></a>
+    <a class="post-card" href="/vlanstrunkspt2/"><div class="post-title">VLAN &amp; Trunks</div><div style="display:flex;align-items:center"><span class="post-badge badge-net">Net</span><span class="arrow">→</span></div></a>
+    <a class="post-card" href="/vlansgns3/"><div class="post-title">VTP</div><div style="display:flex;align-items:center"><span class="post-badge badge-net">Net</span><span class="arrow">→</span></div></a>
+    <a class="post-card" href="/FirstGNS3/"><div class="post-title">First GNS3 Network</div><div style="display:flex;align-items:center"><span class="post-badge badge-net">Net</span><span class="arrow">→</span></div></a>
+    <a class="post-card" href="/PCAP/"><div class="post-title">PCAP</div><div style="display:flex;align-items:center"><span class="post-badge badge-dfir">DFIR</span><span class="arrow">→</span></div></a>
+    <a class="post-card" href="/TBReaper/"><div class="post-title">Reaper Sherlock</div><div style="display:flex;align-items:center"><span class="post-badge badge-htb">HTB</span><span class="arrow">→</span></div></a>
+    <a class="post-card" href="/EventLogs/"><div class="post-title">Event Logs</div><div style="display:flex;align-items:center"><span class="post-badge badge-dfir">DFIR</span><span class="arrow">→</span></div></a>
+    <a class="post-card" href="/TBCJ12/"><div class="post-title">Crown Jewel 1 + 2</div><div style="display:flex;align-items:center"><span class="post-badge badge-htb">HTB</span><span class="arrow">→</span></div></a>
+  </div>
+
+  <div class="year-block">
+    <div class="year-label">2024</div>
+    <a class="post-card" href="/TidBit-XSS/"><div class="post-title">XSS</div><div style="display:flex;align-items:center"><span class="post-badge badge-web">Web</span><span class="arrow">→</span></div></a>
+    <a class="post-card" href="/TidBit-9/"><div class="post-title">TidBit 9</div><div style="display:flex;align-items:center"><span class="post-badge">Misc</span><span class="arrow">→</span></div></a>
+    <a class="post-card" href="/TidBit-10/"><div class="post-title">TidBit 10</div><div style="display:flex;align-items:center"><span class="post-badge">Misc</span><span class="arrow">→</span></div></a>
+    <a class="post-card" href="/TidBit-11/"><div class="post-title">TidBit 11</div><div style="display:flex;align-items:center"><span class="post-badge">Misc</span><span class="arrow">→</span></div></a>
+    <a class="post-card" href="/TidBit-12/"><div class="post-title">TidBit 12</div><div style="display:flex;align-items:center"><span class="post-badge">Misc</span><span class="arrow">→</span></div></a>
+    <a class="post-card" href="/TidBit-19/"><div class="post-title">TidBit 19</div><div style="display:flex;align-items:center"><span class="post-badge">Misc</span><span class="arrow">→</span></div></a>
+    <a class="post-card" href="/TidBit-20/"><div class="post-title">TidBit 20</div><div style="display:flex;align-items:center"><span class="post-badge">Misc</span><span class="arrow">→</span></div></a>
+  </div>
+
+</div>
+
+<footer>
+  <a href="/">← Home</a> &nbsp;·&nbsp; CyberCasquatch &nbsp;·&nbsp; <a href="https://github.com/CyberCasquatch/cybercasquatch.github.io">GitHub</a>
+</footer>
+</body>
+</html>
