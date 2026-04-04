@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Walkthroughs — CyberCasquatch</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d0d0d; --surface: #141414; --border: #222;
+    --accent: #00ff9d; --accent2: #ff6b35; --text: #e0e0e0; --muted: #555;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: 'Syne', sans-serif; line-height: 1.7; }
+  body::before {
+    content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 999;
+    background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.03) 2px, rgba(0,0,0,0.03) 4px);
+  }
+  nav {
+    border-bottom: 1px solid var(--border); padding: 1.25rem 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    position: sticky; top: 0; background: rgba(13,13,13,0.95); backdrop-filter: blur(8px); z-index: 100;
+  }
+  .nav-logo { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 0.9rem; color: var(--accent); text-decoration: none; }
+  .nav-logo span { color: var(--text); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--muted); text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+  .hero { max-width: 860px; margin: 0 auto; padding: 4rem 2rem 2.5rem; border-bottom: 1px solid var(--border); }
+  .hero-tag { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--accent); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem; }
+  .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.75rem; }
+  .hero p { color: var(--muted); font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; }
+  .main { max-width: 860px; margin: 0 auto; padding: 3rem 2rem 6rem; }
+  .platform-block { margin-bottom: 3rem; }
+  .platform-header {
+    display: flex; align-items: center; gap: 1rem;
+    border-bottom: 1px solid var(--border); padding-bottom: 0.75rem; margin-bottom: 1.25rem;
+  }
+  .platform-name { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--muted); }
+  .platform-badge {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.65rem;
+    padding: 0.12rem 0.5rem; letter-spacing: 0.08em;
+  }
+  .badge-htb { border: 1px solid #ff4444; color: #ff4444; }
+  .badge-thm { border: 1px solid #44aaff; color: #44aaff; }
+  .badge-hw { border: 1px solid var(--accent); color: var(--accent); }
+  .post-card {
+    display: flex; align-items: center; justify-content: space-between;
+    text-decoration: none; border: 1px solid var(--border);
+    background: var(--surface); padding: 1.1rem 1.25rem; margin-bottom: 0.6rem;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .post-card:hover { border-color: var(--accent); background: #161616; }
+  .post-card:hover .arrow { color: var(--accent); transform: translateX(3px); }
+  .post-info { flex: 1; }
+  .post-title { font-size: 0.95rem; font-weight: 700; color: var(--text); margin-bottom: 0.15rem; }
+  .post-sub { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--muted); }
+  .arrow { color: var(--border); margin-left: 1rem; transition: color 0.2s, transform 0.2s; flex-shrink: 0; }
+  footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--muted); }
+  footer a { color: var(--accent); text-decoration: none; }
+  @keyframes fadeUp { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
+  .platform-block { animation: fadeUp 0.4s ease both; }
+  .platform-block:nth-child(2) { animation-delay: 0.07s; }
+  .platform-block:nth-child(3) { animation-delay: 0.14s; }
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="/"><span>//</span> CyberCasquatch</a>
+  <ul class="nav-links">
+    <li><a href="/TidBits-Main">TidBits</a></li>
+    <li><a href="/Walkthrough-Main" class="active">Walkthroughs</a></li>
+    <li><a href="/Resources-page">Resources</a></li>
+    <li><a href="/Projects">Projects</a></li>
+    <li><a href="https://github.com/CyberCasquatch/cybercasquatch.github.io">GitHub</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="hero-tag">// Step by Step</div>
+  <h1>Walkthroughs</h1>
+  <p>CTF writeups, lab walkthroughs, and platform challenges — documented for reference.</p>
+</div>
+
+<div class="main">
+
+  <div class="platform-block">
+    <div class="platform-header">
+      <div class="platform-name">Hack The Box</div>
+      <span class="platform-badge badge-htb">HTB</span>
+    </div>
+    <a class="post-card" href="/Log-jammer/">
+      <div class="post-info">
+        <div class="post-title">Sherlock: Logjammer</div>
+        <div class="post-sub">DFIR · Log analysis</div>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+    <a class="post-card" href="/origins-sherlock/">
+      <div class="post-info">
+        <div class="post-title">Sherlock: Origins</div>
+        <div class="post-sub">DFIR · Forensics</div>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+    <a class="post-card" href="/brutus-sherlock/">
+      <div class="post-info">
+        <div class="post-title">Sherlock: Brutus</div>
+        <div class="post-sub">DFIR · Forensics</div>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+  </div>
+
+  <div class="platform-block">
+    <div class="platform-header">
+      <div class="platform-name">TryHackMe</div>
+      <span class="platform-badge badge-thm">THM</span>
+    </div>
+    <a class="post-card" href="/Yara-Walkthrough/">
+      <div class="post-info">
+        <div class="post-title">Yara Room Walkthrough</div>
+        <div class="post-sub">Threat detection · Malware analysis</div>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+    <a class="post-card" href="/Snort-Walkthrough/">
+      <div class="post-info">
+        <div class="post-title">Snort Room Walkthrough</div>
+        <div class="post-sub">IDS/IPS · Network monitoring</div>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+    <a class="post-card" href="/CI-CD-Pipeline/">
+      <div class="post-info">
+        <div class="post-title">CI/CD Pipeline Room Walkthrough</div>
+        <div class="post-sub">DevSecOps · Pipeline security</div>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+  </div>
+
+  <div class="platform-block">
+    <div class="platform-header">
+      <div class="platform-name">Hardware</div>
+      <span class="platform-badge badge-hw">HW</span>
+    </div>
+    <a class="post-card" href="/AllAboutUART/">
+      <div class="post-info">
+        <div class="post-title">All About UART — Brown Fine Security</div>
+        <div class="post-sub">Raspberry Pi Pico 2 · UART · Brute force · macOS</div>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+  </div>
+
+</div>
+
+<footer>
+  <a href="/">← Home</a> &nbsp;·&nbsp; CyberCasquatch &nbsp;·&nbsp; <a href="https://github.com/CyberCasquatch/cybercasquatch.github.io">GitHub</a>
+</footer>
+</body>
+</html>
