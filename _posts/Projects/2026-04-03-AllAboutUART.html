@@ -495,7 +495,7 @@ python3 -m serial.tools.miniterm /dev/cu.usbserial-AB9BHU7G 115200</pre>
   <hr class="divider">
 
   <h2>The Challenge — Brute Forcing the UART PIN</h2>
-
+  <h2>*ALERT* There are spoilers beyong this point, proceed at your own risk</h2>
   <p>The main menu has an <strong>Unlock</strong> option (option 4) that prompts for a 3-digit PIN. The task is to brute force it using a Python script over serial.</p>
 
   <p>The course provides a starter script. The two changes needed for Mac:</p>
@@ -512,7 +512,7 @@ baudrate=115200,</pre>
   <p>The script loops through every PIN from <code>000</code> to <code>999</code>, sends each one via the Unlock menu, and checks if the response contains <code>"Incorrect PIN"</code>. If that phrase is absent, the PIN was accepted.</p>
 
   <div class="callout warning">
-    <div class="callout-label">Gotcha</div>
+    <div class="callout-label">Look Here</div>
     The script waits for the <code>Password:</code> prompt on startup. If the Pico already booted before the script connected, it missed it. Fix: unplug and replug the Pico right after starting the script.
   </div>
 
