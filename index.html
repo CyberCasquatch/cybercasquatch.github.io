@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CyberCasquatch</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d0d0d;
+    --surface: #141414;
+    --border: #222;
+    --accent: #00ff9d;
+    --accent2: #ff6b35;
+    --text: #e0e0e0;
+    --muted: #555;
+    --code-bg: #1a1a1a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Syne', sans-serif;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg, transparent, transparent 2px,
+      rgba(0,0,0,0.03) 2px, rgba(0,0,0,0.03) 4px
+    );
+    pointer-events: none;
+    z-index: 999;
+  }
+
+  /* NAV */
+  nav {
+    border-bottom: 1px solid var(--border);
+    padding: 1.25rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    background: rgba(13,13,13,0.95);
+    backdrop-filter: blur(8px);
+    z-index: 100;
+  }
+
+  .nav-logo {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--accent);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+  }
+
+  .nav-logo span { color: var(--text); }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--accent); }
+
+  /* HERO */
+  .hero {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 5rem 2rem 3rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero h1 .dim { color: var(--muted); }
+  .hero h1 .accent { color: var(--accent); }
+
+  .hero-desc {
+    color: var(--muted);
+    font-size: 0.95rem;
+    max-width: 480px;
+    font-family: 'JetBrains Mono', monospace;
+    line-height: 1.8;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 3rem;
+    margin-top: 2.5rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+  }
+
+  .stat-val {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--accent);
+    font-family: 'Syne', sans-serif;
+    line-height: 1;
+  }
+
+  .stat-label { color: var(--muted); margin-top: 0.2rem; }
+
+  /* MAIN LAYOUT */
+  .main {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 3rem 2rem 6rem;
+  }
+
+  /* SECTION */
+  .section { margin-bottom: 3.5rem; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+  }
+
+  .section-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 0.1rem 0.5rem;
+    letter-spacing: 0.1em;
+  }
+
+  /* POST CARDS */
+  .post-card {
+    display: block;
+    text-decoration: none;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 0.75rem;
+    transition: border-color 0.2s, background 0.2s;
+    position: relative;
+  }
+
+  .post-card:hover {
+    border-color: var(--accent);
+    background: #161616;
+  }
+
+  .post-card:hover .post-arrow { color: var(--accent); transform: translateX(3px); }
+
+  .post-card-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .post-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.2rem;
+  }
+
+  .post-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--muted);
+  }
+
+  .post-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    padding: 0.15rem 0.5rem;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .post-badge.hardware { border-color: var(--accent); color: var(--accent); }
+  .post-badge.htb { border-color: #ff4444; color: #ff4444; }
+  .post-badge.thm { border-color: #44aaff; color: #44aaff; }
+  .post-badge.networking { border-color: #aa44ff; color: #aa44ff; }
+  .post-badge.web { border-color: var(--accent2); color: var(--accent2); }
+
+  .post-arrow {
+    color: var(--border);
+    font-size: 1rem;
+    transition: color 0.2s, transform 0.2s;
+    flex-shrink: 0;
+    margin-left: 0.5rem;
+  }
+
+  /* Year group */
+  .year-group { margin-bottom: 2rem; }
+
+  .year-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    margin-bottom: 0.75rem;
+    padding-left: 0.25rem;
+  }
+
+  /* Footer */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 2rem;
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--muted);
+  }
+
+  footer a { color: var(--accent); text-decoration: none; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero { animation: fadeUp 0.5s ease both; }
+  .section { animation: fadeUp 0.5s ease both; }
+  .section:nth-child(2) { animation-delay: 0.05s; }
+  .section:nth-child(3) { animation-delay: 0.1s; }
+  .section:nth-child(4) { animation-delay: 0.15s; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="/"><span>//</span> CyberCasquatch</a>
+  <ul class="nav-links">
+    <li><a href="/TidBits-Main">TidBits</a></li>
+    <li><a href="/Walkthrough-Main">Walkthroughs</a></li>
+    <li><a href="/Resources-page">Resources</a></li>
+    <li><a href="/Projects">Projects</a></li>
+    <li><a href="https://github.com/CyberCasquatch/cybercasquatch.github.io">GitHub</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="hero-tag">// Security Research & Learning</div>
+  <h1>
+    <span class="dim">cyber</span><span class="accent">casquatch</span>
+  </h1>
+  <p class="hero-desc">
+    Documenting the journey through hardware hacking, CTFs, networking, and whatever else breaks in interesting ways.
+  </p>
+  <div class="hero-stats">
+    <div>
+      <span class="stat-val">30+</span>
+      <div class="stat-label">posts</div>
+    </div>
+    <div>
+      <span class="stat-val">2024–</span>
+      <div class="stat-label">active</div>
+    </div>
+    <div>
+      <span class="stat-val">∞</span>
+      <div class="stat-label">rabbit holes</div>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- LATEST -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Latest</div>
+      <div class="section-tag">NEW</div>
+    </div>
+
+    <a class="post-card" href="/AllAboutUART/">
+      <div class="post-card-inner">
+        <div>
+          <div class="post-title">All About UART — Brown Fine Security</div>
+          <div class="post-meta">Hardware hacking · Raspberry Pi Pico 2 · Brute force · macOS troubleshooting</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.75rem;flex-shrink:0">
+          <span class="post-badge hardware">Hardware</span>
+          <span class="post-arrow">→</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="post-card" href="/TidBits-Main/_posts/TidBits/2026-03-31-PortswiggerAccessControl.md">
+      <div class="post-card-inner">
+        <div>
+          <div class="post-title">TidBit — Portswigger Access Control</div>
+          <div class="post-meta">Web security · PortSwigger Academy</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.75rem;flex-shrink:0">
+          <span class="post-badge web">Web</span>
+          <span class="post-arrow">→</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="post-card" href="/TidBits-Main/_posts/TidBits/2026-03-31-PortswiggerPathTraversal.md">
+      <div class="post-card-inner">
+        <div>
+          <div class="post-title">TidBit — Portswigger Path Traversal</div>
+          <div class="post-meta">Web security · PortSwigger Academy</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.75rem;flex-shrink:0">
+          <span class="post-badge web">Web</span>
+          <span class="post-arrow">→</span>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <!-- WALKTHROUGHS -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Walkthroughs</div>
+    </div>
+
+    <div class="year-group">
+      <div class="year-label">Hack The Box</div>
+      <a class="post-card" href="/Log-jammer/">
+        <div class="post-card-inner">
+          <div>
+            <div class="post-title">Sherlock: Logjammer</div>
+            <div class="post-meta">HTB Sherlock · DFIR</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:0.75rem;flex-shrink:0">
+            <span class="post-badge htb">HTB</span>
+            <span class="post-arrow">→</span>
+          </div>
+        </div>
+      </a>
+      <a class="post-card" href="/origins-sherlock/">
+        <div class="post-card-inner">
+          <div>
+            <div class="post-title">Sherlock: Origins</div>
+            <div class="post-meta">HTB Sherlock · DFIR</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:0.75rem;flex-shrink:0">
+            <span class="post-badge htb">HTB</span>
+            <span class="post-arrow">→</span>
+          </div>
+        </div>
+      </a>
+      <a class="post-card" href="/brutus-sherlock/">
+        <div class="post-card-inner">
+          <div>
+            <div class="post-title">Sherlock: Brutus</div>
+            <div class="post-meta">HTB Sherlock · DFIR</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:0.75rem;flex-shrink:0">
+            <span class="post-badge htb">HTB</span>
+            <span class="post-arrow">→</span>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="year-group">
+      <div class="year-label">TryHackMe</div>
+      <a class="post-card" href="/Yara-Walkthrough/">
+        <div class="post-card-inner">
+          <div>
+            <div class="post-title">Yara Room Walkthrough</div>
+            <div class="post-meta">TryHackMe · Threat detection</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:0.75rem;flex-shrink:0">
+            <span class="post-badge thm">THM</span>
+            <span class="post-arrow">→</span>
+          </div>
+        </div>
+      </a>
+      <a class="post-card" href="/Snort-Walkthrough/">
+        <div class="post-card-inner">
+          <div>
+            <div class="post-title">Snort Room Walkthrough</div>
+            <div class="post-meta">TryHackMe · IDS/IPS</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:0.75rem;flex-shrink:0">
+            <span class="post-badge thm">THM</span>
+            <span class="post-arrow">→</span>
+          </div>
+        </div>
+      </a>
+      <a class="post-card" href="/CI-CD-Pipeline/">
+        <div class="post-card-inner">
+          <div>
+            <div class="post-title">CI/CD Pipeline Room Walkthrough</div>
+            <div class="post-meta">TryHackMe · DevSecOps</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:0.75rem;flex-shrink:0">
+            <span class="post-badge thm">THM</span>
+            <span class="post-arrow">→</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- TIDBITS -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">TidBits</div>
+      <a href="/TidBits-Main" style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--muted);text-decoration:none;margin-left:auto;">view all →</a>
+    </div>
+
+    <div class="year-group">
+      <div class="year-label">2025–2026</div>
+      <a class="post-card" href="/TBBumblebee/">
+        <div class="post-card-inner">
+          <div><div class="post-title">Bumblebee Sherlock</div><div class="post-meta">HTB Sherlock TidBit</div></div>
+          <div style="display:flex;align-items:center;gap:0.75rem;flex-shrink:0"><span class="post-badge htb">HTB</span><span class="post-arrow">→</span></div>
+        </div>
+      </a>
+      <a class="post-card" href="/TBNoxious/">
+        <div class="post-card-inner">
+          <div><div class="post-title">Noxious Sherlock</div><div class="post-meta">HTB Sherlock TidBit</div></div>
+          <div style="display:flex;align-items:center;gap:0.75rem;flex-shrink:0"><span class="post-badge htb">HTB</span><span class="post-arrow">→</span></div>
+        </div>
+      </a>
+      <a class="post-card" href="/MST/">
+        <div class="post-card-inner">
+          <div><div class="post-title">MST</div><div class="post-meta">Networking TidBit</div></div>
+          <div style="display:flex;align-items:center;gap:0.75rem;flex-shrink:0"><span class="post-badge networking">Net</span><span class="post-arrow">→</span></div>
+        </div>
+      </a>
+      <a class="post-card" href="/Etherchannel/">
+        <div class="post-card-inner">
+          <div><div class="post-title">Etherchannel</div><div class="post-meta">Networking TidBit</div></div>
+          <div style="display:flex;align-items:center;gap:0.75rem;flex-shrink:0"><span class="post-badge networking">Net</span><span class="post-arrow">→</span></div>
+        </div>
+      </a>
+      <a class="post-card" href="/TidBits-Main" style="border-style:dashed;">
+        <div class="post-card-inner">
+          <div><div class="post-title" style="color:var(--muted)">View all TidBits →</div></div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div>CyberCasquatch · <a href="https://github.com/CyberCasquatch/cybercasquatch.github.io">GitHub</a></div>
+</footer>
+
+</body>
+</html>
