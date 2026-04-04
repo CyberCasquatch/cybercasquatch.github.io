@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — CyberCasquatch</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d0d0d; --surface: #141414; --border: #222;
+    --accent: #00ff9d; --accent2: #ff6b35; --text: #e0e0e0; --muted: #555;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: 'Syne', sans-serif; line-height: 1.7; }
+  body::before {
+    content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 999;
+    background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.03) 2px, rgba(0,0,0,0.03) 4px);
+  }
+  nav {
+    border-bottom: 1px solid var(--border); padding: 1.25rem 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    position: sticky; top: 0; background: rgba(13,13,13,0.95); backdrop-filter: blur(8px); z-index: 100;
+  }
+  .nav-logo { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 0.9rem; color: var(--accent); text-decoration: none; }
+  .nav-logo span { color: var(--text); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--muted); text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+  .hero { max-width: 860px; margin: 0 auto; padding: 4rem 2rem 2.5rem; border-bottom: 1px solid var(--border); }
+  .hero-tag { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--accent); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem; }
+  .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.75rem; }
+  .hero p { color: var(--muted); font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; }
+  .main { max-width: 860px; margin: 0 auto; padding: 3rem 2rem 6rem; }
+  .year-block { margin-bottom: 3rem; }
+  .year-label {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--accent);
+    border: 1px solid var(--accent); display: inline-block; padding: 0.15rem 0.6rem;
+    letter-spacing: 0.12em; margin-bottom: 1.25rem;
+  }
+  .project-card {
+    display: flex; align-items: center; justify-content: space-between;
+    text-decoration: none; border: 1px solid var(--border);
+    background: var(--surface); padding: 1.2rem 1.5rem; margin-bottom: 0.75rem;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .project-card:hover { border-color: var(--accent); background: #161616; }
+  .project-card:hover .arrow { color: var(--accent); transform: translateX(3px); }
+  .project-card:hover .project-title { color: var(--accent); }
+  .project-info { flex: 1; }
+  .project-title { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 0.15rem; transition: color 0.2s; }
+  .project-sub { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--muted); }
+  .project-badge {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.62rem;
+    padding: 0.15rem 0.5rem; border: 1px solid var(--border); color: var(--muted);
+    white-space: nowrap; flex-shrink: 0; margin: 0 0.75rem;
+  }
+  .badge-hw { border-color: var(--accent); color: var(--accent); }
+  .badge-lab { border-color: #44aaff; color: #44aaff; }
+  .badge-net { border-color: #aa44ff; color: #aa44ff; }
+  .badge-soc { border-color: var(--accent2); color: var(--accent2); }
+  .badge-3d { border-color: #ffcc00; color: #ffcc00; }
+  .badge-dev { border-color: #ff4444; color: #ff4444; }
+  .arrow { color: var(--border); flex-shrink: 0; transition: color 0.2s, transform 0.2s; }
+  footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--muted); }
+  footer a { color: var(--accent); text-decoration: none; }
+  @keyframes fadeUp { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
+  .year-block { animation: fadeUp 0.4s ease both; }
+  .year-block:nth-child(2) { animation-delay: 0.07s; }
+  .year-block:nth-child(3) { animation-delay: 0.14s; }
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="/"><span>//</span> CyberCasquatch</a>
+  <ul class="nav-links">
+    <li><a href="/TidBits-Main">TidBits</a></li>
+    <li><a href="/Walkthrough-Main">Walkthroughs</a></li>
+    <li><a href="/Resources-page">Resources</a></li>
+    <li><a href="/Projects" class="active">Projects</a></li>
+    <li><a href="https://github.com/CyberCasquatch/cybercasquatch.github.io">GitHub</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="hero-tag">// Activities by the Squatch</div>
+  <h1>Projects</h1>
+  <p>Labs, builds, courses, and things that kept me busy.</p>
+</div>
+
+<div class="main">
+
+  <div class="year-block">
+    <div class="year-label">2026</div>
+    <a class="project-card" href="/Big-Iron/">
+      <div class="project-info">
+        <div class="project-title">Voron 2.4 Build</div>
+        <div class="project-sub">3D printer build — big iron edition</div>
+      </div>
+      <span class="project-badge badge-3d">3D Print</span>
+      <span class="arrow">→</span>
+    </a>
+    <a class="project-card" href="/AllAboutUART/">
+      <div class="project-info">
+        <div class="project-title">All About UART</div>
+        <div class="project-sub">Brown Fine Security · Hardware hacking · Raspberry Pi Pico 2</div>
+      </div>
+      <span class="project-badge badge-hw">Hardware</span>
+      <span class="arrow">→</span>
+    </a>
+  </div>
+
+  <div class="year-block">
+    <div class="year-label">2024</div>
+    <a class="project-card" href="/Download-file-cleanup/">
+      <div class="project-info">
+        <div class="project-title">Downloads Folder Cleanup</div>
+        <div class="project-sub">Scripting · File management</div>
+      </div>
+      <span class="project-badge badge-dev">Dev</span>
+      <span class="arrow">→</span>
+    </a>
+    <a class="project-card" href="/Visual-Packet_tracer/">
+      <div class="project-info">
+        <div class="project-title">Visual Packet Tracer</div>
+        <div class="project-sub">Networking · Cisco Packet Tracer</div>
+      </div>
+      <span class="project-badge badge-net">Net</span>
+      <span class="arrow">→</span>
+    </a>
+    <a class="project-card" href="/ActiveDirectoryLab/">
+      <div class="project-info">
+        <div class="project-title">Active Directory Lab</div>
+        <div class="project-sub">Home lab · Windows Server · AD DS</div>
+      </div>
+      <span class="project-badge badge-lab">Lab</span>
+      <span class="arrow">→</span>
+    </a>
+    <a class="project-card" href="/NessusLab/">
+      <div class="project-info">
+        <div class="project-title">Nessus Lab</div>
+        <div class="project-sub">Vulnerability scanning · Tenable Nessus</div>
+      </div>
+      <span class="project-badge badge-lab">Lab</span>
+      <span class="arrow">→</span>
+    </a>
+    <a class="project-card" href="/SentinelSIEMLab/">
+      <div class="project-info">
+        <div class="project-title">Sentinel Lab</div>
+        <div class="project-sub">Microsoft Sentinel · SIEM · SOC</div>
+      </div>
+      <span class="project-badge badge-soc">SOC</span>
+      <span class="arrow">→</span>
+    </a>
+    <a class="project-card" href="/THMSOCLVL1Path/">
+      <div class="project-info">
+        <div class="project-title">SOC Analyst Path Level 1</div>
+        <div class="project-sub">TryHackMe · SOC · Blue team</div>
+      </div>
+      <span class="project-badge badge-soc">SOC</span>
+      <span class="arrow">→</span>
+    </a>
+    <a class="project-card" href="/CCNA_part1/">
+      <div class="project-info">
+        <div class="project-title">CCNA 200-301 — Part 1</div>
+        <div class="project-sub">Cisco · Networking fundamentals</div>
+      </div>
+      <span class="project-badge badge-net">Net</span>
+      <span class="arrow">→</span>
+    </a>
+    <a class="project-card" href="/CCNA_part2/">
+      <div class="project-info">
+        <div class="project-title">CCNA 200-301 — Part 2</div>
+        <div class="project-sub">Cisco · Switching &amp; VLANs</div>
+      </div>
+      <span class="project-badge badge-net">Net</span>
+      <span class="arrow">→</span>
+    </a>
+    <a class="project-card" href="/CCNA_part3/">
+      <div class="project-info">
+        <div class="project-title">CCNA 200-301 — Part 3</div>
+        <div class="project-sub">Cisco · Routing</div>
+      </div>
+      <span class="project-badge badge-net">Net</span>
+      <span class="arrow">→</span>
+    </a>
+    <a class="project-card" href="/CCNA_part4/">
+      <div class="project-info">
+        <div class="project-title">CCNA 200-301 — Part 4</div>
+        <div class="project-sub">Cisco · WAN &amp; services</div>
+      </div>
+      <span class="project-badge badge-net">Net</span>
+      <span class="arrow">→</span>
+    </a>
+    <a class="project-card" href="/CCNA_part5/">
+      <div class="project-info">
+        <div class="project-title">CCNA 200-301 — Part 5</div>
+        <div class="project-sub">Cisco · Security &amp; automation</div>
+      </div>
+      <span class="project-badge badge-net">Net</span>
+      <span class="arrow">→</span>
+    </a>
+    <a class="project-card" href="/CCNA_part6/">
+      <div class="project-info">
+        <div class="project-title">CCNA 200-301 — Part 6</div>
+        <div class="project-sub">Cisco · Final review</div>
+      </div>
+      <span class="project-badge badge-net">Net</span>
+      <span class="arrow">→</span>
+    </a>
+  </div>
+
+</div>
+
+<footer>
+  <a href="/">← Home</a> &nbsp;·&nbsp; CyberCasquatch &nbsp;·&nbsp; <a href="https://github.com/CyberCasquatch/cybercasquatch.github.io">GitHub</a>
+</footer>
+</body>
+</html>
