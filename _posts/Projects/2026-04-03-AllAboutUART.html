@@ -310,6 +310,14 @@
   
   <p>This is my writeup for the <em>All About UART</em> course by Brown Fine Security. The course is well structured and can be done in a couple of hours if you're already familiar with embedded hardware, or a solid afternoon if you're new to it like I was. I ran into a bunch of Mac-specific issues that the course doesn't cover (they advise to use linux), so I've documented all of my troubleshooting here too.</p>
 
+    <hr class="divider">
+    <div class="credits">
+    <div style="color:var(--accent); margin-bottom:0.75rem; font-weight:700;">Course Credits</div>
+    <div style="margin-bottom:0.4rem;">Andrew Bellini — <a href="https://links.digitalandrew.io">links.digitalandrew.io</a> · <a href="https://www.youtube.com/@D1gitalAndrew">YouTube</a></div>
+    <div>Matt Brown — <a href="https://brownfinesecurity.com">brownfinesecurity.com</a> · <a href="https://www.youtube.com/@mattbrwn">YouTube</a></div>
+    <div style="margin-top:0.75rem; color:var(--muted);">All About UART — Brown Fine Security</div>
+  </div>
+  
   <h2>Gear</h2>
   <div class="gear-grid">
     <div class="gear-item">Raspberry Pi Pico 2 (with headers pre-soldered)</div>
@@ -523,9 +531,7 @@ baudrate=115200,</pre>
   
   <hr class="divider">
 
-  <h2>Why This Matters</h2>
-
-  <p>This is a great demonstration of why UART security matters on real hardware:</p>
+  <h2>More Notes</h2>
   <ul>
     <li><strong>PINs should never be hardcoded</strong> in firmware</li>
     <li><strong>Rate limiting</strong> is essential — without lockout after failed attempts, brute force is trivial</li>
@@ -533,14 +539,6 @@ baudrate=115200,</pre>
     <li>An attacker with physical access and a $10 USB-to-UART adapter can do exactly what we just did</li>
   </ul>
 
-  <hr class="divider">
-
-  <div class="credits">
-    <div style="color:var(--accent); margin-bottom:0.75rem; font-weight:700;">Course Credits</div>
-    <div style="margin-bottom:0.4rem;">Andrew Bellini — <a href="https://links.digitalandrew.io">links.digitalandrew.io</a> · <a href="https://www.youtube.com/@D1gitalAndrew">YouTube</a></div>
-    <div>Matt Brown — <a href="https://brownfinesecurity.com">brownfinesecurity.com</a> · <a href="https://www.youtube.com/@mattbrwn">YouTube</a></div>
-    <div style="margin-top:0.75rem; color:var(--muted);">All About UART — Brown Fine Security</div>
-  </div>
 
 </div>
 </body>
