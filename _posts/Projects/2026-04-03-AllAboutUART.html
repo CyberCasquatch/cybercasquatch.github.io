@@ -391,7 +391,7 @@
     On Linux the command uses <code>/Volumes/RPI-RP2</code>. On Mac with a Pico 2 (RP2350 chip), the drive mounts as <code>RP2350</code>. This is correct and expected — it is in bootloader mode.
   </div>
 
-  <p>After copying, the drive disappears and the Pico reboots — that's normal and means it worked. The LED did not flash after booting, which I initially thought was an error. It's not — the <code>all_about_uart</code> firmware doesn't blink an LED. It just sits there waiting for a serial connection.</p>
+  <p>After copying, the drive disappears and the Pico reboots — that's normal and means it worked. The LED did not flash after booting, which I initially thought was an error. It's not — I didn't look into why mine didn't blink, I should probably look into the code ey.</p>
 
   <hr class="divider">
 
@@ -533,10 +533,9 @@ baudrate=115200,</pre>
 
   <h2>More Notes</h2>
   <ul>
-    <li><strong>PINs should never be hardcoded</strong> in firmware</li>
-    <li><strong>Rate limiting</strong> is essential — without lockout after failed attempts, brute force is trivial</li>
-    <li><strong>UART debug ports</strong> on production devices should be disabled or physically removed</li>
-    <li>An attacker with physical access and a $10 USB-to-UART adapter can do exactly what we just did</li>
+    <li><strong>This course was good</strong> you should try it.</li>
+    <li><strong>This course was good</strong> you should try it.</li>
+    <li><strong>This course was good</strong> you should try it.</li>
   </ul>
 
 
