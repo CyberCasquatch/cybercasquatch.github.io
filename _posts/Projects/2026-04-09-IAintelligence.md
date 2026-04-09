@@ -1,4 +1,12 @@
-Project
+---
+layout: post
+title:  "IATelligence — Ported to Claude"
+date:   2026-04-09
+author: C. Casquatch
+comments: false
+categories: Projects
+tags: [claude, malware analysis]
+---
 
 # IATelligence — Ported to Claude
 
