@@ -8,8 +8,6 @@ categories: Projects
 tags: [claude, malware analysis]
 ---
 
-# IATelligence — Ported to Claude
-
 // Forking a malware analysis tool to use Anthropic's Claude API instead of OpenAI
 
 Tool Python · Malware Analysis · AWS Bedrock
