@@ -65,7 +65,7 @@ The cost estimation line from the original was removed — Anthropic pricing var
 
 ## API access
 
-The Claude API is pay-as-you-go and separate from any claude.ai subscription. You sign up at [platform.anthropic.com](https://platform.anthropic.com) and get ~$5 in free credits to start.
+The Claude API is pay-as-you-go and separate from any claude.ai subscription. You sign up at [platform.anthropic.com](https://platform.anthropic.com).
 
 Current pricing per million tokens:
 
@@ -142,7 +142,7 @@ python iatelligence.py C:\Windows\System32\calc.exe
 
 ## Limitations
 
-Same as the original — one API call per function, so large IATs are slow. Claude is a language model so MITRE mappings won't always be accurate. Treat output as a starting point for analysis, not a verdict.
+Same as the original — one API call per function, so large IATs are slow. Claude is a language model so MITRE mappings won't always be accurate. Treat output as a starting point for analysis.
 
 ---
 
