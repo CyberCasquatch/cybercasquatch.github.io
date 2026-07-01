@@ -7,7 +7,7 @@ tags: [tamagotchi, uart, serial, logic-analyser, sigrok, firmware, test-points, 
 description: "When the microscope couldn't read the die, I went after the data electrically — soldering onto the board's test points and hunting for a serial interface that, it turns out, was never there."
 ---
 
-This is the second half of the Tamagotchi project. In the [first post](#) I decapped the chip, exposed the die, and ran straight into a wall: my microscope can't resolve enough detail to read the silicon. The decap worked; the optical readout didn't.
+This is the second half of the Tamagotchi project. In the [first post](/_posts/Projects/2026-06-29-decapping-a-tamagotchi-die-extraction.md) I decapped the chip, exposed the die, and ran straight into a wall: my microscope can't resolve enough detail to read the silicon. The decap worked; the optical readout didn't.
 
 So I changed tack. If I can't *read* the chip, maybe I can get the firmware out *electrically* — find a serial interface on the board, solder onto it, and listen. This is the story of that attempt, the research I leaned on, and why it ended where it did.
 
