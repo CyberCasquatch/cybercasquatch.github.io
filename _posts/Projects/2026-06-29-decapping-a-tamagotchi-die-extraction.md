@@ -68,7 +68,7 @@ After dremelling the first tamagotchi. As you can see, I was too excited and hav
 ![Photo of setup3](/assets/images/Tamagotchi/AfterDremelTama1.png)
 
 
-What they look like after being dremelled but before the acid.
+What they look like after being dremelled but before the acid. Scuffed and Stuffed :(
 
 ![Photo of setup4](/assets/images/Tamagotchi/PhotosBeforeAcids/Scale2.jpg)
 
@@ -87,15 +87,15 @@ This is the stage everyone pictures when they hear "decapping" — the epoxy bei
 
 ---
 
-## Step 3 — Imaging the die, and where I hit the wall
+## Step 3 — Imaging the die, and another wall
 
-This is the part I am currently unable to get past.
+This is the part I am currently unable to get past, besides scuffing my dies.
 
-I got the epoxy off. I exposed the die. On the practice chips and on the Tamagotchi, the chemistry worked — there was bare silicon sitting there to look at. The decap was a success.
+I got the epoxy off. I exposed the die. On the practice chips and on the Tamagotchi, the chemistry worked — there was bare silicon sitting there to look at. The decap was a partial success.
 
-The microscope was the failure.
+The microscope I bought was another failure.
 
-What I have right now simply doesn't resolve enough detail. You can *see* the die — the rough floor plan, the large structures, the general layout of regions on the silicon. What you can't do at this magnification is read anything meaningful: no tracing of individual gates, no following the metal layers, nothing close to the resolution you'd need to actually reconstruct logic or pull a ROM optically. To do that properly you're into high-magnification optical work or, realistically, a scanning electron microscope — and an SEM is lab-level access I don't have on the bench.
+What I have right now simply doesn't resolve enough detail. You can *see* the die — the rough floor plan, the large structures, the general layout of regions on the silicon. What you can't do at this magnification is read anything meaningful: no tracing of individual gates, no following the metal layers, nothing close to the resolution you'd need to reconstruct logic or pull a ROM optically. To do that properly you're into high-magnification optical work or a scanning electron microscope.
 
 ![Photo of Tamagotchi](/assets/images/Tamagotchi/DiesUnderScope/Tama1.jpg)
 
@@ -103,13 +103,13 @@ What I have right now simply doesn't resolve enough detail. You can *see* the di
 
 ![Photo of Tamagotchi](/assets/images/Tamagotchi/DiesUnderScope/Tama3.jpg)
 
-So the result is a split decision: **decap, successful. Optical readout, blocked on magnification.** The die is sitting there exposed and I can't read it. That's not a chemistry problem any more — it's purely a microscope problem, which is, at least, a solvable one with better glass or borrowed SEM time. Worth chasing down whether a local hackerspace or university EM facility will give external access.
+This is as clear as I can get with my current microscope. I could probably find a university or hackerspace that has some access to something more heavy-duty.
 
 ---
 
 ## Where this goes next
 
-Hitting the optical wall is what pushed me to the other approach: if I can't *read* the silicon, can I get the data out *electrically*? That's the whole of the second post — soldering onto the board's test points and trying to coax firmware out over a serial line. Spoiler: that didn't go the way I hoped either, but for completely different reasons.
+Soldering onto the board's test points and trying to coax firmware out over a serial line. Spoiler: It went exactly as I thought it would.
 
 ---
 
