@@ -80,9 +80,9 @@ This is the stage everyone pictures when they hear "decapping" — the epoxy bei
 > **📷 Photo space — the burn / acid stage**
 > *Reaction shots go here: epoxy reacting, the blob breaking down, the residue. Whatever you captured of the actual chemistry — this is the money section visually.*
 >
-![Photo of Tamagotchi heating](assets/images/Tamagotchi/HeatingFakeTama.png)
+![Photo of Tamagotchi heating](/assets/images/Tamagotchi/HeatingFakeTama.png)
 
-![Photo of Tamagotchi after heating](assets/images/Tamagotchi/Acid3.png)
+![Photo of Tamagotchi after heating](/assets/images/Tamagotchi/Acid3.png)
 
 > *If you have a before/during/after sequence, run them in order here.*
 
