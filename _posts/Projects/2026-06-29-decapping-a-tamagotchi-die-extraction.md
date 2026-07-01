@@ -26,6 +26,8 @@ This is the same construction that made the early Tamagotchi ROM dumps such a bi
 
 ![Photo of Tamagotchi board](/assets/images/Tamagotchi/BackofTama.png)
 
+![Photo of Tamagotchi board blob](/assets/images/Tamagotchi/FirstTama.png)
+
 ---
 
 ## Equipment and PPE
