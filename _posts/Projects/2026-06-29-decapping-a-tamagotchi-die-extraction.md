@@ -9,7 +9,7 @@ description: "Burning and dissolving the epoxy off a chip-on-board package to ex
 
 This is the first of two posts about a rabbit hole I went down trying to read the code on a Tamagotchi. I wanted to know how the thing actually works at the silicon level, and that meant getting eyes on the die. The chip you're after isn't a tidy little package you can desolder and drop into a reader — it's a **chip-on-board (COB)** blob, a bare die glued straight to the PCB and drowned in a glob of black epoxy. No package, no pins, no markings, no datasheet. Just a blob.
 
-So before I could read anything, I had to get that epoxy off without wrecking the die underneath. This post is the physical side of the story. The [second post](#) covers the other route I tried — going after the data electrically through the board's test points.
+So before I could read anything, I had to get that epoxy off without wrecking the die underneath. This post is the physical side of the story. The [second post](#_posts/Projects/2026-06-29-reading-a-tamagotchi-uart-test-points.md) covers the other route I tried — going after the data electrically through the board's test points.
 
 A quick note on naming: this was sold to me as a "Gen 2" Tamagotchi, but the board is modern-production (marked `42800VR5`, dated 2024). "Gen 2" describes the gameplay style and shell it imitates, not the chip inside — so I'll just call it a chip-on-board Tamagotchi and leave the silicon's exact lineage as an open question.
 
@@ -27,6 +27,10 @@ This is the same construction that made the early Tamagotchi ROM dumps such a bi
 ---
 
 ## Equipment and PPE
+
+Primary setup outside because of the nitric acid.
+
+![Photo of setup1](assets/images/Tamagotchi/Setup1.png)
 
 > **📷 Photo space — bench / gear shot**
 > *A shot of the setup: fume extraction, acid, microscope, the prepped practice chips lined up.*
@@ -49,6 +53,19 @@ The point of dremelling first is to remove the bulk of the epoxy mechanically so
 
 The whole game here is restraint. You're trying to thin the blob, not breach it. Go too far and you crack or score the die, or shear the bond wires, and the part is dead before chemistry ever starts. Heat is the other enemy — the epoxy is formulated to survive soldering temps, so grinding generates heat that can cook the die if you lean on it. Short passes, let it cool.
 
+After dremelling some of the tests.
+
+![Photo of setup2](assets/images/Tamagotchi/AfterDremel1.png)
+
+After dremelliing the first tamagotchi.
+
+![Photo of setup3](assets/images/Tamagotchi/AfterDremelTama1.png)
+
+
+What they look like after being dremelled but before the acid.
+
+![Photo of setup4](assets/images/Tamagotchi/PhotosBeforeAcids/Scale2.jpg)
+
 > **📷 Photo space — practice chips, dremelled and ready**
 > *The junk chips with the bulk epoxy ground down, before the acid stage.*
 
@@ -61,11 +78,15 @@ This is the stage everyone pictures when they hear "decapping" — the epoxy bei
 > **📷 Photo space — the burn / acid stage**
 > *Reaction shots go here: epoxy reacting, the blob breaking down, the residue. Whatever you captured of the actual chemistry — this is the money section visually.*
 >
+> assets/images/Tamagotchi/HeatingFakeTama.png
+> assets/images/Tamagotchi/Acid3.png
 > *If you have a before/during/after sequence, run them in order here.*
 
 > **📷 Photo space — exposed die, first look**
 > *The first clean shot of the die once the epoxy was gone, before it went under the scope.*
 
+assets/images/Tamagotchi/TamasAfterAcid.png
+> 
 ---
 
 ## Step 3 — Imaging the die, and where I hit the wall
