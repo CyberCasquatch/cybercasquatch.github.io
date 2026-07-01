@@ -21,9 +21,6 @@ A COB part is about the cheapest way to put a chip on a board. The silicon die i
 
 This is the same construction that made the early Tamagotchi ROM dumps such a big deal — there was no easy electrical path in, so people had to get physical.
 
-> **📷 Photo space — IMG_0902 (front / component face)**
-> *Drop the front-of-board shot here. The big central black blob is the COB. Worth annotating with arrows: COB blob, LCD ribbon connectors (top + bottom), the CANCEL / OK / SELECT button pads, and the SMD passives (C8, C9, C10, R2, R3, R6, JP1) clustered around it.*
-
 ![Photo of Tamagotchi board](/assets/images/Tamagotchi/BackofTama.png)
 
 ![Photo of Tamagotchi board blob](/assets/images/Tamagotchi/FirstTama.png)
@@ -34,19 +31,16 @@ This is the same construction that made the early Tamagotchi ROM dumps such a bi
 
 Primary setup outside because of the nitric acid.
 
-![Photo of setup1](/assets/images/Tamagotchi/Setup1.png)
-
-> **📷 Photo space — bench / gear shot**
-> *A shot of the setup: fume extraction, acid, microscope, the prepped practice chips lined up.*
+![Photo of setup1](/assets/images/Tamagotchi/Setup1copy.png)
 
 Quick word before anyone copies this: the chemistry here is dangerous, not internet-dangerous. Fuming nitric acid does not forgive mistakes. None of this is a how-to — it's a write-up of what I did. If you don't already know how to handle these reagents safely, this is not where you learn.
 
 What I used:
 
-- PPE: acid-rated gloves, goggles/face protection, and proper ventilation. This is the non-negotiable part.
+- PPE: acid-rated gloves, goggles/face protection, and proper ventilation.
 - A Dremel for mechanical prep.
-- Acid for the chemical decap stage.
-- A microscope plus a phone-to-eyepiece adapter for imaging.
+- Nitric Acid and Acetone for the chemical decap stage.
+- A usb-capable microscope that looks through your photobooth.
 - A pile of junk chips — dead boards I didn't care about — as practice before I touched anything I wanted to keep.
 
 ---
@@ -70,8 +64,6 @@ What they look like after being dremelled but before the acid.
 
 ![Photo of setup4](/assets/images/Tamagotchi/PhotosBeforeAcids/Scale2.jpg)
 
-> **📷 Photo space — practice chips, dremelled and ready**
-> *The junk chips with the bulk epoxy ground down, before the acid stage.*
 
 ---
 
@@ -79,20 +71,12 @@ What they look like after being dremelled but before the acid.
 
 This is the stage everyone pictures when they hear "decapping" — the epoxy being chemically eaten away to leave the bare silicon sitting there exposed.
 
-> **📷 Photo space — the burn / acid stage**
-> *Reaction shots go here: epoxy reacting, the blob breaking down, the residue. Whatever you captured of the actual chemistry — this is the money section visually.*
->
 ![Photo of Tamagotchi heating](/assets/images/Tamagotchi/HeatingFakeTama.png)
 
 ![Photo of Tamagotchi after heating](/assets/images/Tamagotchi/Acid3.png)
 
-> *If you have a before/during/after sequence, run them in order here.*
-
-> **📷 Photo space — exposed die, first look**
-> *The first clean shot of the die once the epoxy was gone, before it went under the scope.*
-
 ![Photo of acid](/assets/images/Tamagotchi/TamasAfterAcid.png)
-> 
+
 ---
 
 ## Step 3 — Imaging the die, and where I hit the wall
