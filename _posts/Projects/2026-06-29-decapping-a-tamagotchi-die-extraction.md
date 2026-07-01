@@ -24,6 +24,8 @@ This is the same construction that made the early Tamagotchi ROM dumps such a bi
 > **📷 Photo space — IMG_0902 (front / component face)**
 > *Drop the front-of-board shot here. The big central black blob is the COB. Worth annotating with arrows: COB blob, LCD ribbon connectors (top + bottom), the CANCEL / OK / SELECT button pads, and the SMD passives (C8, C9, C10, R2, R3, R6, JP1) clustered around it.*
 
+![Photo of Tamagotchi board](assets/images/Tamagotchi/BackofTama.png)
+
 ---
 
 ## Equipment and PPE
