@@ -61,7 +61,7 @@ After dremelling some of the tests.
 
 ![Photo of setup2](/assets/images/Tamagotchi/AfterDremel1.png)
 
-After dremelliing the first tamagotchi. As you can see, I was too excited and have already stuffed up - rule of thumb, if you can see part of the die before you've even hit it with acid, chances are you've scuffed it. This means readability of the die will be poor.
+After dremelling the first tamagotchi. As you can see, I was too excited and have already stuffed up - rule of thumb, if you can see part of the die before you've even hit it with acid, chances are you've scuffed it. This means readability of the die will be poor.
 
 ![Photo of setup3](/assets/images/Tamagotchi/AfterDremelTama1.png)
 
