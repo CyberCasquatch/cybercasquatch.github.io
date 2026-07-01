@@ -48,6 +48,7 @@ What I used:
 - A usb-capable microscope.
 - Tongs.
 - ultra-sonic cleaner.
+- 23 Gauge syringe for nitric acid.
 - A pile of junk chips — dead boards I didn't care about — as practice before I touched anything I wanted to keep.
 
 ---
