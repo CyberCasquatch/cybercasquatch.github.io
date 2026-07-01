@@ -15,7 +15,7 @@ A quick note on naming: this was sold to me as a "Gen 2" Tamagotchi, but the boa
 
 ---
 
-## What you're actually looking at
+## What we're looking at
 
 A COB part is about the cheapest way to put a chip on a board. The silicon die is bonded directly to the PCB, wire-bonded to the pads, and then potted under epoxy to protect those hair-thin bond wires. It's everywhere in cheap consumer electronics for exactly that reason — it's cheap to make. The downside, if you're the one trying to reverse engineer it, is that there's nothing to read from the outside. No part number to look up. The ROM is baked into the silicon itself.
 
@@ -31,7 +31,7 @@ This is the same construction that made the early Tamagotchi ROM dumps such a bi
 > **📷 Photo space — bench / gear shot**
 > *A shot of the setup: fume extraction, acid, microscope, the prepped practice chips lined up.*
 
-Quick word before anyone copies this: the chemistry here is genuinely dangerous, not internet-dangerous. Fuming nitric acid does not forgive mistakes. None of this is a how-to — it's a write-up of what I did. If you don't already know how to handle these reagents safely, this is not where you learn.
+Quick word before anyone copies this: the chemistry here is dangerous, not internet-dangerous. Fuming nitric acid does not forgive mistakes. None of this is a how-to — it's a write-up of what I did. If you don't already know how to handle these reagents safely, this is not where you learn.
 
 What I used:
 
@@ -70,7 +70,7 @@ This is the stage everyone pictures when they hear "decapping" — the epoxy bei
 
 ## Step 3 — Imaging the die, and where I hit the wall
 
-This is the honest part of the post.
+This is the part I am currently unable to get past.
 
 I got the epoxy off. I exposed the die. On the practice chips and on the Tamagotchi, the chemistry worked — there was bare silicon sitting there to look at. The decap was a success.
 
@@ -87,7 +87,7 @@ So the result is a split decision: **decap, successful. Optical readout, blocked
 
 ## Where this goes next
 
-Hitting the optical wall is what pushed me to the other approach: if I can't *read* the silicon, can I get the data out *electrically*? That's the whole of the second post — soldering onto the board's test points and trying to coax firmware out over a serial line. Spoiler: that didn't go the way I hoped either, but for completely different and quite interesting reasons.
+Hitting the optical wall is what pushed me to the other approach: if I can't *read* the silicon, can I get the data out *electrically*? That's the whole of the second post — soldering onto the board's test points and trying to coax firmware out over a serial line. Spoiler: that didn't go the way I hoped either, but for completely different reasons.
 
 ---
 
