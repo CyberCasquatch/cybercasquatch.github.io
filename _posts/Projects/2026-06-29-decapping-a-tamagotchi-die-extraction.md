@@ -89,8 +89,11 @@ The microscope was the failure.
 
 What I have right now simply doesn't resolve enough detail. You can *see* the die — the rough floor plan, the large structures, the general layout of regions on the silicon. What you can't do at this magnification is read anything meaningful: no tracing of individual gates, no following the metal layers, nothing close to the resolution you'd need to actually reconstruct logic or pull a ROM optically. To do that properly you're into high-magnification optical work or, realistically, a scanning electron microscope — and an SEM is lab-level access I don't have on the bench.
 
-> **📷 Photo space — die under the microscope**
-> *Your die-imaging attempts go here. Even the ones that came out too blurry to read are worth including — they make the resolution-wall point concretely. A side-by-side of "what I can see" vs "what I'd need to see" would land well.*
+![Photo of Tamagotchi](/assets/images/Tamagotchi/DiesUnderScope/Tama1.jpg)
+
+![Photo of Tamagotchi](/assets/images/Tamagotchi/DiesUnderScope/Tama2.jpg)
+
+![Photo of Tamagotchi](/assets/images/Tamagotchi/DiesUnderScope/Tama3.jpg)
 
 So the result is a split decision: **decap, successful. Optical readout, blocked on magnification.** The die is sitting there exposed and I can't read it. That's not a chemistry problem any more — it's purely a microscope problem, which is, at least, a solvable one with better glass or borrowed SEM time. Worth chasing down whether a local hackerspace or university EM facility will give external access.
 
