@@ -38,9 +38,16 @@ Quick word before anyone copies this: the chemistry here is dangerous, not inter
 What I used:
 
 - PPE: acid-rated gloves, goggles/face protection, and proper ventilation.
+- Small cooktop.
+- Beakers (all glass).
+- various metal and plastic tweezers of different sizes and pinch types.
+- Graphits ingot.
+- Thermometer.
 - A Dremel for mechanical prep.
 - Nitric Acid and Acetone for the chemical decap stage.
-- A usb-capable microscope that looks through your photobooth.
+- A usb-capable microscope.
+- Tongs.
+- ultra-sonic cleaner.
 - A pile of junk chips — dead boards I didn't care about — as practice before I touched anything I wanted to keep.
 
 ---
