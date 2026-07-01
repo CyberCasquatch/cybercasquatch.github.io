@@ -125,4 +125,5 @@ Hitting the optical wall is what pushed me to the other approach: if I can't *re
 - **[Tamagotchi ROM Dump and Reverse Engineering](https://hackaday.com/2013/06/10/tamagotchi-rom-dump-and-reverse-engineering/)** — Hackaday. Covers the full arc from physical access through to ROM extraction.
 - **[Hacking the PIC 18F1320](https://bunniestudios.com/blog/?p=73)** — bunnie's blog. Context on reading protected microcontroller memory and why physical access is sometimes the only path in.
 - **[Removing / Decapping an Epoxy Blob](https://www.eevblog.com/forum/beginners/removingdecapping-an-epoxy-blob/)** — EEVblog forum. Community methods specifically for COB / glob-top removal.
+- **[Learning to Decapsulate Integrated Circuits Using Acid Deposition](https://jcjc-dev.com/2020/10/20/learning-to-decap-ics/#taking-pictures-under-the-microscope)** - My whole post and experiment is thanks to this guy - Juan Carlos Jimenez and his careful instructions on how to do this.
 - **[iPhone-to-Microscope Eyepiece Adapter](https://www.thingiverse.com/)** — DemuxLabs, Thingiverse. The phone-to-eyepiece adapter approach for die imaging. *(swap in your exact thing: link)*
