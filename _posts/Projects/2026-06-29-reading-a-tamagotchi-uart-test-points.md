@@ -81,9 +81,9 @@ sigrok-cli -d fx2lafw --channels D5,D7 \
   --time 5s
 ```
 
-I ran it at 115200, then 57600, 38400, 19200, 9600. I swapped which pin was RX and which was TX. I re-ran the raw capture and opened it in PulseView to eyeball the channels directly.
+I ran it at 115200, then 57600, 38400, 19200, 9600. I swapped which pin was RX and which was TX. 
 
-**Nothing. Flat lines on every channel, every baud rate, every combination.** No pulses on power-up, no garbage, no traffic at all.
+Nothing. No pulses on power-up, no garbage, no traffic at all.
 
 ---
 
