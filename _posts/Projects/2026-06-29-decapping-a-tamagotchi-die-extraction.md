@@ -126,4 +126,9 @@ Soldering onto the board's test points and trying to coax firmware out over a se
 - **[Hacking the PIC 18F1320](https://bunniestudios.com/blog/?p=73)** — bunnie's blog. Context on reading protected microcontroller memory and why physical access is sometimes the only path in.
 - **[Removing / Decapping an Epoxy Blob](https://www.eevblog.com/forum/beginners/removingdecapping-an-epoxy-blob/)** — EEVblog forum. Community methods specifically for COB / glob-top removal.
 - **[Learning to Decapsulate Integrated Circuits Using Acid Deposition](https://jcjc-dev.com/2020/10/20/learning-to-decap-ics/#taking-pictures-under-the-microscope)** - My whole post and experiment is thanks to this guy - Juan Carlos Jimenez and his careful instructions on how to do this.
-- **[iPhone-to-Microscope Eyepiece Adapter](https://www.thingiverse.com/)** — DemuxLabs, Thingiverse. The phone-to-eyepiece adapter approach for die imaging. *(swap in your exact thing: link)*
+- **[Chip decapping - more ways](https://hackaday.com/2020/03/11/chip-decapping-the-easy-way/)** - another way to decap chips.
+- **[Chip Decapping on a Budget](https://www.youtube.com/watch?v=mriu_O8bhck)** - Zach Pahle Schmoocon 2020
+- **[Defcon 21 talk](https://www.youtube.com/watch?v=7Q82FkthDx8)** - Chip decapping the East (Hard) way
+- **[Bsidse Knoxville 2022](https://www.youtube.com/watch?v=H3iL8_LzAjE)** - Travis Goodspeed - An Amateur's Guide to Microchip Decapsulation Chemistry
+- **[Beginners Guide to IC Reverse Engineering - With a High Likelihood of Survival!](https://media.ccc.de/v/ds25-570-beginners-guide-to-ic-reverse-engineering-with-a-high-likelihood-of-survival#t=233)** - Henny-Brenner Saal
+- **[Decapping ICs with Sulphuric Acid](https://www.youtube.com/watch?v=pneScFR-mUI)** - Hackware v3.7 Lim Jin Gen
