@@ -9,7 +9,7 @@ description: "When the microscope couldn't read the die, I went after the data e
 
 **Please see the bottom of this post for some sick references if you want to enjoy more rabbit hole tamagotchi hacking things**
 
-This is the second half of the Tamagotchi project. In the [first post](/_posts/Projects/2026-06-29-decapping-a-tamagotchi-die-extraction.md) I decapped the chip, exposed the die, and ran straight into a wall: my microscope can't resolve enough detail to read the silicon. The decap can work if I show more refrain with the dremel and I get access to a better microsope.
+This is the second half of the Tamagotchi project. In the [first post](/decapping-a-tamagotchi-die-extraction/) I decapped the chip, exposed the die, and ran straight into a wall: my microscope can't resolve enough detail to read the silicon. The decap can work if I show more refrain with the dremel and I get access to a better microsope.
 
 So I changed tack. If I can't *read* the chip, maybe I can get the firmware out *electrically* — find a serial interface on the board, solder onto it, and listen. This is the story of that attempt, the research I leaned on, and why it ended where it did.
 
