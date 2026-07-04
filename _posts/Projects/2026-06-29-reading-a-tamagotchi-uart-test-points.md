@@ -129,7 +129,6 @@ There's a more promising future target sitting in plain sight, though. The newer
 - **[IE Reverse Engineering Wiki](https://siliconpr0n.org/wiki/doku.php?__cf_chl_f_tk=RtzjcxGghR..F_h2aLbhnkV33GewWJ5ShqzbJEH40QQ-1783139924-1.0.1.1-y3BZd2AA0iL7TrNStYmyBYeDxCc7JBJG1_a33DL3VHc)** - more info about integrated circuit reverse engineering.
 - **[More P1 ROM](https://rhubarbtart.neocities.org/p1hackinglog)** - More Rubarbtart Posts
 - **[Osutchi/Mesutchi Hacking](https://rhubarbtart.neocities.org/osumesuhackinglog)** - More Rubarbtart posts about tama hacking.
-- **[
 - **[TamaHacks Wiki — Uni page](https://tamahacks.com/index.php?title=Uni)** — community research on the ESP32-S3-based Uni; the right place to look before going after the WiFi model.
 - **[UART, U-Boot, and USB](https://voidstarsec.com/blog/uart-uboot-and-usb)** — VoidStar Security. Solid general embedded-RE walkthrough for finding and using serial interfaces.
 - **[Hardware Hacking 101 — UART](https://ivanorsolic.github.io/post/hardwarehacking1/)** — Ivan Orsolic. Practical UART hunting with an FT232H / Bus Pirate.
