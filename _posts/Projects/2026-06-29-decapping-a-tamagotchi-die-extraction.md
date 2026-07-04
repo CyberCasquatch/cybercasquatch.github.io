@@ -2,6 +2,7 @@
 layout: post
 title: "Decapping a Tamagotchi — Extracting the Die from the Epoxy Blob"
 date: 2026-06-29
+author: C. Casquatch
 categories: [hardware, reverse-engineering]
 tags: [tamagotchi, decap, epoxy-blob, die-imaging, acid-decap, COB, microscopy]
 description: "Burning and dissolving the epoxy off a chip-on-board package to expose the silicon die underneath — practice chips, a Gen 2 Tamagotchi, and the wall I hit at the microscope."
