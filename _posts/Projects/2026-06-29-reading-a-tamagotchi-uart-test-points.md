@@ -2,6 +2,7 @@
 layout: post
 title: "Reading a Tamagotchi the Other Way — Chasing UART on the Test Points"
 date: 2026-06-29
+author: C. Casquatch
 categories: [hardware, reverse-engineering]
 tags: [tamagotchi, uart, serial, logic-analyser, sigrok, firmware, test-points, COB]
 description: "When the microscope couldn't read the die, I went after the data electrically — soldering onto the board's test points and hunting for a serial interface that, it turns out, was never there."
