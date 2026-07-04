@@ -7,13 +7,15 @@ tags: [tamagotchi, uart, serial, logic-analyser, sigrok, firmware, test-points, 
 description: "When the microscope couldn't read the die, I went after the data electrically — soldering onto the board's test points and hunting for a serial interface that, it turns out, was never there."
 ---
 
-This is the second half of the Tamagotchi project. In the [first post](/_posts/Projects/2026-06-29-decapping-a-tamagotchi-die-extraction.md) I decapped the chip, exposed the die, and ran straight into a wall: my microscope can't resolve enough detail to read the silicon. The decap worked; the optical readout didn't.
+**Please see the bottom of this post for some sick references if you want to enjoy more rabbit hole tamagotchi hacking things**
+
+This is the second half of the Tamagotchi project. In the [first post](/_posts/Projects/2026-06-29-decapping-a-tamagotchi-die-extraction.md) I decapped the chip, exposed the die, and ran straight into a wall: my microscope can't resolve enough detail to read the silicon. The decap can work if I show more refrain with the dremel and I get access to a better microsope.
 
 So I changed tack. If I can't *read* the chip, maybe I can get the firmware out *electrically* — find a serial interface on the board, solder onto it, and listen. This is the story of that attempt, the research I leaned on, and why it ended where it did.
 
-It's a failure write-up, mostly. But it's a useful one, because the *reason* it failed tells you something real about this hardware.
+It's a failure write-up, mostly. But it's a useful one.
 
-> **A note on what this board actually is.** I bought this advertised as a "Gen 2" Tamagotchi, but the board is marked `No: 42800VR5` and dated `2024-3-20` — so it's modern-production hardware in a classic-style shell. "Gen 2" here describes the gameplay generation and shell it imitates, not the silicon inside. I genuinely don't know the exact part under the epoxy: it could be running the classic ROM on a modern low-cost controller. What I *can* say for certain, from my own probing, is that it's a chip-on-board design with no accessible serial interface — and that's the part that matters for this post. Where I'd otherwise have asserted "it's a simple 90s ASIC," I'm instead leaving the generation an open question, because that's the honest position.
+> **A note on what this board actually is.** I bought this advertised as a "Gen 2" Tamagotchi, but the board is marked `No: 42800VR5` and dated `2024-3-20` — so it's modern-production hardware in a classic-style shell. "Gen 2" here describes the gameplay generation and shell it imitates, not the silicon inside. I don't know the exact part under the epoxy: it could be running the classic ROM on a modern low-cost controller. What I can say for certain, from my own probing, is that it's a chip-on-board design with no accessible serial interface. Where I'd otherwise have asserted "it's a simple 90s ASIC," I'm instead leaving the generation an open question, because that's the my position.
 
 ---
 
@@ -21,10 +23,12 @@ It's a failure write-up, mostly. But it's a useful one, because the *reason* it 
 
 The dream was UART. A lot of embedded devices leave a debug serial line exposed on the PCB — test pads the factory used for programming or QA that still spew boot output if you connect to them. If the Tamagotchi had one of those, the chip would happily tell me what it was doing on power-up, and possibly let me dump flash.
 
-Before touching the iron I read everything I could find. The cornerstone is Natalie Silvanovich's (natashenka) Tamagotchi work — the [29C3 talk](https://www.youtube.com/watch?v=c4PoacCB9GM) and the [Tamagotchi-Hack repo](https://github.com/natashenka/Tamagotchi-Hack). The thing that stuck with me reading her work and the follow-on community write-ups: classic Tamagotchi hardware is built as a closed, deliberately-minimal toy with no friendly debug door, which is exactly why the early ROM extraction was *hard*. That tradition of being locked-down by design held true for my board too, whatever the exact chip turned out to be. I went looking anyway, because the point was to read *my own* Tama, not download someone else's dump.
+Before touching the iron I read everything I could find. The cornerstone is Natalie Silvanovich's (natashenka) Tamagotchi work — the [29C3 talk](https://www.youtube.com/watch?v=c4PoacCB9GM) and the [Tamagotchi-Hack repo](https://github.com/natashenka/Tamagotchi-Hack). The thing that stuck with me reading her work and the follow-on community write-ups: classic Tamagotchi hardware is built as a closed, deliberately-minimal toy with no friendly debug door, which is exactly why the early ROM extraction was hard. That tradition of being locked-down by design held true for my board too, whatever the exact chip turned out to be. I went looking anyway, because the point was to learn and fail.
 
-> **📷 Photo space — the board, test points labelled**
-> *The back-of-board shot showing the test points. Worth annotating: TP1–TP15, BAT+, BAT-, GND, RESET, the two buzzer pads (BZ1, BZ2), and the board markings — `No: 42800VR5`, dated `2024-3-20`.*
+![Front Tama](/assets/images/Tamagotchi/FrontofTama2.png)
+
+![Back Tama](/assets/images/Tamagotchi/BackofTama.png)
+
 
 ---
 
@@ -46,8 +50,9 @@ Two pads gave me something: **two test points both reading ~2.2V**. On a 3V syst
 
 Everything else read a flat **0V**, including the labelled `BAT-` which confirmed my ground reference. So the working theory was: two 2.2V pads = TX and RX, `BAT-` = GND, go listen.
 
-> **📷 Photo space — multimeter on the test points**
-> *Probing shot, ideally showing the ~2.2V reading on one of the candidate pads.*
+![Photo 2](/assets/images/Tamagotchi/MultimeterTest.png)
+
+![Photo 3](/assets/images/Tamagotchi/MultimeterTestTama.png)
 
 ---
 
@@ -80,20 +85,17 @@ I ran it at 115200, then 57600, 38400, 19200, 9600. I swapped which pin was RX a
 
 **Nothing. Flat lines on every channel, every baud rate, every combination.** No pulses on power-up, no garbage, no traffic at all.
 
-> **📷 Photo space — sigrok / PulseView capture**
-> *A screenshot of the flat capture — the "nothing happened" evidence. The empty trace is the point.*
-
 ---
 
-## Why it was never going to work
+## Pfffft
 
 Empty captures narrow things down to a few possibilities — flaky solder joints, a signal too fast for the window — but after re-seating the wires and re-running, the honest conclusion is the simplest one:
 
-**Those 2.2V pads were never a UART. They were voltage bleed from internal pull-ups, not an active serial line.**
+**Those 2.2V pads were voltage bleed from internal pull-ups, not an active serial line.**
 
 Classic-style Tamagotchi hardware is built as a closed, deliberately-minimal toy. There's no reason for it to carry a hobbyist-accessible debug UART — Bandai gains nothing by exposing one. The test points scattered across the back of the board are almost certainly **bed-of-nails manufacturing test contacts** — pads the factory used for QA on the production line, not a debug or programming interface. Whether the silicon under the blob is a genuine vintage ASIC or a modern low-cost controller re-running the classic ROM, the result for me is the same: nothing to talk to. A reading of 2.2V on a multimeter is just a high-impedance pad floating; it looks identical to an idle UART line on a meter, which is exactly the trap I walked into.
 
-That's the real lesson of this post. A multimeter can't tell you the difference between "idle serial line" and "pad pulled up to nowhere." Only the analyser can — and the analyser's verdict was *nothing*. The interface I thought I'd found didn't exist.
+The interface I thought I'd found didn't exist.
 
 ---
 
@@ -104,7 +106,7 @@ Both routes are now spent, in their current form:
 - **Optically** (post 1): die exposed, but my microscope can't resolve enough to read it.
 - **Electrically** (this post): no serial interface exists to read it through.
 
-The genuinely-next options from here are more invasive — desoldering and directly reading a ROM/flash part, or getting the die under proper SEM-grade magnification — both of which need kit I don't currently have. There's also the boring shortcut I deliberately skipped: the community has already dumped Gen 1 and Gen 2 ROMs, so the data exists. But downloading someone else's dump was never the point. The point was to read *mine*.
+The next options from here are more invasive — desoldering and directly reading a ROM/flash part, or getting the die under proper SEM-grade magnification — both of which need kit I don't currently have. There's also the boring shortcut I deliberately skipped: the community has already dumped Gen 1 and Gen 2 ROMs, so the data exists. But downloading someone else's dump was never the point. The point was to read *mine*.
 
 There's a more promising future target sitting in plain sight, though. The newer WiFi Tamagotchi — the **Uni** — is built on an **ESP32-S3**, which is a documented, open platform with real community tooling and an actual debug UART. That's a device you can genuinely flash custom firmware onto, assuming Bandai didn't lock it down with flash encryption. The [TamaHacks wiki](https://tamahacks.com/index.php?title=Uni) is tracking exactly that. That's likely where this project goes next — from *reading* a Tamagotchi to *running my own code on one*.
 
@@ -120,6 +122,14 @@ There's a more promising future target sitting in plain sight, though. The newer
 
 - **[natashenka/Tamagotchi-Hack](https://github.com/natashenka/Tamagotchi-Hack)** — GitHub. The original code from the 29C3 talk: ROM reading, patching, code execution.
 - **[Hack those Tamagotchis!](https://natashenka.ca)** — natashenka.ca. Companion write-ups to the talk.
+- **[First Glimpse into the Soul of a Tamagotchi](https://web.archive.org/web/20160304045713/http://www.kwartzlab.ca/2013/05/first-glimpse-soul-tamagotchi/)** - One of Natasha's earlier posts about her tama hacking.
+- **[Code Execution on a Tamagotchi](https://web.archive.org/web/20160310103757/http://www.kwartzlab.ca/2013/05/code-execution-tamagotchi/)** - Natasha write-up.
+- **[Tama Gen2.](https://adb.arcadeitalia.net/dettaglio_mame.php?game_name=tamag2)** - more info for a tama gen2.
+- **[P1 ROM Dump](https://rhubarbtart.neocities.org/p1romdumplog)** - Rubarbtarts' blog about their rom dumps - THEY ARE SO GOOD.
+- **[IE Reverse Engineering Wiki](https://siliconpr0n.org/wiki/doku.php?__cf_chl_f_tk=RtzjcxGghR..F_h2aLbhnkV33GewWJ5ShqzbJEH40QQ-1783139924-1.0.1.1-y3BZd2AA0iL7TrNStYmyBYeDxCc7JBJG1_a33DL3VHc)** - more info about integrated circuit reverse engineering.
+- **[More P1 ROM](https://rhubarbtart.neocities.org/p1hackinglog)** - More Rubarbtart Posts
+- **[Osutchi/Mesutchi Hacking](https://rhubarbtart.neocities.org/osumesuhackinglog)** - More Rubarbtart posts about tama hacking.
+- **[
 - **[TamaHacks Wiki — Uni page](https://tamahacks.com/index.php?title=Uni)** — community research on the ESP32-S3-based Uni; the right place to look before going after the WiFi model.
 - **[UART, U-Boot, and USB](https://voidstarsec.com/blog/uart-uboot-and-usb)** — VoidStar Security. Solid general embedded-RE walkthrough for finding and using serial interfaces.
 - **[Hardware Hacking 101 — UART](https://ivanorsolic.github.io/post/hardwarehacking1/)** — Ivan Orsolic. Practical UART hunting with an FT232H / Bus Pirate.
