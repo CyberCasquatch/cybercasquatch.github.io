@@ -107,9 +107,7 @@ Both routes are now spent, in their current form:
 - **Optically** (post 1): die exposed, but my microscope can't resolve enough to read it.
 - **Electrically** (this post): no serial interface exists to read it through.
 
-The next options from here are more invasive — desoldering and directly reading a ROM/flash part, or getting the die under proper SEM-grade magnification — both of which need kit I don't currently have. There's also the boring shortcut I deliberately skipped: the community has already dumped Gen 1 and Gen 2 ROMs, so the data exists. But downloading someone else's dump was never the point. The point was to read *mine*.
-
-There's a more promising future target sitting in plain sight, though. The newer WiFi Tamagotchi — the **Uni** — is built on an **ESP32-S3**, which is a documented, open platform with real community tooling and an actual debug UART. That's a device you can genuinely flash custom firmware onto, assuming Bandai didn't lock it down with flash encryption. The [TamaHacks wiki](https://tamahacks.com/index.php?title=Uni) is tracking exactly that. That's likely where this project goes next — from *reading* a Tamagotchi to *running my own code on one*.
+There's a more promising future target, though. The newer WiFi Tamagotchi — the **Uni** — is built on an **ESP32-S3**, which is a documented, open platform with real community tooling. The [TamaHacks wiki](https://tamahacks.com/index.php?title=Uni) is tracking that. That's likely where this project goes next.
 
 ---
 
