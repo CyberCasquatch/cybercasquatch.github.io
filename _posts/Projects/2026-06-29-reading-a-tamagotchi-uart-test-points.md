@@ -129,6 +129,9 @@ There's a more promising future target, though. The newer WiFi Tamagotchi — th
 - **[More P1 ROM](https://rhubarbtart.neocities.org/p1hackinglog)** - More Rubarbtart Posts
 - **[Osutchi/Mesutchi Hacking](https://rhubarbtart.neocities.org/osumesuhackinglog)** - More Rubarbtart posts about tama hacking.
 - **[TamaHacks Wiki — Uni page](https://tamahacks.com/index.php?title=Uni)** — community research on the ESP32-S3-based Uni; the right place to look before going after the WiFi model.
+- **[Tamagotchi Tech Specs Collection](https://tama.loociano.com)** - webiste of compiled technical specifications of tamagtochi toys.
+- **[Mr. Blinky](https://github.com/MrBlinky/tamadumper)** - Tamadumper on github
+- **[Tama Singularity Project](http://spritesmods.com/?art=tamasingularity)** - Spritesmods
 - **[UART, U-Boot, and USB](https://voidstarsec.com/blog/uart-uboot-and-usb)** — VoidStar Security. Solid general embedded-RE walkthrough for finding and using serial interfaces.
 - **[Hardware Hacking 101 — UART](https://ivanorsolic.github.io/post/hardwarehacking1/)** — Ivan Orsolic. Practical UART hunting with an FT232H / Bus Pirate.
 
